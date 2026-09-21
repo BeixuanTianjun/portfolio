@@ -177,13 +177,14 @@ window.PROFILE = {
       role: "Founder",
       org: "MasterIDX",
       type: "Self-employed",
-      /* TODO — confirm the start date; this is taken from when the codebase
-         first appeared, which may be later than when you started. */
+      /* TODO — confirm the start date. Taken from when the codebase first
+         appeared (Aug 2026); "October 2026" is when the subscription opens,
+         not when the work began, so it is not used as the period here. */
       period: "2026 — Present",
       location: "Jakarta, Indonesia · masteridx.com",
       bullets: [
         "Built and run a paid stock analysis platform for the Indonesian exchange: valuation, screening, financial ratios and bandarmology (broker-level accumulation analysis), with a public API.",
-        "Sole operator end to end — product, data pipeline, billing and support. Priced at Rp 299,000, currently with a free month for beta testers while the product is proved out.",
+        "Sole operator end to end — product, data pipeline, billing and support. Subscription opens October 2026 at Rp 299,000 a month, free for beta testers until then.",
         "The same tool I run my own capital through, so every weakness in it costs me directly before it costs a subscriber."
       ],
       tags: ["Valuation", "IDX", "Bandarmology", "API", "SaaS"]
@@ -338,7 +339,7 @@ window.PROFILE = {
       title: "MasterIDX",
       year: "2026",
       blurb:
-        "A stock analysis platform for the IDX — valuation, screening, financial ratios and bandarmology, with a public API. Priced at Rp 299,000 and in beta, free for the first month. Built and operated single-handed, and the tool I run my own positions through.",
+        "A stock analysis platform for the IDX — valuation, screening, financial ratios and bandarmology, with a public API. In free beta now; subscriptions open October 2026 at Rp 299,000 a month. Built and operated single-handed, and the tool I run my own positions through.",
       tags: ["Valuation", "IDX", "Bandarmology", "API"],
       link: "https://masteridx.com/"
     },
