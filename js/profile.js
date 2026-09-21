@@ -69,7 +69,7 @@ window.PROFILE = {
       { k: "Based in",   v: "Jakarta Metropolitan Area" },
       { k: "Studying",   v: "Industrial Engineering, BINUS University" },
       { k: "Focus",      v: "Financial modeling · Valuation · Markets" },
-      { k: "Working on", v: "FMVA · CFA · WMI · WPPE" },
+      { k: "Training in", v: "WPPE · FMVA · WMI · CFA Level I" },
       { k: "Open to",    v: "Analyst internships · on-site or hybrid" }
     ]
   },
@@ -297,13 +297,17 @@ window.PROFILE = {
     }
   ],
 
-  /* TODO — the four in your headline, all listed as candidate / in progress.
-     Once one is passed, replace the year with the year you passed it. */
+  /* None of these is passed yet, so none of them says it is. "Candidate" is a
+     regulated term for the CFA Program — it means registered for a specific
+     exam — and a finance reader knows that, so claiming it loosely costs more
+     credibility than the word buys. Stated as training, which is true.
+     Once an exam is actually booked, "Exam <month year>" is the strongest
+     line here; once one is passed, put the year. */
   certifications: [
-    { name: "FMVA — Financial Modeling & Valuation Analyst", issuer: "CFI",           year: "In progress" },
-    { name: "CFA",                                          issuer: "CFA Institute",  year: "Candidate" },
-    { name: "WMI — Wakil Manajer Investasi",                issuer: "OJK",            year: "Candidate" },
-    { name: "WPPE — Wakil Perantara Pedagang Efek",         issuer: "Finplan / OJK",  year: "In progress" }
+    { name: "WPPE — securities broker-dealer representative track", issuer: "Finplan / OJK", year: "In training" },
+    { name: "FMVA — Financial Modeling & Valuation Analyst",        issuer: "CFI",           year: "Coursework" },
+    { name: "WMI — Wakil Manajer Investasi",                        issuer: "OJK",           year: "Preparing" },
+    { name: "CFA Level I",                                          issuer: "CFA Institute", year: "Preparing" }
   ],
 
   /* --- 9. PROJECTS ------------------------------------------------------ */
