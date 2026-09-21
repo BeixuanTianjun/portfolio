@@ -67,43 +67,23 @@ npx http-server . -p 8080 -c-1     # or serve it, if you prefer
 
 ## Deploying
 
-### GitHub Pages — automatic
+This repo *is* the site. Pages serves the repository root, so `index.html`
+here is what loads at:
 
-`.github/workflows/deploy-pages.yml` (repo root) publishes this folder on every
-push that touches `Portfolio/**`. It uploads `Portfolio/` alone as the artifact,
-so the site serves from the Pages root rather than under `/Portfolio/`:
+    https://beixuantianjun.github.io/portfolio/
 
-    https://beixuantianjun.github.io/Kode-Lord_MW/
+Settings → Pages → Source is **Deploy from a branch**, `main` / `/ (root)`.
+Push to `main` and the change is live in about a minute; there is no build
+step and no workflow to wait on.
 
-**One-time setup, needed before the first run can succeed:**
-
-> Repo **Settings → Pages → Build and deployment → Source: "GitHub Actions"**
-
-The `GITHUB_TOKEN` a workflow receives is not allowed to create the Pages site,
-no matter what permissions the workflow asks for — only a repo admin can. Until
-that switch is flipped the run fails at *Configure Pages* with
-`Create Pages site failed ... Resource not accessible by integration`.
-
-Once it's set, re-run the workflow from the **Actions** tab (it has
-`workflow_dispatch`, so no new commit is needed) and every later push deploys
-by itself.
-
-Deploys run from `main` only. The `github-pages` environment GitHub creates
-rejects every other branch by default — `Branch "..." is not allowed to deploy
-to github-pages due to environment protection rules` — so a feature branch in
-the trigger list only queues runs that fail before their first step. Merge to
-`main` to publish.
-
-Note that this repo holds other projects, and the workflow does not publish
-them. To put them online too, add their folders to the artifact and move the
-portfolio under a subpath.
+`.nojekyll` is what stops GitHub running the files through Jekyll, which would
+otherwise ignore any path beginning with an underscore.
 
 ### Anywhere else
 
 It's a folder of static files, so any static host works — Netlify, Vercel,
-Cloudflare Pages, cPanel, an S3 bucket. Upload `Portfolio/` as-is; there is
-nothing to build. On a host that serves from the repo root, point it at the
-`Portfolio` subdirectory — the root of this repo has no site in it.
+Cloudflare Pages, cPanel, an S3 bucket. Upload the folder as-is; there is
+nothing to build.
 
 ### Link previews
 
@@ -113,8 +93,10 @@ generated from `profile.js` — crawlers read the served HTML and never run the
 script, so anything set at runtime would be invisible to them. If you change
 your name or headline in `profile.js`, change the tags in `index.html` too.
 
-Both URLs are hardcoded to the GitHub Pages address. On a custom domain, update
-`og:url`, `og:image`, `twitter:image` and the canonical link.
+Those tags hardcode the site's address. They were updated when this project
+moved out of `Kode-Lord_MW`; move it again, or put it on a custom domain, and
+`og:url`, `og:image`, `twitter:image` and the canonical link all need updating
+with it.
 
 ## Structure
 

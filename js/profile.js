@@ -20,16 +20,16 @@ window.PROFILE = {
       "Value Investing on the IDX",
       "Financial Modeling & Valuation",
       "Aspiring Investment Banking Analyst",
-      "Founder ×3"
+      "Founder ×4"
     ],
     location: "Jakarta Metropolitan Area",
     availability: "Open to work · Jakarta · on-site or hybrid",
     /* Path to your photo, relative to index.html. "" hides the avatar. */
     photo: "assets/michael-wibowo.jpg",
     tagline:
-      "Five years of my own capital in Indonesian equities and crypto, " +
-      "hunting mispriced value — now pointed at financial modeling, " +
-      "valuation and a seat on a banking desk."
+      "I built the IDX terminal I wanted, then put my own " +
+      "capital behind what it tells me. Five years in Indonesian equities " +
+      "and crypto, hunting mispriced value."
   },
 
   /* --- 2. LINKS --------------------------------------------------------- */
@@ -62,14 +62,14 @@ window.PROFILE = {
     heading: "About",
     paragraphs: [
       "I'm an Industrial Engineering undergraduate at BINUS University working towards a career in investment banking. Since 2021 I've run my own capital in Indonesian equities and crypto, looking for stocks the market has mispriced — which means the work is already valuation: read the business, decide what it's worth, and only then look at what it costs. The habits that came out of it — size the risk before the upside, write the thesis down, be wrong quickly and cheaply — are the ones I bring to modeling work.",
-      "I've been selling things for money since school, and I still am. A food stand run to a 50% margin inside three months. GrowYourUMKM, a marketing agency helping the government make its small-business programmes actually work, which reached Rp 500 million in revenue. MWcrypto, a trading community past 100 active traders where I call live market commentary and risk. BullzTCG, where I price, source and sell collectible card assets end to end. Right now I'm funding BINECA 2026 the same way — food resale, danusan and merchandise.",
+      "MasterIDX is the one I care about most. It began as a screening tool for my own positions and I kept building until it was a terminal: valuation, screening, ratios, bandarmology, a public API — run by me alone, and still the tool I put my own capital through. Before that I'd been selling things for money since school, and I still am. A food stand run to a 50% margin inside three months. GrowYourUMKM, a marketing agency helping the government make its small-business programmes actually work, which reached Rp 500 million in revenue. MWcrypto, a trading community past 100 active traders where I call live market commentary and risk. BullzTCG, where I price, source and sell collectible card assets end to end. Right now I'm funding BINECA 2026 the same way — food resale, danusan and merchandise.",
       "I'm open to analyst internships in Jakarta — investment banking, equity research, corporate finance or valuation. On-site or hybrid."
     ],
     facts: [
       { k: "Based in",   v: "Jakarta Metropolitan Area" },
       { k: "Studying",   v: "Industrial Engineering, BINUS University" },
       { k: "Focus",      v: "Financial modeling · Valuation · Markets" },
-      { k: "Working on", v: "FMVA · CFA · WMI · WPPE" },
+      { k: "Training in", v: "RTA · WPPE · WMI" },
       { k: "Open to",    v: "Analyst internships · on-site or hybrid" }
     ]
   },
@@ -79,8 +79,8 @@ window.PROFILE = {
     {
       title: "Financial Modeling & Valuation",
       blurb:
-        "Three-statement models, DCFs and comparable company analysis built from the filings up in Excel — the assumptions written down where anyone can argue with them.",
-      tags: ["Excel", "DCF", "Comparables", "Three-statement"]
+        "Three-statement models, DCFs and comparable company analysis built from the filings up — and then built into MasterIDX, because a method you have to productise is a method you can no longer hand-wave.",
+      tags: ["DCF", "Comparables", "Screening", "Excel"]
     },
     {
       title: "Value & Markets",
@@ -114,17 +114,17 @@ window.PROFILE = {
      - below  you have touched it, not much more
 
      This is why the markets rows sit above the modeling row. It reads as
-     self-aware rather than inflated: a high score on Financial Modeling
-     directly beside "FMVA candidate" is a contradiction a recruiter spots
-     in two seconds, and it makes them doubt the 90% on Technical Analysis,
-     which you have genuinely earned.
+     self-aware rather than inflated: a high score on Financial Modeling,
+     with no certification or coursework behind it, is a claim a recruiter
+     will test in the first five minutes, and failing that test makes them
+     doubt the 90% on Technical Analysis, which you have genuinely earned.
 
      Valuation, Equity Research and Fundamental Analysis sit in the 60s-70s
      rather than the 50s because picking mispriced IDX names with your own
      money IS applied valuation — years of doing it, by the rule above.
      Financial Modeling stays lowest of the group because that row means
-     building the three-statement model and the DCF, which is the part the
-     FMVA is still teaching you.
+     building the three-statement model and the DCF from scratch, which is
+     the one part of this you have not done under instruction.
 
      Move any number you disagree with — it's your claim, not mine. */
   skills: [
@@ -160,8 +160,8 @@ window.PROFILE = {
   skillsNote:
     "Self-assessed, on one rule: years of doing it beats studying it now. " +
     "The markets rows are five years of my own money on the line. The " +
-    "modeling row is what the FMVA is teaching me right now, and it's scored " +
-    "like it.",
+    "modeling row is the one I have no formal training in yet, and it's " +
+    "scored like it.",
 
   /* words that scroll past in the marquee strip */
   marquee: [
@@ -173,6 +173,22 @@ window.PROFILE = {
   /* Current roles first, then past roles by end date. Merged from LinkedIn
      and the CV — the CV supplied the three oldest entries. */
   experience: [
+    {
+      role: "Founder",
+      org: "MasterIDX",
+      type: "Self-employed",
+      /* TODO — confirm the start date. Taken from when the codebase first
+         appeared (Aug 2026); "October 2026" is when the subscription opens,
+         not when the work began, so it is not used as the period here. */
+      period: "2026 — Present",
+      location: "Jakarta, Indonesia · masteridx.com",
+      bullets: [
+        "Built and run a market terminal for the Indonesian exchange: valuation, screening, financial ratios and bandarmology (broker-level accumulation analysis), with a public API.",
+        "Sole operator end to end — product, data pipeline, billing and support. Subscription opens October 2026 at Rp 299,000 a month, free for beta testers until then.",
+        "Started as a screening tool for my own positions and kept growing until it was a terminal — and it is still the one I run my own capital through, so a weakness in the analysis costs me before it costs a subscriber."
+      ],
+      tags: ["Valuation", "IDX", "Bandarmology", "API", "SaaS"]
+    },
     {
       role: "Coordinator of Finance Division, BINECA 2026",
       org: "HIMTRI BINUS",
@@ -279,7 +295,7 @@ window.PROFILE = {
     {
       school: "BINUS University",
       degree: "Bachelor of Industrial Engineering",
-      period: "Sep 2023 — Sep 2028",
+      period: "Sep 2024 — 2028 (expected)",
       detail: "Project Management and Communication."
       /* TODO — add GPA or relevant coursework if you want it on here. */
     },
@@ -297,18 +313,42 @@ window.PROFILE = {
     }
   ],
 
-  /* TODO — the four in your headline, all listed as candidate / in progress.
-     Once one is passed, replace the year with the year you passed it. */
+  /* Nothing here is passed, so nothing says it is. "Candidate" is a regulated
+     term for the CFA Program — it means registered for a specific exam — and
+     a finance reader knows it, so claiming it loosely costs more than it buys.
+
+     Ordered by how committed each one is, which is the only ordering that
+     means anything: taking it now, then certain, then next.
+
+     Issued by CSA Institute. TODO — this assumes all three come from the
+     same body, which is how they were described; if RTA and CTA are run by
+     a different association, split them out. */
   certifications: [
-    { name: "FMVA — Financial Modeling & Valuation Analyst", issuer: "CFI",           year: "In progress" },
-    { name: "CFA",                                          issuer: "CFA Institute",  year: "Candidate" },
-    { name: "WMI — Wakil Manajer Investasi",                issuer: "OJK",            year: "Candidate" },
-    { name: "WPPE — Wakil Perantara Pedagang Efek",         issuer: "Finplan / OJK",  year: "In progress" }
+    { name: "RTA — Registered Technical Analyst",  issuer: "CSA Institute", year: "Taking now" },
+    { name: "WPPE — Wakil Perantara Pedagang Efek", issuer: "Finplan / OJK", year: "In training" },
+    { name: "WMI — Wakil Manajer Investasi",        issuer: "OJK",           year: "Planned" },
+    { name: "CSA & CTA",                            issuer: "CSA Institute", year: "After RTA" }
   ],
 
   /* --- 9. PROJECTS ------------------------------------------------------ */
   /* Concrete things, so this section isn't just the experience list again. */
   projects: [
+    {
+      title: "MasterIDX",
+      year: "2026",
+      blurb:
+        "A market terminal for the IDX — valuation, screening, financial ratios and bandarmology, with a public API. In free beta now; subscriptions open October 2026 at Rp 299,000 a month. Built and operated single-handed, and the tool I run my own positions through.",
+      tags: ["Valuation", "IDX", "Bandarmology", "API"],
+      link: "https://masteridx.com/"
+    },
+    {
+      title: "TeknikalDrill",
+      year: "2026",
+      blurb:
+        "A mock-test application covering the RTA and CTA syllabus, with interactive summaries and mind maps per competency unit. Built while studying for the RTA exam myself — the fastest way to find out what you actually don't know is to have to write the questions.",
+      tags: ["Technical Analysis", "RTA & CTA", "Self-built"],
+      link: "https://beixuantianjun.github.io/teknikaldrill/"
+    },
     {
       title: "2025 Crypto Track Record",
       year: "2025",
