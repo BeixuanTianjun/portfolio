@@ -27,7 +27,7 @@ window.PROFILE = {
     /* Path to your photo, relative to index.html. "" hides the avatar. */
     photo: "assets/michael-wibowo.jpg",
     tagline:
-      "I built the stock analysis platform I wanted, then put my own " +
+      "I built the IDX terminal I wanted, then put my own " +
       "capital behind what it tells me. Five years in Indonesian equities " +
       "and crypto, hunting mispriced value."
   },
@@ -62,7 +62,7 @@ window.PROFILE = {
     heading: "About",
     paragraphs: [
       "I'm an Industrial Engineering undergraduate at BINUS University working towards a career in investment banking. Since 2021 I've run my own capital in Indonesian equities and crypto, looking for stocks the market has mispriced — which means the work is already valuation: read the business, decide what it's worth, and only then look at what it costs. The habits that came out of it — size the risk before the upside, write the thesis down, be wrong quickly and cheaply — are the ones I bring to modeling work.",
-      "MasterIDX is the one I care about most: a stock analysis platform for the IDX — valuation, screening, ratios, bandarmology, a public API — built and run by me alone, and the same tool I put my own capital through. Before that I'd been selling things for money since school, and I still am. A food stand run to a 50% margin inside three months. GrowYourUMKM, a marketing agency helping the government make its small-business programmes actually work, which reached Rp 500 million in revenue. MWcrypto, a trading community past 100 active traders where I call live market commentary and risk. BullzTCG, where I price, source and sell collectible card assets end to end. Right now I'm funding BINECA 2026 the same way — food resale, danusan and merchandise.",
+      "MasterIDX is the one I care about most. It began as a screening tool for my own positions and I kept building until it was a terminal: valuation, screening, ratios, bandarmology, a public API — run by me alone, and still the tool I put my own capital through. Before that I'd been selling things for money since school, and I still am. A food stand run to a 50% margin inside three months. GrowYourUMKM, a marketing agency helping the government make its small-business programmes actually work, which reached Rp 500 million in revenue. MWcrypto, a trading community past 100 active traders where I call live market commentary and risk. BullzTCG, where I price, source and sell collectible card assets end to end. Right now I'm funding BINECA 2026 the same way — food resale, danusan and merchandise.",
       "I'm open to analyst internships in Jakarta — investment banking, equity research, corporate finance or valuation. On-site or hybrid."
     ],
     facts: [
@@ -183,9 +183,9 @@ window.PROFILE = {
       period: "2026 — Present",
       location: "Jakarta, Indonesia · masteridx.com",
       bullets: [
-        "Built and run a paid stock analysis platform for the Indonesian exchange: valuation, screening, financial ratios and bandarmology (broker-level accumulation analysis), with a public API.",
+        "Built and run a market terminal for the Indonesian exchange: valuation, screening, financial ratios and bandarmology (broker-level accumulation analysis), with a public API.",
         "Sole operator end to end — product, data pipeline, billing and support. Subscription opens October 2026 at Rp 299,000 a month, free for beta testers until then.",
-        "The same tool I run my own capital through, so every weakness in it costs me directly before it costs a subscriber."
+        "Started as a screening tool for my own positions and kept growing until it was a terminal — and it is still the one I run my own capital through, so a weakness in the analysis costs me before it costs a subscriber."
       ],
       tags: ["Valuation", "IDX", "Bandarmology", "API", "SaaS"]
     },
@@ -339,7 +339,7 @@ window.PROFILE = {
       title: "MasterIDX",
       year: "2026",
       blurb:
-        "A stock analysis platform for the IDX — valuation, screening, financial ratios and bandarmology, with a public API. In free beta now; subscriptions open October 2026 at Rp 299,000 a month. Built and operated single-handed, and the tool I run my own positions through.",
+        "A market terminal for the IDX — valuation, screening, financial ratios and bandarmology, with a public API. In free beta now; subscriptions open October 2026 at Rp 299,000 a month. Built and operated single-handed, and the tool I run my own positions through.",
       tags: ["Valuation", "IDX", "Bandarmology", "API"],
       link: "https://masteridx.com/"
     },
