@@ -69,7 +69,7 @@ window.PROFILE = {
       { k: "Based in",   v: "Jakarta Metropolitan Area" },
       { k: "Studying",   v: "Industrial Engineering, BINUS University" },
       { k: "Focus",      v: "Financial modeling · Valuation · Markets" },
-      { k: "Training in", v: "WPPE · FMVA · WMI · CFA Level I" },
+      { k: "Training in", v: "RTA · WPPE · WMI" },
       { k: "Open to",    v: "Analyst internships · on-site or hybrid" }
     ]
   },
@@ -114,17 +114,17 @@ window.PROFILE = {
      - below  you have touched it, not much more
 
      This is why the markets rows sit above the modeling row. It reads as
-     self-aware rather than inflated: a high score on Financial Modeling
-     directly beside "FMVA candidate" is a contradiction a recruiter spots
-     in two seconds, and it makes them doubt the 90% on Technical Analysis,
-     which you have genuinely earned.
+     self-aware rather than inflated: a high score on Financial Modeling,
+     with no certification or coursework behind it, is a claim a recruiter
+     will test in the first five minutes, and failing that test makes them
+     doubt the 90% on Technical Analysis, which you have genuinely earned.
 
      Valuation, Equity Research and Fundamental Analysis sit in the 60s-70s
      rather than the 50s because picking mispriced IDX names with your own
      money IS applied valuation — years of doing it, by the rule above.
      Financial Modeling stays lowest of the group because that row means
-     building the three-statement model and the DCF, which is the part the
-     FMVA is still teaching you.
+     building the three-statement model and the DCF from scratch, which is
+     the one part of this you have not done under instruction.
 
      Move any number you disagree with — it's your claim, not mine. */
   skills: [
@@ -160,8 +160,8 @@ window.PROFILE = {
   skillsNote:
     "Self-assessed, on one rule: years of doing it beats studying it now. " +
     "The markets rows are five years of my own money on the line. The " +
-    "modeling row is what the FMVA is teaching me right now, and it's scored " +
-    "like it.",
+    "modeling row is the one I have no formal training in yet, and it's " +
+    "scored like it.",
 
   /* words that scroll past in the marquee strip */
   marquee: [
@@ -297,22 +297,36 @@ window.PROFILE = {
     }
   ],
 
-  /* None of these is passed yet, so none of them says it is. "Candidate" is a
-     regulated term for the CFA Program — it means registered for a specific
-     exam — and a finance reader knows that, so claiming it loosely costs more
-     credibility than the word buys. Stated as training, which is true.
-     Once an exam is actually booked, "Exam <month year>" is the strongest
-     line here; once one is passed, put the year. */
+  /* Nothing here is passed, so nothing says it is. "Candidate" is a regulated
+     term for the CFA Program — it means registered for a specific exam — and
+     a finance reader knows it, so claiming it loosely costs more than it buys.
+
+     Ordered by how committed each one is, which is the only ordering that
+     means anything: taking it now, then certain, then next.
+
+     TODO — confirm the issuing bodies before sending this anywhere. RTA and
+     CTA are Indonesian technical-analyst certifications and CSA a securities-
+     analyst one, but an issuer named wrongly on a CV is exactly what an
+     interviewer catches, so these say "Indonesian capital market" until you
+     confirm the associations. */
   certifications: [
-    { name: "WPPE — securities broker-dealer representative track", issuer: "Finplan / OJK", year: "In training" },
-    { name: "FMVA — Financial Modeling & Valuation Analyst",        issuer: "CFI",           year: "Coursework" },
-    { name: "WMI — Wakil Manajer Investasi",                        issuer: "OJK",           year: "Preparing" },
-    { name: "CFA Level I",                                          issuer: "CFA Institute", year: "Preparing" }
+    { name: "RTA — Registered Technical Analyst",  issuer: "Indonesian capital market", year: "Taking now" },
+    { name: "WPPE — Wakil Perantara Pedagang Efek", issuer: "Finplan / OJK",             year: "In training" },
+    { name: "WMI — Wakil Manajer Investasi",        issuer: "OJK",                       year: "Planned" },
+    { name: "CSA & CTA",                            issuer: "Indonesian capital market", year: "After RTA" }
   ],
 
   /* --- 9. PROJECTS ------------------------------------------------------ */
   /* Concrete things, so this section isn't just the experience list again. */
   projects: [
+    {
+      title: "TeknikalDrill",
+      year: "2026",
+      blurb:
+        "A mock-test application covering the RTA and CTA syllabus, with interactive summaries and mind maps per competency unit. Built while studying for the RTA exam myself — the fastest way to find out what you actually don't know is to have to write the questions.",
+      tags: ["Technical Analysis", "RTA & CTA", "Self-built"],
+      link: "https://beixuantianjun.github.io/teknikaldrill/"
+    },
     {
       title: "2025 Crypto Track Record",
       year: "2025",
