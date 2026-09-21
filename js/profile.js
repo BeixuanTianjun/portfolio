@@ -308,7 +308,7 @@ window.PROFILE = {
     {
       school: "Kanaan Christian High School",
       degree: "High School Diploma",
-      period: "Graduated 2024",
+      period: "Graduated 2023",
       detail: "Banjarmasin, South Borneo."
     }
   ],
