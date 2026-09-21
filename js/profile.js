@@ -20,16 +20,16 @@ window.PROFILE = {
       "Value Investing on the IDX",
       "Financial Modeling & Valuation",
       "Aspiring Investment Banking Analyst",
-      "Founder ×3"
+      "Founder ×4"
     ],
     location: "Jakarta Metropolitan Area",
     availability: "Open to work · Jakarta · on-site or hybrid",
     /* Path to your photo, relative to index.html. "" hides the avatar. */
     photo: "assets/michael-wibowo.jpg",
     tagline:
-      "Five years of my own capital in Indonesian equities and crypto, " +
-      "hunting mispriced value — now pointed at financial modeling, " +
-      "valuation and a seat on a banking desk."
+      "I built the stock analysis platform I wanted, then put my own " +
+      "capital behind what it tells me. Five years in Indonesian equities " +
+      "and crypto, hunting mispriced value."
   },
 
   /* --- 2. LINKS --------------------------------------------------------- */
@@ -62,7 +62,7 @@ window.PROFILE = {
     heading: "About",
     paragraphs: [
       "I'm an Industrial Engineering undergraduate at BINUS University working towards a career in investment banking. Since 2021 I've run my own capital in Indonesian equities and crypto, looking for stocks the market has mispriced — which means the work is already valuation: read the business, decide what it's worth, and only then look at what it costs. The habits that came out of it — size the risk before the upside, write the thesis down, be wrong quickly and cheaply — are the ones I bring to modeling work.",
-      "I've been selling things for money since school, and I still am. A food stand run to a 50% margin inside three months. GrowYourUMKM, a marketing agency helping the government make its small-business programmes actually work, which reached Rp 500 million in revenue. MWcrypto, a trading community past 100 active traders where I call live market commentary and risk. BullzTCG, where I price, source and sell collectible card assets end to end. Right now I'm funding BINECA 2026 the same way — food resale, danusan and merchandise.",
+      "MasterIDX is the one I care about most: a stock analysis platform for the IDX — valuation, screening, ratios, bandarmology, a public API — built and run by me alone, and the same tool I put my own capital through. Before that I'd been selling things for money since school, and I still am. A food stand run to a 50% margin inside three months. GrowYourUMKM, a marketing agency helping the government make its small-business programmes actually work, which reached Rp 500 million in revenue. MWcrypto, a trading community past 100 active traders where I call live market commentary and risk. BullzTCG, where I price, source and sell collectible card assets end to end. Right now I'm funding BINECA 2026 the same way — food resale, danusan and merchandise.",
       "I'm open to analyst internships in Jakarta — investment banking, equity research, corporate finance or valuation. On-site or hybrid."
     ],
     facts: [
@@ -79,8 +79,8 @@ window.PROFILE = {
     {
       title: "Financial Modeling & Valuation",
       blurb:
-        "Three-statement models, DCFs and comparable company analysis built from the filings up in Excel — the assumptions written down where anyone can argue with them.",
-      tags: ["Excel", "DCF", "Comparables", "Three-statement"]
+        "Three-statement models, DCFs and comparable company analysis built from the filings up — and then built into MasterIDX, because a method you have to productise is a method you can no longer hand-wave.",
+      tags: ["DCF", "Comparables", "Screening", "Excel"]
     },
     {
       title: "Value & Markets",
@@ -173,6 +173,21 @@ window.PROFILE = {
   /* Current roles first, then past roles by end date. Merged from LinkedIn
      and the CV — the CV supplied the three oldest entries. */
   experience: [
+    {
+      role: "Founder",
+      org: "MasterIDX",
+      type: "Self-employed",
+      /* TODO — confirm the start date; this is taken from when the codebase
+         first appeared, which may be later than when you started. */
+      period: "2026 — Present",
+      location: "Jakarta, Indonesia · masteridx.com",
+      bullets: [
+        "Built and run a paid stock analysis platform for the Indonesian exchange: valuation, screening, financial ratios and bandarmology (broker-level accumulation analysis), with a public API.",
+        "Sole operator end to end — product, data pipeline, billing and support. Priced at Rp 299,000, currently with a free month for beta testers while the product is proved out.",
+        "The same tool I run my own capital through, so every weakness in it costs me directly before it costs a subscriber."
+      ],
+      tags: ["Valuation", "IDX", "Bandarmology", "API", "SaaS"]
+    },
     {
       role: "Coordinator of Finance Division, BINECA 2026",
       org: "HIMTRI BINUS",
@@ -319,6 +334,14 @@ window.PROFILE = {
   /* --- 9. PROJECTS ------------------------------------------------------ */
   /* Concrete things, so this section isn't just the experience list again. */
   projects: [
+    {
+      title: "MasterIDX",
+      year: "2026",
+      blurb:
+        "A stock analysis platform for the IDX — valuation, screening, financial ratios and bandarmology, with a public API. Priced at Rp 299,000 and in beta, free for the first month. Built and operated single-handed, and the tool I run my own positions through.",
+      tags: ["Valuation", "IDX", "Bandarmology", "API"],
+      link: "https://masteridx.com/"
+    },
     {
       title: "TeknikalDrill",
       year: "2026",
