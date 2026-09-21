@@ -320,15 +320,14 @@ window.PROFILE = {
      Ordered by how committed each one is, which is the only ordering that
      means anything: taking it now, then certain, then next.
 
-     TODO — spell "CFI" out in full. The abbreviation collides with Corporate
-     Finance Institute, the American body that issues the FMVA, so a finance
-     reader can land on the wrong organisation entirely. The full name fixes
-     that in three words. */
+     Issued by CSA Institute. TODO — this assumes all three come from the
+     same body, which is how they were described; if RTA and CTA are run by
+     a different association, split them out. */
   certifications: [
-    { name: "RTA — Registered Technical Analyst",  issuer: "CFI",                     year: "Taking now" },
-    { name: "WPPE — Wakil Perantara Pedagang Efek", issuer: "Finplan / OJK",             year: "In training" },
-    { name: "WMI — Wakil Manajer Investasi",        issuer: "OJK",                       year: "Planned" },
-    { name: "CSA & CTA",                            issuer: "CFI",                     year: "After RTA" }
+    { name: "RTA — Registered Technical Analyst",  issuer: "CSA Institute", year: "Taking now" },
+    { name: "WPPE — Wakil Perantara Pedagang Efek", issuer: "Finplan / OJK", year: "In training" },
+    { name: "WMI — Wakil Manajer Investasi",        issuer: "OJK",           year: "Planned" },
+    { name: "CSA & CTA",                            issuer: "CSA Institute", year: "After RTA" }
   ],
 
   /* --- 9. PROJECTS ------------------------------------------------------ */
