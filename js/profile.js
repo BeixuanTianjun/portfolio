@@ -295,7 +295,7 @@ window.PROFILE = {
     {
       school: "BINUS University",
       degree: "Bachelor of Industrial Engineering",
-      period: "Sep 2023 — Sep 2028",
+      period: "Sep 2024 — 2028 (expected)",
       detail: "Project Management and Communication."
       /* TODO — add GPA or relevant coursework if you want it on here. */
     },
@@ -308,7 +308,7 @@ window.PROFILE = {
     {
       school: "Kanaan Christian High School",
       degree: "High School Diploma",
-      period: "Graduated 2023",
+      period: "Graduated 2024",
       detail: "Banjarmasin, South Borneo."
     }
   ],
@@ -320,16 +320,15 @@ window.PROFILE = {
      Ordered by how committed each one is, which is the only ordering that
      means anything: taking it now, then certain, then next.
 
-     TODO — confirm the issuing bodies before sending this anywhere. RTA and
-     CTA are Indonesian technical-analyst certifications and CSA a securities-
-     analyst one, but an issuer named wrongly on a CV is exactly what an
-     interviewer catches, so these say "Indonesian capital market" until you
-     confirm the associations. */
+     TODO — spell "CFI" out in full. The abbreviation collides with Corporate
+     Finance Institute, the American body that issues the FMVA, so a finance
+     reader can land on the wrong organisation entirely. The full name fixes
+     that in three words. */
   certifications: [
-    { name: "RTA — Registered Technical Analyst",  issuer: "Indonesian capital market", year: "Taking now" },
+    { name: "RTA — Registered Technical Analyst",  issuer: "CFI",                     year: "Taking now" },
     { name: "WPPE — Wakil Perantara Pedagang Efek", issuer: "Finplan / OJK",             year: "In training" },
     { name: "WMI — Wakil Manajer Investasi",        issuer: "OJK",                       year: "Planned" },
-    { name: "CSA & CTA",                            issuer: "Indonesian capital market", year: "After RTA" }
+    { name: "CSA & CTA",                            issuer: "CFI",                     year: "After RTA" }
   ],
 
   /* --- 9. PROJECTS ------------------------------------------------------ */
