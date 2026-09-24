@@ -299,7 +299,7 @@ window.PROFILE = {
     {
       school: "Finplan",
       degree: "WPPE — Finance, General",
-      period: "Sep 2026 — Present",
+      period: "Sep 2026",
       detail: "Securities broker-dealer representative certification programme."
     },
     {
