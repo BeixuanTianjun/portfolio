@@ -69,7 +69,7 @@ window.PROFILE = {
       { k: "Based in",   v: "Jakarta Metropolitan Area" },
       { k: "Studying",   v: "Industrial Engineering, BINUS University" },
       { k: "Focus",      v: "Financial modeling · Valuation · Markets" },
-      { k: "Training in", v: "RTA · WPPE · WMI" },
+      { k: "Certifying in", v: "WPPE · RTA · WMI" },
       { k: "Open to",    v: "Analyst internships · on-site or hybrid" }
     ]
   },
@@ -177,10 +177,7 @@ window.PROFILE = {
       role: "Founder",
       org: "MasterIDX",
       type: "Self-employed",
-      /* TODO — confirm the start date. Taken from when the codebase first
-         appeared (Aug 2026); "October 2026" is when the subscription opens,
-         not when the work began, so it is not used as the period here. */
-      period: "2026 — Present",
+      period: "Aug 2026 — Present",
       location: "Jakarta, Indonesia · masteridx.com",
       bullets: [
         "Built and run a market terminal for the Indonesian exchange: valuation, screening, financial ratios and bandarmology (broker-level accumulation analysis), with a public API.",
@@ -302,7 +299,7 @@ window.PROFILE = {
     {
       school: "Finplan",
       degree: "WPPE — Finance, General",
-      period: "Sep 2026 — Present",
+      period: "Sep 2026",
       detail: "Securities broker-dealer representative certification programme."
     },
     {
@@ -320,12 +317,15 @@ window.PROFILE = {
      Ordered by how committed each one is, which is the only ordering that
      means anything: taking it now, then certain, then next.
 
-     Issued by CSA Institute. TODO — this assumes all three come from the
-     same body, which is how they were described; if RTA and CTA are run by
-     a different association, split them out. */
+     Ordered by how far along each one is: WPPE's training is finished and
+     only the examination remains, RTA is the one being studied now.
+
+     TODO — this assumes RTA, CTA and CSA all come from CSA Institute, which
+     is how they were described; if the technical analyst track is run by a
+     different association, split it out. */
   certifications: [
-    { name: "RTA — Registered Technical Analyst",  issuer: "CSA Institute", year: "Taking now" },
-    { name: "WPPE — Wakil Perantara Pedagang Efek", issuer: "Finplan / OJK", year: "In training" },
+    { name: "WPPE — Wakil Perantara Pedagang Efek", issuer: "Finplan / OJK", year: "Awaiting exam" },
+    { name: "RTA — Registered Technical Analyst",   issuer: "CSA Institute", year: "In training" },
     { name: "WMI — Wakil Manajer Investasi",        issuer: "OJK",           year: "Planned" },
     { name: "CSA & CTA",                            issuer: "CSA Institute", year: "After RTA" }
   ],
