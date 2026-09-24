@@ -177,10 +177,7 @@ window.PROFILE = {
       role: "Founder",
       org: "MasterIDX",
       type: "Self-employed",
-      /* TODO — confirm the start date. Taken from when the codebase first
-         appeared (Aug 2026); "October 2026" is when the subscription opens,
-         not when the work began, so it is not used as the period here. */
-      period: "2026 — Present",
+      period: "Aug 2026 — Present",
       location: "Jakarta, Indonesia · masteridx.com",
       bullets: [
         "Built and run a market terminal for the Indonesian exchange: valuation, screening, financial ratios and bandarmology (broker-level accumulation analysis), with a public API.",
