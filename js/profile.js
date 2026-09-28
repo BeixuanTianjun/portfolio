@@ -387,11 +387,19 @@ window.PROFILE = {
       link: ""
     },
     {
-      title: "System Engineering & Analysis \u2014 Biodegradable Tumbler",
+      title: "Engineering Data Analysis \u2014 Exam Score Prediction",
       year: "2025",
       blurb:
-        "A drinks tumbler made from agricultural waste \u2014 rice husk, coconut shell and coffee grounds \u2014 designed from the customer inwards. Surveyed 30 respondents and weighted the six needs that came back, eco-friendly material leading at 22%, then used QFD House of Quality to translate them into six technical requirements: ergonomic form, biodegradable material, biopolymer coating, impact-resistant structure, natural insulation and low-carbon production. Benchmarked against commercial tumblers on each need.",
-      tags: ["QFD", "Voice of Customer", "Product Design", "Sustainability"],
+        "A multiple linear regression over a 20,000-row dataset of study habits and exam results, built in Python and Google Colab. R-squared 0.63 on the test set with train and test within 0.01 of each other, so no overfitting. Validated with residual, fitted-value and Q\u2013Q diagnostics, and the mild heteroscedasticity and non-normal residuals found were reported rather than hidden. Drivers tested one at a time: sleep quality significant by ANOVA, internet access not by t-test. Students then segmented into three clusters by K-Means.",
+      tags: ["Python", "Regression", "ANOVA & t-test", "K-Means"],
+      link: ""
+    },
+    {
+      title: "System Engineering & Analysis \u2014 Multifunction Hanger",
+      year: "2025",
+      blurb:
+        "A group project of four: each member developed a product concept from a Voice-of-Customer survey through a QFD House of Quality, and the four were then scored against eight weighted criteria by Additive Weighting. The multifunction hanger won at 4.78 and was carried through to detail design, technical drawing and production planning. My own concept was a tumbler made from agricultural waste, built from a 30-respondent survey weighted into six customer needs and six technical requirements.",
+      tags: ["QFD", "Voice of Customer", "Weighted Decision", "Product Design"],
       link: ""
     },
     {
