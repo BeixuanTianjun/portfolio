@@ -395,10 +395,10 @@ window.PROFILE = {
       link: ""
     },
     {
-      title: "System Engineering & Analysis \u2014 Multifunction Hanger",
+      title: "System Engineering & Analysis \u2014 Sustainable Product Design",
       year: "2025",
       blurb:
-        "A group project of four: each member developed a product concept from a Voice-of-Customer survey through a QFD House of Quality, and the four were then scored against eight weighted criteria by Additive Weighting. The multifunction hanger won at 4.78 and was carried through to detail design, technical drawing and production planning. My own concept was a tumbler made from agricultural waste, built from a 30-respondent survey weighted into six customer needs and six technical requirements.",
+        "Two halves of one course. For the individual midterm I took a biodegradable tumbler made from agricultural waste through the whole cycle myself: a 30-respondent Voice-of-Customer survey weighted into six customer needs (eco-friendly material highest at 22%), a QFD House of Quality translating those into six technical requirements, then two design alternatives scored against each other by Tabular Additive Method \u2014 3.69 against 3.00. For the group final the four members\u2019 concepts were scored on eight weighted criteria by Additive Weighting; the multifunction hanger won at 4.78 and the group carried it through detail design, technical drawing and production planning.",
       tags: ["QFD", "Voice of Customer", "Weighted Decision", "Product Design"],
       link: ""
     },
