@@ -223,7 +223,12 @@ window.PROFILE = {
         "Founded and scaled a trading community to 100+ active traders, providing live market commentary, execution strategy, and real-time risk management guidance during active trading sessions.",
         "Conducted regular market analysis to identify opportunities for new business development and competitive advantages."
       ],
-      tags: ["Technical Analysis", "Market Research", "Risk Management", "Community"]
+      tags: ["Technical Analysis", "Market Research", "Risk Management", "Community"],
+      images: [
+        { src: "assets/projects/mwc-calls-elite", alt: "Two dated calls posted to the elite-plan channel, each with the chart behind it" },
+        { src: "assets/projects/mwc-call-hype", alt: "A HYPE long posted with entry, three take-profit levels, a stop, a conviction score and the reasoning" },
+        { src: "assets/projects/mwc-call-sui", alt: "A SUI price-action post with the weekly chart" }
+      ]
     },
     {
       role: "Trader",
@@ -324,7 +329,14 @@ window.PROFILE = {
      is how they were described; if the technical analyst track is run by a
      different association, split it out. */
   certifications: [
-    { name: "WPPE — Wakil Perantara Pedagang Efek", issuer: "Finplan / OJK", year: "Awaiting exam" },
+    {
+      name: "WPPE — Wakil Perantara Pedagang Efek",
+      issuer: "Finplan / OJK",
+      year: "Awaiting exam",
+      images: [
+        { src: "assets/projects/wppe-certificate", alt: "Finplan Academy certificate for the KKNI Level 5 capital-market broker-dealer representative preparation programme, Jakarta, 17 September 2026" }
+      ]
+    },
     { name: "RTA — Registered Technical Analyst",   issuer: "CSA Institute", year: "In training" },
     { name: "WMI — Wakil Manajer Investasi",        issuer: "OJK",           year: "Planned" },
     { name: "CSA & CTA",                            issuer: "CSA Institute", year: "After RTA" }
@@ -357,6 +369,10 @@ window.PROFILE = {
       blurb:
         "A full year of trades kept and documented — entries, sizing and outcomes — the record I point at when someone asks whether the approach actually works.",
       tags: ["Trade Execution", "Risk Management", "Documentation"],
+      images: [
+        { src: "assets/projects/track-record-log", alt: "The trade log: entry, take profit, stop loss, leverage and outcome per position, with a running win rate" },
+        { src: "assets/projects/track-record-pepe", alt: "A closed PEPEUSDT position at +909%, shared in a chat; the other people in the thread are redacted" }
+      ],
       link: ""
       /* TODO — link the record, or a write-up of it, if you're happy to show it. */
     },
@@ -366,6 +382,10 @@ window.PROFILE = {
       blurb:
         "A physical booth run with @hiddentreasuresociety: pricing inventory on the day, handling buyers face to face, and turning a card collection into a margin.",
       tags: ["Retail", "Pricing", "Client Relations"],
+      images: [
+        { src: "assets/projects/bullz-booth", alt: "The BullzTCG pop-up booth at Mall Taman Anggrek, stock laid out and buyers at the counter" },
+        { src: "assets/projects/bullz-cards", alt: "Graded Pokemon cards in the display case" }
+      ],
       link: ""
     },
     {
