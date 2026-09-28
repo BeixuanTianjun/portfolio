@@ -431,6 +431,17 @@ window.PROFILE = {
       link: ""
     },
     {
+      title: "Investment Banking Job Simulation \u2014 Bank of America",
+      year: "2026",
+      blurb:
+        "A self-paced job simulation run by Bank of America through Forage. Screened an acquisition target for a client by SWOT analysis against their stated strategic criteria, built a DCF to an implied equity and per-share value, ran a sensitivity analysis showing how that valuation moves as the assumptions move, and wrote the target company profile. Not a qualification \u2014 the tasks are the point, and they are the same shape as the work.",
+      tags: ["DCF", "SWOT", "Sensitivity Analysis", "M&A Screening"],
+      images: [
+        { src: "assets/projects/forage-boa-ibd", alt: "Forage certificate of completion for the Bank of America Investment Banking Job Simulation, September 2026" }
+      ],
+      link: ""
+    },
+    {
       title: "Campus Tree-Planting Capstone",
       year: "2025",
       blurb:
