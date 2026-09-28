@@ -387,6 +387,14 @@ window.PROFILE = {
       link: ""
     },
     {
+      title: "System Engineering & Analysis \u2014 Biodegradable Tumbler",
+      year: "2025",
+      blurb:
+        "A drinks tumbler made from agricultural waste \u2014 rice husk, coconut shell and coffee grounds \u2014 designed from the customer inwards. Surveyed 30 respondents and weighted the six needs that came back, eco-friendly material leading at 22%, then used QFD House of Quality to translate them into six technical requirements: ergonomic form, biodegradable material, biopolymer coating, impact-resistant structure, natural insulation and low-carbon production. Benchmarked against commercial tumblers on each need.",
+      tags: ["QFD", "Voice of Customer", "Product Design", "Sustainability"],
+      link: ""
+    },
+    {
       title: "Campus Tree-Planting Capstone",
       year: "2025",
       blurb:
