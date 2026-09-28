@@ -394,10 +394,21 @@ main,.nav,.foot,.marquee{position:relative;z-index:2}
   transition:transform .45s var(--ease),background .35s,color .35s,border-color .35s;
 }
 .project:hover .project__go{transform:rotate(45deg) scale(1.08);background:var(--grad);color:#05060a;border-color:transparent}
+/* a project that carries a poster: the thumbnail sits under the tags, wide
+   enough to read as a poster, and opens full size in a new tab */
+.project__shot{
+  display:block;margin:20px 0 0;max-width:560px;border:1px solid var(--line);
+  border-radius:12px;overflow:hidden;background:#fff;line-height:0;
+  transition:border-color .35s,transform .5s var(--ease);
+}
+.project__shot img{display:block;width:100%;height:auto}
+.project__shot:hover{border-color:var(--line-2);transform:translateY(-2px)}
+.project__shot:focus-visible{outline:2px solid var(--acc,#9d5cff);outline-offset:3px}
 @media (max-width:700px){
   .project{grid-template-columns:1fr;padding:28px 24px}
   .project__year{writing-mode:horizontal-tb}
   .project__go{display:none}
+  .project__shot{max-width:100%}
 }
 
 /* --- awards --------------------------------------------------------------- */

@@ -367,6 +367,26 @@ window.PROFILE = {
       link: ""
     },
     {
+      title: "Production & Operations Analysis \u2014 Razer Wireless Mouse",
+      year: "2026",
+      blurb:
+        "A full production plan for a wireless mouse line. Benchmarked five forecasting methods on MSE, MAPE and MAD \u2014 Winter's won at MAPE 2.67 \u2014 then compared four aggregate planning strategies and four lot-sizing heuristics, built the assembly chart, product structure and a bill of materials across 17 components and 7 levels, and closed with MPS, MRP, Kanban inventory control and machine and worker scheduling.",
+      tags: ["Forecasting", "MRP & MPS", "Lot Sizing", "Scheduling"],
+      image: "assets/projects/poa-razer",
+      imageAlt: "Final poster for the Production & Operation Analysis project on the Razer wireless mouse",
+      link: ""
+    },
+    {
+      title: "Human-Integrated System \u2014 Automatic Paint Roller",
+      year: "2026",
+      blurb:
+        "An ergonomic redesign of a paint roller, sized from anthropometric percentiles (P5\u2013P95) and a time-and-motion study, with an automatic pump that removes the repeated bending to re-dip. Measured against the original with a Fatigue Assessment Scale: average operator fatigue fell 53%. The companion sales website was tested with SUS and WAMMI, reliability checked in SPSS by Cronbach's alpha.",
+      tags: ["Ergonomics", "Time & Motion Study", "SPSS", "Usability Testing"],
+      image: "assets/projects/his-paint-roller",
+      imageAlt: "Final poster for the Human-Integrated System project on the automatic paint roller",
+      link: ""
+    },
+    {
       title: "Campus Tree-Planting Capstone",
       year: "2025",
       blurb:

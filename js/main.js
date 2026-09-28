@@ -205,9 +205,19 @@
       var open = p.link
         ? '<a class="project__go" href="' + esc(p.link) + '" aria-label="Open ' + esc(p.title) + '">↗</a>'
         : '<span class="project__go" aria-hidden="true">↗</span>';
-      return '<article class="project" data-reveal>' +
+      /* an optional poster: the thumbnail rides in the card, the full-size
+         copy opens in a new tab, so the card stays light on mobile */
+      var shot = '';
+      if (p.image) {
+        shot = '<a class="project__shot" href="' + esc(p.image) + '.webp" target="_blank" rel="noopener"' +
+          ' aria-label="Open the full poster for ' + esc(p.title) + '">' +
+          '<img src="' + esc(p.image) + '-thumb.webp" alt="' + esc(p.imageAlt || p.title) + '"' +
+          ' loading="lazy" decoding="async" width="720" height="509">' +
+        '</a>';
+      }
+      return '<article class="project' + (p.image ? ' project--shot' : '') + '" data-reveal>' +
         '<span class="project__year">' + esc(p.year) + '</span>' +
-        '<div><h3>' + esc(p.title) + '</h3><p>' + esc(p.blurb) + '</p>' + tags(p.tags) + '</div>' +
+        '<div><h3>' + esc(p.title) + '</h3><p>' + esc(p.blurb) + '</p>' + tags(p.tags) + shot + '</div>' +
         open +
       '</article>';
     }).join('');
