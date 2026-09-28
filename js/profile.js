@@ -253,7 +253,10 @@ window.PROFILE = {
       bullets: [
         "Mentored first-year students through university onboarding, tracked academic compliance for mandatory assessments, and directed a capstone tree-planting initiative from execution to completion."
       ],
-      tags: ["Mentoring", "Project Management", "Communication"]
+      tags: ["Mentoring", "Project Management", "Communication"],
+      images: [
+        { src: "assets/projects/freshmen-partner", alt: "The Freshmen Partner team at BINUS" }
+      ]
     },
     {
       role: "Market Sales Manager",
