@@ -339,7 +339,8 @@ window.PROFILE = {
       blurb:
         "A market terminal for the IDX — valuation, screening, financial ratios and bandarmology, with a public API. In free beta now; subscriptions open October 2026 at Rp 299,000 a month. Built and operated single-handed, and the tool I run my own positions through.",
       tags: ["Valuation", "IDX", "Bandarmology", "API"],
-      link: "https://masteridx.com/"
+      link: "https://masteridx.com/",
+      linkLabel: "Open masteridx.com"
     },
     {
       title: "TeknikalDrill",
@@ -347,7 +348,8 @@ window.PROFILE = {
       blurb:
         "A mock-test application covering the RTA and CTA syllabus, with interactive summaries and mind maps per competency unit. Built while studying for the RTA exam myself — the fastest way to find out what you actually don't know is to have to write the questions.",
       tags: ["Technical Analysis", "RTA & CTA", "Self-built"],
-      link: "https://beixuantianjun.github.io/teknikaldrill/"
+      link: "https://beixuantianjun.github.io/teknikaldrill/",
+      linkLabel: "Open TeknikalDrill"
     },
     {
       title: "2025 Crypto Track Record",
@@ -392,7 +394,8 @@ window.PROFILE = {
       blurb:
         "A multiple linear regression over a 20,000-row dataset of study habits and exam results, built in Python and Google Colab. R-squared 0.63 on the test set with train and test within 0.01 of each other, so no overfitting. Validated with residual, fitted-value and Q\u2013Q diagnostics, and the mild heteroscedasticity and non-normal residuals found were reported rather than hidden. Drivers tested one at a time: sleep quality significant by ANOVA, internet access not by t-test. Students then segmented into three clusters by K-Means.",
       tags: ["Python", "Regression", "ANOVA & t-test", "K-Means"],
-      link: "assets/projects/EDA_Final_Project.pdf"
+      link: "assets/projects/EDA_Final_Project.pdf",
+      linkLabel: "Open the project deck (PDF)"
     },
     {
       title: "System Engineering & Analysis \u2014 Sustainable Product Design",

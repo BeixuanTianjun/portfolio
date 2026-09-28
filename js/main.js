@@ -215,9 +215,17 @@
           ' loading="lazy" decoding="async" width="720" height="509">' +
         '</a>';
       }
+      /* the corner arrow is decoration and is hidden on narrow screens, so a
+         linked project also gets a labelled link in the body that survives
+         every breakpoint and says what it opens */
+      var go = '';
+      if (p.link) {
+        go = '<a class="project__open" href="' + esc(p.link) + '" target="_blank" rel="noopener">' +
+          esc(p.linkLabel || 'Open') + ' <span aria-hidden="true">\u2197</span></a>';
+      }
       return '<article class="project' + (p.image ? ' project--shot' : '') + '" data-reveal>' +
         '<span class="project__year">' + esc(p.year) + '</span>' +
-        '<div><h3>' + esc(p.title) + '</h3><p>' + esc(p.blurb) + '</p>' + tags(p.tags) + shot + '</div>' +
+        '<div><h3>' + esc(p.title) + '</h3><p>' + esc(p.blurb) + '</p>' + tags(p.tags) + go + shot + '</div>' +
         open +
       '</article>';
     }).join('');
