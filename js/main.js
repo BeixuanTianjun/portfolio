@@ -163,6 +163,18 @@
     });
   }
 
+  /* a row of evidence thumbnails; each opens its full-size copy in a new tab.
+     `images` is [{src, alt}] where src omits the -thumb/.webp suffixes. */
+  function gallery(list) {
+    if (!list || !list.length) return '';
+    return '<div class="shots">' + list.map(function (g) {
+      return '<a class="shots__item" href="' + esc(g.src) + '.webp" target="_blank" rel="noopener">' +
+        '<img src="' + esc(g.src) + '-thumb.webp" alt="' + esc(g.alt || '') + '"' +
+        ' loading="lazy" decoding="async">' +
+      '</a>';
+    }).join('') + '</div>';
+  }
+
   /* experience */
   var tl = $('#timeline');
   if (tl && P.experience) {
@@ -174,7 +186,7 @@
         '<p class="job__org">' + esc(j.org) + (j.type ? ' · ' + esc(j.type) : '') + '</p>' +
         '<p class="job__where">' + esc(j.location || '') + '</p>' +
         (bullets ? '<ul class="job__bullets">' + bullets + '</ul>' : '') +
-        tags(j.tags) +
+        tags(j.tags) + gallery(j.images) +
       '</li>';
     }).join('');
   }
@@ -194,7 +206,7 @@
   if (certsEl && P.certifications) {
     certsEl.innerHTML = P.certifications.map(function (c) {
       return '<li data-reveal><span><b>' + esc(c.name) + '</b><small>' + esc(c.issuer) +
-        '</small></span><time>' + esc(c.year) + '</time></li>';
+        '</small>' + gallery(c.images) + '</span><time>' + esc(c.year) + '</time></li>';
     }).join('');
   }
 
@@ -215,9 +227,17 @@
           ' loading="lazy" decoding="async" width="720" height="509">' +
         '</a>';
       }
+      /* the corner arrow is decoration and is hidden on narrow screens, so a
+         linked project also gets a labelled link in the body that survives
+         every breakpoint and says what it opens */
+      var go = '';
+      if (p.link) {
+        go = '<a class="project__open" href="' + esc(p.link) + '" target="_blank" rel="noopener">' +
+          esc(p.linkLabel || 'Open') + ' <span aria-hidden="true">\u2197</span></a>';
+      }
       return '<article class="project' + (p.image ? ' project--shot' : '') + '" data-reveal>' +
         '<span class="project__year">' + esc(p.year) + '</span>' +
-        '<div><h3>' + esc(p.title) + '</h3><p>' + esc(p.blurb) + '</p>' + tags(p.tags) + shot + '</div>' +
+        '<div><h3>' + esc(p.title) + '</h3><p>' + esc(p.blurb) + '</p>' + tags(p.tags) + go + shot + gallery(p.images) + '</div>' +
         open +
       '</article>';
     }).join('');

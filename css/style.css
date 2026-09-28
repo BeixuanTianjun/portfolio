@@ -403,6 +403,26 @@ main,.nav,.foot,.marquee{position:relative;z-index:2}
 }
 /* cap the height so a portrait poster does not tower over a landscape one;
    the card shrinks to whatever the image ends up being */
+/* evidence thumbnails: a wrapping row that works inside a project card, a
+   timeline entry and a certification row alike */
+.shots{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 0}
+.shots__item{
+  display:block;border:1px solid var(--line);border-radius:10px;overflow:hidden;
+  background:#fff;line-height:0;transition:border-color .35s,transform .45s var(--ease);
+}
+.shots__item img{display:block;width:auto;height:112px;max-width:260px;object-fit:cover}
+.shots__item:hover{border-color:var(--line-2);transform:translateY(-2px)}
+.shots__item:focus-visible{outline:2px solid var(--acc,#9d5cff);outline-offset:3px}
+@media (max-width:700px){ .shots__item img{height:92px;max-width:160px} }
+
+.project__open{
+  display:inline-flex;align-items:center;gap:7px;margin:14px 0 0;
+  padding:8px 15px;border:1px solid var(--line-2);border-radius:999px;
+  font:600 13.5px/1 inherit;color:var(--ink);text-decoration:none;
+  transition:background .3s,color .3s,border-color .3s;
+}
+.project__open:hover{background:var(--grad);color:#05060a;border-color:transparent}
+.project__open:focus-visible{outline:2px solid var(--acc,#9d5cff);outline-offset:3px}
 .project__shot{width:fit-content}
 .project__shot img{display:block;width:auto;max-width:100%;height:auto;max-height:440px}
 .project__shot:hover{border-color:var(--line-2);transform:translateY(-2px)}

@@ -223,7 +223,12 @@ window.PROFILE = {
         "Founded and scaled a trading community to 100+ active traders, providing live market commentary, execution strategy, and real-time risk management guidance during active trading sessions.",
         "Conducted regular market analysis to identify opportunities for new business development and competitive advantages."
       ],
-      tags: ["Technical Analysis", "Market Research", "Risk Management", "Community"]
+      tags: ["Technical Analysis", "Market Research", "Risk Management", "Community"],
+      images: [
+        { src: "assets/projects/mwc-calls-elite", alt: "Two dated calls posted to the elite-plan channel, each with the chart behind it" },
+        { src: "assets/projects/mwc-call-hype", alt: "A HYPE long posted with entry, three take-profit levels, a stop, a conviction score and the reasoning" },
+        { src: "assets/projects/mwc-call-sui", alt: "A SUI price-action post with the weekly chart" }
+      ]
     },
     {
       role: "Trader",
@@ -248,7 +253,10 @@ window.PROFILE = {
       bullets: [
         "Mentored first-year students through university onboarding, tracked academic compliance for mandatory assessments, and directed a capstone tree-planting initiative from execution to completion."
       ],
-      tags: ["Mentoring", "Project Management", "Communication"]
+      tags: ["Mentoring", "Project Management", "Communication"],
+      images: [
+        { src: "assets/projects/freshmen-partner", alt: "The Freshmen Partner team at BINUS" }
+      ]
     },
     {
       role: "Market Sales Manager",
@@ -324,7 +332,14 @@ window.PROFILE = {
      is how they were described; if the technical analyst track is run by a
      different association, split it out. */
   certifications: [
-    { name: "WPPE — Wakil Perantara Pedagang Efek", issuer: "Finplan / OJK", year: "Awaiting exam" },
+    {
+      name: "WPPE — Wakil Perantara Pedagang Efek",
+      issuer: "Finplan / OJK",
+      year: "Awaiting exam",
+      images: [
+        { src: "assets/projects/wppe-certificate", alt: "Finplan Academy certificate for the KKNI Level 5 capital-market broker-dealer representative preparation programme, Jakarta, 17 September 2026" }
+      ]
+    },
     { name: "RTA — Registered Technical Analyst",   issuer: "CSA Institute", year: "In training" },
     { name: "WMI — Wakil Manajer Investasi",        issuer: "OJK",           year: "Planned" },
     { name: "CSA & CTA",                            issuer: "CSA Institute", year: "After RTA" }
@@ -339,7 +354,8 @@ window.PROFILE = {
       blurb:
         "A market terminal for the IDX — valuation, screening, financial ratios and bandarmology, with a public API. In free beta now; subscriptions open October 2026 at Rp 299,000 a month. Built and operated single-handed, and the tool I run my own positions through.",
       tags: ["Valuation", "IDX", "Bandarmology", "API"],
-      link: "https://masteridx.com/"
+      link: "https://masteridx.com/",
+      linkLabel: "Open masteridx.com"
     },
     {
       title: "TeknikalDrill",
@@ -347,7 +363,8 @@ window.PROFILE = {
       blurb:
         "A mock-test application covering the RTA and CTA syllabus, with interactive summaries and mind maps per competency unit. Built while studying for the RTA exam myself — the fastest way to find out what you actually don't know is to have to write the questions.",
       tags: ["Technical Analysis", "RTA & CTA", "Self-built"],
-      link: "https://beixuantianjun.github.io/teknikaldrill/"
+      link: "https://beixuantianjun.github.io/teknikaldrill/",
+      linkLabel: "Open TeknikalDrill"
     },
     {
       title: "2025 Crypto Track Record",
@@ -355,6 +372,10 @@ window.PROFILE = {
       blurb:
         "A full year of trades kept and documented — entries, sizing and outcomes — the record I point at when someone asks whether the approach actually works.",
       tags: ["Trade Execution", "Risk Management", "Documentation"],
+      images: [
+        { src: "assets/projects/track-record-log", alt: "The trade log: entry, take profit, stop loss, leverage and outcome per position, with a running win rate" },
+        { src: "assets/projects/track-record-pepe", alt: "A closed PEPEUSDT position at +909%, shared in a chat; the other people in the thread are redacted" }
+      ],
       link: ""
       /* TODO — link the record, or a write-up of it, if you're happy to show it. */
     },
@@ -364,6 +385,10 @@ window.PROFILE = {
       blurb:
         "A physical booth run with @hiddentreasuresociety: pricing inventory on the day, handling buyers face to face, and turning a card collection into a margin.",
       tags: ["Retail", "Pricing", "Client Relations"],
+      images: [
+        { src: "assets/projects/bullz-booth", alt: "The BullzTCG pop-up booth at Mall Taman Anggrek, stock laid out and buyers at the counter" },
+        { src: "assets/projects/bullz-cards", alt: "Graded Pokemon cards in the display case" }
+      ],
       link: ""
     },
     {
@@ -392,7 +417,8 @@ window.PROFILE = {
       blurb:
         "A multiple linear regression over a 20,000-row dataset of study habits and exam results, built in Python and Google Colab. R-squared 0.63 on the test set with train and test within 0.01 of each other, so no overfitting. Validated with residual, fitted-value and Q\u2013Q diagnostics, and the mild heteroscedasticity and non-normal residuals found were reported rather than hidden. Drivers tested one at a time: sleep quality significant by ANOVA, internet access not by t-test. Students then segmented into three clusters by K-Means.",
       tags: ["Python", "Regression", "ANOVA & t-test", "K-Means"],
-      link: "assets/projects/EDA_Final_Project.pdf"
+      link: "assets/projects/EDA_Final_Project.pdf",
+      linkLabel: "Open the project deck (PDF)"
     },
     {
       title: "System Engineering & Analysis \u2014 Sustainable Product Design",
