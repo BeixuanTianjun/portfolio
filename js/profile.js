@@ -392,7 +392,7 @@ window.PROFILE = {
       blurb:
         "A multiple linear regression over a 20,000-row dataset of study habits and exam results, built in Python and Google Colab. R-squared 0.63 on the test set with train and test within 0.01 of each other, so no overfitting. Validated with residual, fitted-value and Q\u2013Q diagnostics, and the mild heteroscedasticity and non-normal residuals found were reported rather than hidden. Drivers tested one at a time: sleep quality significant by ANOVA, internet access not by t-test. Students then segmented into three clusters by K-Means.",
       tags: ["Python", "Regression", "ANOVA & t-test", "K-Means"],
-      link: ""
+      link: "assets/projects/EDA_Final_Project.pdf"
     },
     {
       title: "System Engineering & Analysis \u2014 Sustainable Product Design",
@@ -400,6 +400,8 @@ window.PROFILE = {
       blurb:
         "Two halves of one course. For the individual midterm I took a biodegradable tumbler made from agricultural waste through the whole cycle myself: a 30-respondent Voice-of-Customer survey weighted into six customer needs (eco-friendly material highest at 22%), a QFD House of Quality translating those into six technical requirements, then two design alternatives scored against each other by Tabular Additive Method \u2014 3.69 against 3.00. For the group final the four members\u2019 concepts were scored on eight weighted criteria by Additive Weighting; the multifunction hanger won at 4.78 and the group carried it through detail design, technical drawing and production planning.",
       tags: ["QFD", "Voice of Customer", "Weighted Decision", "Product Design"],
+      image: "assets/projects/sea-qfd",
+      imageAlt: "The QFD House of Quality matrix for the tumbler: six customer requirements weighted against six functional requirements, with the competitive assessment",
       link: ""
     },
     {
