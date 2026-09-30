@@ -62,7 +62,7 @@ window.PROFILE = {
     heading: "About",
     paragraphs: [
       "I'm an Industrial Engineering undergraduate at BINUS University working towards a career in investment banking. Since 2021 I've run my own capital in Indonesian equities and crypto, looking for stocks the market has mispriced — which means the work is already valuation: read the business, decide what it's worth, and only then look at what it costs. The habits that came out of it — size the risk before the upside, write the thesis down, be wrong quickly and cheaply — are the ones I bring to modeling work.",
-      "MasterIDX is the one I care about most. It began as a screening tool for my own positions and I kept building until it was a terminal: valuation, screening, ratios, bandarmology, a public API — run by me alone, and still the tool I put my own capital through. Before that I'd been selling things for money since school, and I still am. A food stand run to a 50% margin inside three months. GrowYourUMKM, a marketing agency for local cafés and small private businesses, which reached Rp 500 million in revenue inside a year. MWcrypto, a trading community past 100 active traders where I call live market commentary and risk. BullzTCG, where I price, source and sell collectible card assets end to end. Right now I'm funding BINECA 2026 the same way — food resale, danusan and merchandise.",
+      "MasterIDX is the one I care about most. It began as a screening tool for my own positions and I kept building until it was a terminal: valuation, screening, ratios, broker-flow analysis, a public API — run by me alone, and still the tool I put my own capital through. Before that I'd been selling things for money since school, and I still am. A food stand run to a 50% margin inside three months. GrowYourUMKM, a marketing agency for local cafés and small private businesses, which reached IDR 500 million in revenue inside a year. MWcrypto, a trading community past 100 active traders where I call live market commentary and risk. BullzTCG, where I price, source and sell collectible card assets end to end. Right now I'm funding BINECA 2026 the same way — food resale, fundraising sales and merchandise.",
       "I'm open to analyst internships in Jakarta — investment banking, equity research, corporate finance or valuation. On-site or hybrid."
     ],
     facts: [
@@ -91,7 +91,7 @@ window.PROFILE = {
     {
       title: "Selling & Building",
       blurb:
-        "From a school food stand at a 50% margin to a marketing agency at Rp 500M, a 100-trader community and a collectibles business — and still running danusan and merchandise to fund BINECA 2026. Source it, price it so the margin holds, then go and sell it.",
+        "From a school food stand at a 50% margin to a marketing agency at IDR 500M, a 100-trader community and a collectibles business — and still running fundraising sales and merchandise to fund BINECA 2026. Source it, price it so the margin holds, then go and sell it.",
       tags: ["Sales & Marketing", "Pricing", "Cost Control", "Business Management"]
     },
     {
@@ -180,8 +180,8 @@ window.PROFILE = {
       period: "Aug 2026 — Present",
       location: "Jakarta, Indonesia · masteridx.com",
       bullets: [
-        "Built and run a market terminal for the Indonesian exchange: valuation, screening, financial ratios and bandarmology (broker-level accumulation analysis), with a public API.",
-        "Sole operator end to end — product, data pipeline, billing and support. Subscription opens October 2026 at Rp 299,000 a month, free for beta testers until then.",
+        "Built and run a market terminal for the Indonesian exchange: valuation, screening, financial ratios and broker-flow analysis (bandarmology — broker-level accumulation), with a public API.",
+        "Sole operator end to end — product, data pipeline, billing and support. Subscription opens October 2026 at IDR 299,000 a month, free for beta testers until then.",
         "Started as a screening tool for my own positions and kept growing until it was a terminal — and it is still the one I run my own capital through, so a weakness in the analysis costs me before it costs a subscriber."
       ],
       tags: ["Valuation", "IDX", "Bandarmology", "API", "SaaS"]
@@ -193,11 +193,11 @@ window.PROFILE = {
       period: "Jul 2026 — Present",
       location: "Hybrid",
       /* TODO — one number would finish this: how much the division has raised
-         so far, or the target. "Raised Rp X of a Rp Y target" beats every
+         so far, or the target. "Raised IDR X of an IDR Y target" beats every
          adjective on this page. */
       bullets: [
         "Raise the event's budget rather than administer it — the finance division funds BINECA 2026 by selling, not by billing.",
-        "Run food resale and danusan alongside event merchandise: sourcing stock, setting the price that actually clears a margin, and marketing each drop to campus.",
+        "Run food resale and student fundraising sales alongside event merchandise: sourcing stock, setting the price that actually clears a margin, and marketing each drop to campus.",
         "Coordinate the division across pre-orders and selling days so stock, cash and hand-off stay accounted for."
       ],
       tags: ["Sales & Marketing", "Pricing", "Coordinating Skills", "Growth Strategies"]
@@ -277,7 +277,7 @@ window.PROFILE = {
       location: "Banjarmasin, South Borneo",
       bullets: [
         "Built a marketing agency for private local businesses — cafés and small enterprises — handling their marketing and client growth.",
-        "Reached Rp 500 million in revenue in one year."
+        "Reached IDR 500 million in revenue in one year."
       ],
       tags: ["Business Management", "Sales & Marketing", "Client Growth"]
     },
@@ -333,7 +333,7 @@ window.PROFILE = {
      different association, split it out. */
   certifications: [
     {
-      name: "WPPE — Wakil Perantara Pedagang Efek",
+      name: "WPPE — Broker-Dealer Representative (Wakil Perantara Pedagang Efek)",
       issuer: "Finplan / OJK",
       year: "Awaiting exam",
       images: [
@@ -341,7 +341,7 @@ window.PROFILE = {
       ]
     },
     { name: "RTA — Registered Technical Analyst",   issuer: "CSA Institute", year: "In training" },
-    { name: "WMI — Wakil Manajer Investasi",        issuer: "OJK",           year: "Planned" },
+    { name: "WMI — Investment Manager Representative (Wakil Manajer Investasi)", issuer: "OJK", year: "Planned" },
     { name: "CSA & CTA",                            issuer: "CSA Institute", year: "After RTA" }
   ],
 
@@ -352,7 +352,7 @@ window.PROFILE = {
       title: "MasterIDX",
       year: "2026",
       blurb:
-        "A market terminal for the IDX — valuation, screening, financial ratios and bandarmology, with a public API. In free beta now; subscriptions open October 2026 at Rp 299,000 a month. Built and operated single-handed, and the tool I run my own positions through.",
+        "A market terminal for the IDX — valuation, screening, financial ratios and broker-flow analysis (bandarmology), with a public API. In free beta now; subscriptions open October 2026 at IDR 299,000 a month. Built and operated single-handed, and the tool I run my own positions through.",
       tags: ["Valuation", "IDX", "Bandarmology", "API"],
       link: "https://masteridx.com/",
       linkLabel: "Open masteridx.com"
