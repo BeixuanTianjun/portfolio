@@ -180,13 +180,18 @@
   if (tl && P.experience) {
     tl.innerHTML = P.experience.map(function (j) {
       var bullets = (j.bullets || []).map(function (b) { return '<li>' + esc(b) + '</li>'; }).join('');
+      var open = '';
+      if (j.link) {
+        open = '<a class="project__open" href="' + esc(j.link) + '" target="_blank" rel="noopener">' +
+          esc(j.linkLabel || 'Open') + ' <span aria-hidden="true">\u2197</span></a>';
+      }
       return '<li class="job" data-reveal>' +
         '<div class="job__top"><h3 class="job__role">' + esc(j.role) + '</h3>' +
         '<span class="job__period">' + esc(j.period) + '</span></div>' +
         '<p class="job__org">' + esc(j.org) + (j.type ? ' · ' + esc(j.type) : '') + '</p>' +
         '<p class="job__where">' + esc(j.location || '') + '</p>' +
         (bullets ? '<ul class="job__bullets">' + bullets + '</ul>' : '') +
-        tags(j.tags) + gallery(j.images) +
+        tags(j.tags) + open + gallery(j.images) +
       '</li>';
     }).join('');
   }
