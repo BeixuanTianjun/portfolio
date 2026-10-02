@@ -178,13 +178,15 @@ window.PROFILE = {
       org: "MasterIDX",
       type: "Self-employed",
       period: "Aug 2026 — Present",
-      location: "Jakarta, Indonesia · masteridx.com",
+      location: "Jakarta, Indonesia",
       bullets: [
         "Built and run a market terminal for the Indonesian exchange: valuation, screening, financial ratios and broker-flow analysis (bandarmology — broker-level accumulation), with a public API.",
         "Sole operator end to end — product, data pipeline, billing and support. Subscription opens October 2026 at IDR 299,000 a month, free for beta testers until then.",
         "Started as a screening tool for my own positions and kept growing until it was a terminal — and it is still the one I run my own capital through, so a weakness in the analysis costs me before it costs a subscriber."
       ],
-      tags: ["Valuation", "IDX", "Bandarmology", "API", "SaaS"]
+      tags: ["Valuation", "IDX", "Bandarmology", "API", "SaaS"],
+      link: "https://masteridx.com/",
+      linkLabel: "Open masteridx.com"
     },
     {
       role: "Coordinator of Finance Division, BINECA 2026",
@@ -211,7 +213,11 @@ window.PROFILE = {
       bullets: [
         "Oversaw procurement, valuation, and sales of Pokemon and One Piece TCG assets, driving high-margin profitability through targeted market positioning and excellent client communication."
       ],
-      tags: ["Communication", "Market Research", "Procurement"]
+      tags: ["Communication", "Market Research", "Procurement"],
+      images: [
+        { src: "assets/projects/bullz-booth", alt: "The BullzTCG pop-up booth at Mall Taman Anggrek, stock laid out and buyers at the counter" },
+        { src: "assets/projects/bullz-cards", alt: "Graded Pokemon cards in the display case" }
+      ]
     },
     {
       role: "Founder & Community Manager",
@@ -348,16 +354,7 @@ window.PROFILE = {
   /* --- 9. PROJECTS ------------------------------------------------------ */
   /* Concrete things, so this section isn't just the experience list again. */
   projects: [
-    {
-      title: "MasterIDX",
-      year: "2026",
-      blurb:
-        "A market terminal for the IDX — valuation, screening, financial ratios and broker-flow analysis (bandarmology), with a public API. In free beta now; subscriptions open October 2026 at IDR 299,000 a month. Built and operated single-handed, and the tool I run my own positions through.",
-      tags: ["Valuation", "IDX", "Bandarmology", "API"],
-      link: "https://masteridx.com/",
-      linkLabel: "Open masteridx.com"
-    },
-    {
+{
       title: "TeknikalDrill",
       year: "2026",
       blurb:
@@ -379,19 +376,7 @@ window.PROFILE = {
       link: ""
       /* TODO — link the record, or a write-up of it, if you're happy to show it. */
     },
-    {
-      title: "BullzTCG Pop-Up, Mall Taman Anggrek",
-      year: "2026",
-      blurb:
-        "A physical booth run with @hiddentreasuresociety: pricing inventory on the day, handling buyers face to face, and turning a card collection into a margin.",
-      tags: ["Retail", "Pricing", "Client Relations"],
-      images: [
-        { src: "assets/projects/bullz-booth", alt: "The BullzTCG pop-up booth at Mall Taman Anggrek, stock laid out and buyers at the counter" },
-        { src: "assets/projects/bullz-cards", alt: "Graded Pokemon cards in the display case" }
-      ],
-      link: ""
-    },
-    {
+{
       title: "Production & Operations Analysis \u2014 Razer Wireless Mouse",
       year: "2026",
       blurb:
