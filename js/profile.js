@@ -50,7 +50,6 @@ window.PROFILE = {
   stats: [
     { value: 5,   suffix: "+", label: "Years trading markets" },
     { value: 100, suffix: "+", label: "Traders in the community" },
-    { value: 500, suffix: "M", label: "Rupiah revenue, GrowYourUMKM" },
     { value: 5,   suffix: "",  label: "Competition placings" }
   ],
 
