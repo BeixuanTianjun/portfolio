@@ -62,7 +62,7 @@ window.PROFILE = {
     heading: "About",
     paragraphs: [
       "I'm an Industrial Engineering undergraduate at BINUS University working towards a career in investment banking. Since 2021 I've run my own capital in Indonesian equities and crypto, looking for stocks the market has mispriced — which means the work is already valuation: read the business, decide what it's worth, and only then look at what it costs. The habits that came out of it — size the risk before the upside, write the thesis down, be wrong quickly and cheaply — are the ones I bring to modeling work.",
-      "MasterIDX is the one I care about most. It began as a screening tool for my own positions and I kept building until it was a terminal: valuation, screening, ratios, broker-flow analysis, a public API — run by me alone, and still the tool I put my own capital through. Before that I'd been selling things for money since school, and I still am. A food stand run to a 50% margin inside three months. GrowYourUMKM, a marketing agency for local cafés and small private businesses, which reached IDR 500 million in revenue inside a year. MWcrypto, a trading community past 100 active traders where I call live market commentary and risk. BullzTCG, where I price, source and sell collectible card assets end to end. Right now I'm funding BINECA 2026 the same way — food resale, fundraising sales and merchandise.",
+      "MasterIDX is the one I care about most. It began as a screening tool for my own positions and I kept building until it was a terminal: valuation, screening, ratios, broker-flow analysis, a public API — run by me alone, and still the tool I put my own capital through. Before that I'd been selling things for money since school, and I still am. A food stand run to a 50% margin inside three months. GrowYourUMKM, a marketing agency for local cafés and small private businesses, built and run for a year. MWcrypto, a trading community past 100 active traders where I call live market commentary and risk. BullzTCG, where I price, source and sell collectible card assets end to end. Right now I'm funding BINECA 2026 the same way — food resale, fundraising sales and merchandise.",
       "I'm open to analyst internships in Jakarta — investment banking, equity research, corporate finance or valuation. On-site or hybrid."
     ],
     facts: [
@@ -91,7 +91,7 @@ window.PROFILE = {
     {
       title: "Selling & Building",
       blurb:
-        "From a school food stand at a 50% margin to a marketing agency at IDR 500M, a 100-trader community and a collectibles business — and still running fundraising sales and merchandise to fund BINECA 2026. Source it, price it so the margin holds, then go and sell it.",
+        "From a school food stand at a 50% margin to a marketing agency, a 100-trader community and a collectibles business — and still running fundraising sales and merchandise to fund BINECA 2026. Source it, price it so the margin holds, then go and sell it.",
       tags: ["Sales & Marketing", "Pricing", "Cost Control", "Business Management"]
     },
     {
@@ -282,8 +282,7 @@ window.PROFILE = {
       period: "2023 — 2024",
       location: "Banjarmasin, South Borneo",
       bullets: [
-        "Built a marketing agency for private local businesses — cafés and small enterprises — handling their marketing and client growth.",
-        "Reached IDR 500 million in revenue in one year."
+        "Built a marketing agency for private local businesses — cafés and small enterprises — handling their marketing and client growth."
       ],
       tags: ["Business Management", "Sales & Marketing", "Client Growth"]
     },
