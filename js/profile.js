@@ -305,8 +305,7 @@ window.PROFILE = {
       school: "BINUS University",
       degree: "Bachelor of Industrial Engineering",
       period: "Sep 2024 — 2028 (expected)",
-      detail: "Project Management and Communication."
-      /* TODO — add GPA or relevant coursework if you want it on here. */
+      detail: "GPA 3.43/4.00. Project Management and Communication."
     },
     {
       school: "Finplan",
