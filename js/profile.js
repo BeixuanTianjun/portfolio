@@ -305,7 +305,7 @@ window.PROFILE = {
       school: "BINUS University",
       degree: "Bachelor of Industrial Engineering",
       period: "Sep 2024 — 2028 (expected)",
-      detail: "GPA 3.43/4.00. Project Management and Communication."
+      detail: "GPA 3.43/4.00"
     },
     {
       school: "Finplan",
