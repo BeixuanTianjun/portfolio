@@ -343,7 +343,14 @@ window.PROFILE = {
         { src: "assets/projects/wppe-certificate", alt: "Finplan Academy certificate for the KKNI Level 5 capital-market broker-dealer representative preparation programme, Jakarta, 17 September 2026" }
       ]
     },
-    { name: "RTA — Registered Technical Analyst",   issuer: "CSA Institute", year: "In training" },
+    {
+      name: "RTA — Registered Technical Analyst",
+      issuer: "CSA Institute",
+      year: "Training completed, awaiting exam",
+      images: [
+        { src: "assets/projects/rta-certificate", alt: "CSA Institute training certificate no. 1541/RTA/CSA Institute/X/2026 for the Registered Technical Analyst programme, Jakarta, 26-27 September 2026" }
+      ]
+    },
     { name: "WMI — Investment Manager Representative (Wakil Manajer Investasi)", issuer: "OJK", year: "Planned" },
     { name: "CSA & CTA",                            issuer: "CSA Institute", year: "After RTA" }
   ],
