@@ -61,7 +61,7 @@ window.PROFILE = {
     heading: "About",
     paragraphs: [
       "I'm an Industrial Engineering undergraduate at BINUS University working towards a career in investment banking. Since 2021 I've run my own capital in Indonesian equities and crypto, looking for stocks the market has mispriced — which means the work is already valuation: read the business, decide what it's worth, and only then look at what it costs. The habits that came out of it — size the risk before the upside, write the thesis down, be wrong quickly and cheaply — are the ones I bring to modeling work.",
-      "MasterIDX is the one I care about most. It began as a screening tool for my own positions and I kept building until it was a terminal: valuation, screening, ratios, broker-flow analysis, a public API — run by me alone, and still the tool I put my own capital through. Before that I'd been selling things for money since school, and I still am. A food stand run to a 50% margin inside three months. GrowYourUMKM, a marketing agency for local cafés and small private businesses, built and run for a year. MWcrypto, a trading community past 100 active traders where I call live market commentary and risk. BullzTCG, where I price, source and sell collectible card assets end to end. Right now I'm funding BINECA 2026 the same way — food resale, fundraising sales and merchandise.",
+      "ShifuWok (formerly MasterIDX) is the one I care about most. It began as a screening tool for my own positions and I kept building until it was a terminal: valuation, screening, ratios, broker-flow analysis, a public API — run by me alone, and still the tool I put my own capital through. Before that I'd been selling things for money since school, and I still am. A food stand run to a 50% margin inside three months. GrowYourUMKM, a marketing agency for local cafés and small private businesses, built and run for a year. MWcrypto, a trading community past 100 active traders where I call live market commentary and risk. BullzTCG, where I price, source and sell collectible card assets end to end. Right now I'm funding BINECA 2026 the same way — food resale, fundraising sales and merchandise.",
       "I'm open to analyst internships in Jakarta — investment banking, equity research, corporate finance or valuation. On-site or hybrid."
     ],
     facts: [
@@ -78,7 +78,7 @@ window.PROFILE = {
     {
       title: "Financial Modeling & Valuation",
       blurb:
-        "Three-statement models, DCFs and comparable company analysis built from the filings up — and then built into MasterIDX, because a method you have to productise is a method you can no longer hand-wave.",
+        "Three-statement models, DCFs and comparable company analysis built from the filings up — and then built into ShifuWok, because a method you have to productise is a method you can no longer hand-wave.",
       tags: ["DCF", "Comparables", "Screening", "Excel"]
     },
     {
@@ -174,7 +174,7 @@ window.PROFILE = {
   experience: [
     {
       role: "Founder",
-      org: "MasterIDX",
+      org: "ShifuWok (formerly MasterIDX)",
       type: "Self-employed",
       period: "Aug 2026 — Present",
       location: "Jakarta, Indonesia",
