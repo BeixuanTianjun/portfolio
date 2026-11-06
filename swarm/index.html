@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Michael Wibowo | Portfolio</title>
+<meta name="description" content="Michael Wibowo, Industrial Engineering student at BINUS. Financial modeling, IDX equities, and ShifuWok, a research terminal for the Indonesian stock market.">
+<meta name="theme-color" content="#07090A">
+<link rel="canonical" href="https://beixuantianjun.github.io/portfolio/swarm/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Michael Wibowo">
+<meta property="og:title" content="Michael Wibowo | Portfolio">
+<meta property="og:description" content="Industrial Engineering @ BINUS. ShifuWok, a live research terminal for Indonesian stocks, and a 100+ member trading community.">
+<meta property="og:url" content="https://beixuantianjun.github.io/portfolio/swarm/">
+<meta property="og:image" content="https://beixuantianjun.github.io/portfolio/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://beixuantianjun.github.io/portfolio/assets/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2307090A'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='800' text-anchor='middle' fill='%2344D62C' font-family='Arial'%3EMW%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../css/fonts.css?v=20261008c">
+<script>
+  document.documentElement.classList.add('js', 'intro');
+  if (/[?&]theme=brand/.test(location.search)) document.documentElement.setAttribute('data-theme', 'brand');
+</script>
+<style>
+:root{
+  --bg:#07090A; --panel:#0E1311; --line:#1D2622; --text:#E8ECEA; --mut:#8FA096;
+  --g:#44D62C; --g2:#44D62C; --on-g:#06120A; --sel:#18A0FB;
+  --sans:"Manrope",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+:root[data-theme="brand"]{ --bg:#05060a; --panel:#0c0e16; --line:#1b2030; --text:#eaeefb; --mut:#9aa4bc; --g:#35e5ff; --g2:#ff4d8d; --on-g:#04121a; }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+html,body{overflow-x:clip}
+section.panel,.hero{overflow-x:clip}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(900px 500px at 78% -10%,color-mix(in srgb,var(--g) 14%,transparent),transparent 70%),
+             linear-gradient(var(--line) 1px,transparent 1px) 0 0/72px 72px,
+             linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/72px 72px;
+  opacity:.5;-webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent)}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+canvas#swarm{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:60}
+html.intro .nav,html.intro main,html.intro footer{opacity:0}
+.nav,main,footer{transition:opacity .6s ease}
+
+/* wireframe -> reveal */
+.b{position:relative}
+.b.pre::before{content:"";position:absolute;inset:-3px;border-radius:8px;background:rgba(255,255,255,.04);outline:1px dashed rgba(255,255,255,.16);z-index:2}
+.b.pre>*{opacity:0}
+.b.rv>*{animation:rv .65s cubic-bezier(.2,.7,.2,1) both}
+.b.rv>*:nth-child(2){animation-delay:.06s}.b.rv>*:nth-child(3){animation-delay:.12s}.b.rv>*:nth-child(4){animation-delay:.18s}
+@keyframes rv{from{opacity:0;clip-path:inset(0 100% 0 0);transform:translateY(8px)}to{opacity:1;clip-path:inset(-4px);transform:none}}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:40}
+.nav .in{max-width:1160px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;background:linear-gradient(var(--bg),transparent)}
+.logo{display:flex;align-items:center;gap:10px;font:800 15px var(--sans);text-decoration:none;letter-spacing:.02em}
+.logo i{display:grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--g);color:var(--on-g);font:800 13px var(--sans);font-style:normal}
+.links{display:flex;gap:22px;align-items:center;font:600 13px var(--mono);color:var(--mut)}
+.links a{text-decoration:none}.links a:hover{color:var(--text)}
+.avail{display:flex;align-items:center;gap:7px;color:var(--text)}
+.avail::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--g);box-shadow:0 0 10px var(--g)}
+@media(max-width:760px){.links a:not(.avail){display:none}}
+
+/* hero */
+.hero{padding:112px 0 40px;position:relative}
+.giant{font:800 clamp(44px,13.5vw,176px)/.88 var(--sans);letter-spacing:-.045em;color:transparent;-webkit-text-stroke:2px var(--g);white-space:nowrap;opacity:.9;margin:0}
+.herogrid{display:grid;grid-template-columns:1.25fr .75fr;gap:36px;margin-top:-4px;align-items:start}
+.hello{font:600 italic 22px var(--sans);margin:18px 0 6px;color:var(--mut)}
+.name{display:inline-block;background:var(--g);color:var(--on-g);font:800 clamp(30px,5vw,52px)/1 var(--sans);padding:8px 14px;letter-spacing:-.02em;margin:0 0 18px}
+.role{font:600 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--g);margin:0 0 12px}
+.lead{font-size:clamp(16px,2vw,20px);max-width:56ch;color:#c9d3cd;margin:0 0 22px}
+.lead b{color:var(--text)}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;font:700 13px var(--mono);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:13px 18px;border-radius:6px;border:1px solid var(--line);background:var(--panel)}
+.btn.p{background:var(--g);color:var(--on-g);border-color:var(--g)}
+.btn:hover{transform:translateY(-1px);border-color:var(--g)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:30px}
+.stat{padding:14px 14px 12px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.stat b{display:block;font:800 clamp(24px,3.4vw,34px)/1.1 var(--sans);color:var(--text)}
+.stat span{font:600 11px var(--mono);color:var(--mut);letter-spacing:.04em}
+.frame{position:relative;background:var(--g);border-radius:6px;padding:12px 12px 0;max-width:340px;margin-left:auto}
+.frame img{display:block;width:100%;aspect-ratio:1/1.05;object-fit:cover;object-position:50% 20%;filter:grayscale(1) contrast(1.05)}
+.frame .chip{display:block;margin:0 -12px;padding:10px 12px;background:var(--bg);border:1px solid var(--g);font:700 11px var(--mono);letter-spacing:.08em;color:var(--g);text-transform:uppercase;text-align:center;transform:translateY(12px)}
+.frame{margin-bottom:26px}
+.sidecard{margin-top:22px;max-width:340px;margin-left:auto;border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:var(--panel);font:600 12px var(--mono);color:var(--mut)}
+.sidecard b{color:var(--text);display:block;font:700 14px var(--sans);margin-bottom:2px}
+@media(max-width:860px){.herogrid{grid-template-columns:1fr}.frame,.sidecard{margin-left:0}.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* sections */
+section.panel{padding:84px 0 30px}
+.kick{font:700 12px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--g);margin:0 0 10px}
+.kick::before{content:"";display:inline-block;width:7px;height:7px;background:var(--g2);border-radius:50%;margin-right:10px;vertical-align:1px}
+h2{font:800 clamp(30px,5vw,54px)/1.05 var(--sans);letter-spacing:-.03em;margin:0 0 16px}
+.idx{font:600 12px var(--mono);color:var(--mut);margin-bottom:26px;letter-spacing:.06em}
+.two{display:grid;grid-template-columns:1.2fr .8fr;gap:44px}
+.two p{color:#c2cdc7;margin:0 0 16px;max-width:62ch}
+.quote{border-left:3px solid var(--g);padding:6px 0 6px 18px;font:600 clamp(18px,2.4vw,24px)/1.35 var(--sans);margin:22px 0 0;max-width:34ch}
+.quote small{display:block;margin-top:8px;font:600 11px var(--mono);letter-spacing:.08em;color:var(--mut);text-transform:uppercase}
+.facts{display:grid;gap:12px}
+.fact{border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:var(--panel)}
+.fact small{display:block;font:700 11px var(--mono);letter-spacing:.12em;color:var(--g);text-transform:uppercase;margin-bottom:4px}
+.fact span{color:#d8e0db;font-size:15px}
+@media(max-width:860px){.two{grid-template-columns:1fr;gap:20px}}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--panel);height:100%}
+.card:hover{border-color:color-mix(in srgb,var(--g) 55%,var(--line))}
+.card .tag{display:inline-block;font:700 11px var(--mono);letter-spacing:.1em;color:var(--on-g);background:var(--g);border-radius:4px;padding:3px 8px;text-transform:uppercase;margin-bottom:12px}
+.card .tag.o{background:transparent;color:var(--g);border:1px solid var(--g)}
+.card h3{font:800 clamp(20px,2.6vw,28px)/1.15 var(--sans);letter-spacing:-.02em;margin:0 0 10px}
+.card p{color:#bcc8c2;margin:0 0 12px;font-size:15px}
+.card ul{margin:0 0 14px;padding-left:18px;color:#cdd7d2;font-size:15px}
+.card li{margin:3px 0}
+.card a.go{font:700 13px var(--mono);color:var(--g);text-decoration:none;letter-spacing:.04em}
+.card a.go:hover{text-decoration:underline}
+.span2{grid-column:1/-1}
+.flag{background:linear-gradient(135deg,color-mix(in srgb,var(--g) 9%,var(--panel)),var(--panel) 60%)}
+@media(max-width:860px){.grid2{grid-template-columns:1fr}}
+.matrix{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.matrix .card h3{font-size:20px}
+.matrix .card ul{margin:0;list-style:none;padding:0}
+.matrix .card li{padding:6px 0;border-top:1px solid var(--line);font-size:14px;color:#cdd7d2}
+.matrix .card li:first-child{border-top:0}
+@media(max-width:980px){.matrix{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.matrix{grid-template-columns:1fr}}
+
+.contact{text-align:center;padding:110px 0 120px}
+.contact h2{font-size:clamp(32px,6vw,68px)}
+.contact p{max-width:52ch;margin:0 auto 26px;color:#c2cdc7;font-size:18px}
+.contact .btns{justify-content:center}
+.mail{font:700 14px var(--mono);color:var(--g);margin-top:20px;letter-spacing:.04em}
+footer{border-top:1px solid var(--line);padding:22px 0;font:600 12px var(--mono);color:var(--mut);position:relative;z-index:1}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.sr{position:absolute;left:-9999px}
+</style>
+</head>
+<body>
+<noscript><style>html.intro .nav,html.intro main,html.intro footer{opacity:1}</style></noscript>
+<canvas id="swarm" aria-hidden="true"></canvas>
+
+<header class="nav b" data-panel="hero"><div class="in">
+  <a class="logo" href="#top"><i>MW</i><span>Michael Wibowo</span></a>
+  <nav class="links" aria-label="Sections"><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a><a class="avail" href="#contact">Open from Feb 2027</a></nav>
+</div></header>
+
+<main id="top">
+<section class="hero" data-panel="hero"><div class="wrap">
+  <div class="b"><h1 class="giant">PORTFOLIO</h1></div>
+  <div class="herogrid">
+    <div>
+      <div class="b"><p class="hello">Hello, I'm</p></div>
+      <div class="b"><h2 class="name">MICHAEL.</h2></div>
+      <div class="b"><p class="role">Industrial Engineering @ BINUS &middot; Valuation &middot; IDX Equities</p></div>
+      <div class="b"><p class="lead">I build <b>tools and communities for the Indonesian capital market</b>: a live research terminal where every number carries a source and a date, and a trading community of 100+ members.</p></div>
+      <div class="b"><div class="btns"><a class="btn p" href="#projects">View projects &rarr;</a><a class="btn" href="#contact">Get in touch</a></div></div>
+      <div class="b stats">
+        <div class="stat"><b data-count="100" data-suf="+">100+</b><span>COMMUNITY MEMBERS</span></div>
+        <div class="stat"><b data-count="3.43" data-dec="2">3.43</b><span>GPA / 4.00</span></div>
+        <div class="stat"><b data-count="11">11</b><span>IDX SECTORS TRACKED</span></div>
+        <div class="stat"><b data-count="31">31</b><span>CONGLOMERATE GROUPS</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="b"><div class="frame"><img src="../assets/michael-wibowo.jpg" alt="Portrait of Michael Wibowo" width="440" height="440"><span class="chip">Open to internships &middot; Feb 2027</span></div></div>
+      <div class="b"><div class="sidecard"><b>ShifuWok is live</b>Terminal data saham Indonesia, with sources on every number.</div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="panel" id="about" data-panel="about"><div class="wrap">
+  <div class="b"><p class="kick">Profile</p></div>
+  <div class="b"><h2>Background &amp; Philosophy</h2></div>
+  <div class="b"><div class="idx">// 01.00 SEC_ABOUT INDEX [01/04]</div></div>
+  <div class="two">
+    <div>
+      <div class="b"><p>I'm a third-year Industrial Engineering student at BINUS University. The degree trained me to look at a system end to end: where the inputs come from, where the delays are, and what breaks downstream when one number is wrong.</p></div>
+      <div class="b"><p>I have invested in IDX equities and crypto since 2021, run a trading community, and built ShifuWok to make Indonesian market data easier to check. I like tools where every claim can be traced back to its source.</p></div>
+      <div class="b"><blockquote class="quote">Decide what it's worth before you look at the price.<small>Working principle</small></blockquote></div>
+    </div>
+    <div class="facts">
+      <div class="b"><div class="fact"><small>Education</small><span>BINUS University, Industrial Engineering. GPA 3.43 / 4.00.</span></div></div>
+      <div class="b"><div class="fact"><small>Licences</small><span>WPPE and RTA training completed. Competency exams pending.</span></div></div>
+      <div class="b"><div class="fact"><small>Availability</small><span>Free from classes through the BINUS Enrichment Program. Full-time from February 2027, up to 12 months.</span></div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="panel" id="projects" data-panel="projects"><div class="wrap">
+  <div class="b"><p class="kick">Selected work</p></div>
+  <div class="b"><h2>Flagship Builds</h2></div>
+  <div class="b"><div class="idx">// 02.00 SEC_PROJECTS INDEX [02/04]</div></div>
+  <div class="grid2">
+    <div class="b span2"><article class="card flag">
+      <span class="tag">Live</span>
+      <h3>ShifuWok: a research terminal for Indonesian stocks</h3>
+      <p>Prices, broker flows, KSEI ownership and official IDX announcements in one place. Every number has a source and a date, and when the data is missing, it says so.</p>
+      <ul><li>Screener whose rules are published, with the results of its tests</li><li>Announcement summaries read from the original PDF, which stays linked</li><li>Paper-trading track record published openly, losses included</li></ul>
+      <a class="go" href="https://shifuwok.com" target="_blank" rel="noopener">Open shifuwok.com &#8599;</a>
+    </article></div>
+    <div class="b"><article class="card"><span class="tag o">Community</span><h3>MWCrypto</h3><p>A trading community of 100+ members, founded November 2024. Regular market-analysis and live-trade sessions with written commentary.</p></article></div>
+    <div class="b"><article class="card"><span class="tag o">Case study</span><h3>Production planning, Razer Wireless Mouse</h3><p>Benchmarked five forecasting methods (Winter's chosen, MAPE 2.67), four aggregate-planning strategies and four lot-sizing heuristics. Built MPS, MRP and Kanban over a 17-component, 7-level BOM.</p></article></div>
+    <div class="b"><article class="card"><span class="tag o">Simulation</span><h3>Investment Banking, Bank of America</h3><p>Forage job simulation, September 2026. Screened an acquisition target by SWOT, built a DCF to an implied per-share value, ran a sensitivity analysis and wrote the target profile.</p></article></div>
+    <div class="b"><article class="card"><span class="tag o">Data analysis</span><h3>Exam score prediction</h3><p>Multiple linear regression on 20,000 rows in Python: R&sup2; 0.63 on the test set, with residual and Q-Q diagnostics, ANOVA on the drivers and K-Means into 3 clusters.</p></article></div>
+  </div>
+</div></section>
+
+<section class="panel" id="skills" data-panel="skills"><div class="wrap">
+  <div class="b"><p class="kick">Toolkit</p></div>
+  <div class="b"><h2>The Skills Matrix</h2></div>
+  <div class="b"><div class="idx">// 03.00 SEC_SKILLS INDEX [03/04]</div></div>
+  <div class="matrix">
+    <div class="b"><div class="card"><h3>Markets</h3><ul><li>Equity valuation (DCF, relative)</li><li>Financial statement and ratio analysis</li><li>Technical analysis</li><li>Ownership and fund-flow analysis</li></ul></div></div>
+    <div class="b"><div class="card"><h3>Data</h3><ul><li>Excel (advanced)</li><li>Python: pandas, scikit-learn</li><li>SPSS</li><li>Dashboards and reports</li></ul></div></div>
+    <div class="b"><div class="card"><h3>Community &amp; Events</h3><ul><li>Hosting live sessions</li><li>Event budgeting (HIMTRI, BINECA 2026)</li><li>Client and partner outreach</li><li>Written market commentary</li></ul></div></div>
+    <div class="b"><div class="card"><h3>Industrial Engineering</h3><ul><li>Forecasting and aggregate planning</li><li>MPS, MRP, lot sizing, Kanban</li><li>Process mapping</li><li>Service systems design</li></ul></div></div>
+  </div>
+</div></section>
+
+<section class="panel contact" id="contact" data-panel="contact"><div class="wrap">
+  <div class="b"><p class="kick">Contact</p></div>
+  <div class="b"><h2>Let's build something useful.</h2></div>
+  <div class="b"><p>Open to internships from February 2027, full-time for up to twelve months. Markets, research and community are where I want to learn next.</p></div>
+  <div class="b"><div class="btns" id="cta"><a class="btn p" href="mailto:michaelwibo@gmail.com">Email me &rarr;</a><a class="btn" href="https://www.linkedin.com/in/michael-wibowo" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://shifuwok.com" target="_blank" rel="noopener">ShifuWok</a></div></div>
+  <div class="b"><div class="mail">michaelwibo@gmail.com</div></div>
+</div></section>
+</main>
+
+<footer class="b" data-panel="contact"><div class="wrap"><span>&copy; 2026 Michael Wibowo &middot; Jakarta</span><span>Industrial Engineering @ BINUS University</span></div></footer>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const items = [...document.querySelectorAll('.b')];
+  const fmt = (n, p) => { const t = parseFloat(n.dataset.count), d = +(n.dataset.dec || 0); return (t * p).toFixed(d) + (p >= 1 ? (n.dataset.suf || '') : ''); };
+  const count = n => { const t0 = performance.now(); (function f(now) { const p = Math.min(1, (now - t0) / 900), e = 1 - Math.pow(1 - p, 3); n.textContent = fmt(n, e); if (p < 1) requestAnimationFrame(f); })(t0); };
+  const reveal = (el, instant) => {
+    if (!el.classList.contains('pre')) return;
+    el.classList.remove('pre');
+    if (!instant) el.classList.add('rv');
+    if (!instant) el.querySelectorAll('[data-count]').forEach(count);
+  };
+  const root = document.documentElement;
+  if (reduce) { root.classList.remove('intro'); return; }
+  items.forEach(el => el.classList.add('pre'));
+  setTimeout(() => root.classList.remove('intro'), 1500);
+
+  const cv = document.getElementById('swarm'), ctx = cv.getContext('2d');
+  let W = 0, H = 0, DPR = 1;
+  const resize = () => { DPR = Math.min(2, devicePixelRatio || 1); W = innerWidth; H = innerHeight; cv.width = W * DPR; cv.height = H * DPR; };
+  addEventListener('resize', resize); resize();
+
+  const COLORS = ['#18A0FB', '#F24E1E', '#0ACF83', '#A259FF', '#FFC700', '#FF7262', '#1ABCFE', '#FF6EC7', '#7CFC00', '#FFA629', '#00E5FF', '#C792EA'];
+  // Names are ShifuWok screen names (shifuwok.com/fitur.html). Replace this list to rename the agents.
+  const NAMES = ['Screener', 'Event Radar', 'Fund Tracker', 'Ownership Map', 'Retail Sentiment', 'Deal Desk', 'Sector Rotation', 'Disclosures', 'Corporate Actions', 'Chart Match', 'Weekly Research', 'Ask a Stock'];
+  const N = innerWidth < 720 ? 8 : 12;
+  const rnd = (a, b) => a + Math.random() * (b - a), clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  const agents = Array.from({ length: N }, (_, i) => ({ i, x: W / 2 + rnd(-20, 20), y: H / 2 + rnd(-20, 20), vx: 0, vy: 0, c: COLORS[i % COLORS.length], name: NAMES[i % NAMES.length], mode: 'intro', tx: W / 2, ty: H / 2, k: 40, cc: 9, hx: W / 2, hy: H / 2, next: 0, busy: false }));
+  const pairs = Array.from({ length: N / 2 }, (_, p) => ({ A: agents[2 * p], B: agents[2 * p + 1], busy: false }));
+  const jobs = [];
+  const ring = { x: W / 2, y: H / 2, on: false };
+  const mouse = { x: -1, y: -1, t: -99 };
+  addEventListener('pointermove', e => { mouse.x = e.clientX; mouse.y = e.clientY; mouse.t = now(); }, { passive: true });
+  let lastY = scrollY;
+  addEventListener('scroll', () => {
+    const dy = scrollY - lastY; lastY = scrollY; if (!dy) return;
+    for (const a of agents) if (!a.busy && a.mode === 'roam') { a.hy = clamp(H * (dy > 0 ? rnd(.55, .85) : rnd(.15, .45)), 40, H - 40); a.hx = rnd(60, W - 60); a.next = 0; }
+  }, { passive: true });
+
+  const start = performance.now(); const now = () => (performance.now() - start) / 1000;
+  let introDone = false, nextLaunch = 0;
+  const ease = p => p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+  const inView = r => r.bottom > 0 && r.top < H * 0.97 && r.right > 0 && r.left < W;
+
+  function launch(pair, el, t) {
+    const job = { el, A: pair.A, B: pair.B, pair, phase: 1, t0: t, t2: 0, t3: 0, t4: 0, alpha: 1 };
+    pair.busy = true; for (const a of [pair.A, pair.B]) { a.busy = true; a.mode = 'build'; }
+    jobs.push(job);
+  }
+  function release(job, t) {
+    job.pair.busy = false;
+    const r = job.el.getBoundingClientRect(), cx = clamp(r.left + r.width / 2, 60, W - 60), cy = clamp(r.top + r.height / 2, 60, H - 60);
+    for (const a of [job.A, job.B]) { a.busy = false; a.mode = 'roam'; a.hx = cx; a.hy = cy; a.next = 0; }
+    jobs.splice(jobs.indexOf(job), 1);
+  }
+  function updateJob(job, t) {
+    const { A, B, el } = job, r = el.getBoundingClientRect();
+    if (r.bottom < -40 || r.top > H + 40) { reveal(el, true); release(job, t); return; }
+    const x0 = r.left, y0 = r.top, x1 = r.right, y1 = r.bottom;
+    const d = (a, x, y) => Math.hypot(a.x - x, a.y - y);
+    if (job.phase === 1) {
+      A.tx = x0; A.ty = y0; B.tx = x0 + 12; B.ty = y0 + 12; A.k = B.k = 80; A.cc = B.cc = 13;
+      if ((d(A, x0, y0) < 9 && d(B, x0 + 12, y0 + 12) < 11) || t - job.t0 > 1.8) { job.phase = 2; job.t2 = t; }
+    } else if (job.phase === 2) {
+      const p = clamp((t - job.t2) / 0.42, 0, 1), e = ease(p);
+      A.tx = x0; A.ty = y0; B.tx = x0 + 12 + (x1 - x0 - 12) * e; B.ty = y0 + 12 + (y1 - y0 - 12) * e; B.k = 240; B.cc = 24;
+      if ((p >= 1 && d(B, x1, y1) < 9) || t - job.t2 > 0.95) { job.phase = 3; job.t3 = t; }
+    } else if (job.phase === 3) {
+      if (t - job.t3 > 0.3) { reveal(el, false); job.phase = 4; job.t4 = t; }
+    } else {
+      job.alpha = 1 - (t - job.t4) / 0.45;
+      A.mode = B.mode = 'roam'; // agents already free to wander while the box fades
+      if (job.alpha <= 0) release(job, t);
+    }
+  }
+
+  function step(dt, t) {
+    if (!introDone && t > 1.7) { introDone = true; for (const a of agents) if (!a.busy) { a.mode = 'roam'; a.hx = W / 2; a.hy = H / 2; a.next = 0; } }
+    // launch builds
+    if (introDone && t >= nextLaunch) {
+      const free = pairs.find(p => !p.busy);
+      if (free) {
+        let target = null;
+        for (let i = 0; i < items.length; i++) {
+          const el = items[i]; if (!el.classList.contains('pre') || el._q) continue;
+          const r = el.getBoundingClientRect();
+          if (r.bottom < -20) { reveal(el, true); continue; }
+          if (inView(r)) { target = el; break; }
+        }
+        if (target) { target._q = true; launch(free, target, t); nextLaunch = t + 0.12; }
+      }
+    }
+    // ring around CTA when everything visible is built
+    const cta = document.getElementById('cta'), cr = cta.getBoundingClientRect();
+    const busyAny = jobs.length > 0;
+    const wantRing = introDone && !busyAny && cr.top > H * 0.1 && cr.bottom < H * 0.95 && !cta.classList.contains('pre');
+    if (wantRing) { ring.x = cr.left + cr.width / 2; ring.y = cr.top + cr.height / 2; }
+    for (const a of agents) {
+      if (!a.busy) {
+        if (wantRing && a.mode !== 'ring') a.mode = 'ring';
+        if (!wantRing && a.mode === 'ring') { a.mode = 'roam'; a.hx = ring.x; a.hy = ring.y; a.next = 0; }
+      }
+      let k = 40, c = 9;
+      if (a.mode === 'intro') { const ang = t * 2.4 + a.i * 2 * Math.PI / N, r = 70 + (a.i % 4) * 22 + Math.sin(t * 1.3 + a.i) * 10; a.tx = W / 2 + Math.cos(ang) * r; a.ty = H / 2 + Math.sin(ang) * r * 0.8; k = 60; c = 7; }
+      else if (a.mode === 'roam') {
+        if (t > a.next) {
+          const follow = (t - mouse.t) < 3 && a.i % 3 === 0;
+          if (follow) { const an = rnd(0, 6.28); a.tx = clamp(mouse.x + Math.cos(an) * 70, 12, W - 12); a.ty = clamp(mouse.y + Math.sin(an) * 70, 12, H - 12); }
+          else { a.tx = clamp(a.hx + rnd(-170, 170), 14, W - 14); a.ty = clamp(a.hy + rnd(-120, 120), 14, H - 14); }
+          a.next = t + rnd(1.1, 2.6);
+        }
+        k = 7; c = 3.4;
+      } else if (a.mode === 'ring') { const ang = t * 1.1 + a.i * 2 * Math.PI / N, r = 100 + (a.i % 3) * 16; a.tx = ring.x + Math.cos(ang) * r * 1.6; a.ty = ring.y + Math.sin(ang) * r * 0.8; k = 20; c = 6.5; }
+      else if (a.mode === 'build') { k = a.k; c = a.cc; }
+      a.vx += (k * (a.tx - a.x) - c * a.vx) * dt; a.vy += (k * (a.ty - a.y) - c * a.vy) * dt;
+      a.x += a.vx * dt; a.y += a.vy * dt;
+    }
+    for (const j of jobs.slice()) updateJob(j, t);
+  }
+
+  function drawBox(j) {
+    const { A, B } = j; const x0 = Math.min(A.x, B.x), y0 = Math.min(A.y, B.y), x1 = Math.max(A.x, B.x), y1 = Math.max(A.y, B.y);
+    const w = x1 - x0, h = y1 - y0; ctx.save(); ctx.globalAlpha = clamp(j.alpha, 0, 1);
+    ctx.fillStyle = 'rgba(24,160,251,.10)'; ctx.strokeStyle = '#18A0FB'; ctx.lineWidth = 1.3; ctx.fillRect(x0, y0, w, h); ctx.strokeRect(x0, y0, w, h);
+    if (w > 18 && h > 18) {
+      const hs = [[x0, y0], [x0 + w / 2, y0], [x1, y0], [x0, y0 + h / 2], [x1, y0 + h / 2], [x0, y1], [x0 + w / 2, y1], [x1, y1]];
+      ctx.fillStyle = '#fff'; for (const [hx, hy] of hs) { ctx.fillRect(hx - 3, hy - 3, 6, 6); ctx.strokeRect(hx - 3, hy - 3, 6, 6); }
+      const label = Math.round(w) + ' × ' + Math.round(h); ctx.font = '600 11px ui-monospace,Menlo,Consolas,monospace';
+      const tw = ctx.measureText(label).width + 12; ctx.fillStyle = '#18A0FB'; ctx.beginPath(); ctx.roundRect ? ctx.roundRect(x1 - tw, y1 + 8, tw, 18, 4) : ctx.rect(x1 - tw, y1 + 8, tw, 18); ctx.fill();
+      ctx.fillStyle = '#fff'; ctx.fillText(label, x1 - tw + 6, y1 + 21);
+    }
+    ctx.restore();
+  }
+  function drawAgent(a) {
+    ctx.save(); ctx.translate(a.x, a.y); ctx.beginPath();
+    ctx.moveTo(0, 0); ctx.lineTo(0, 17); ctx.lineTo(4.6, 13); ctx.lineTo(7.8, 20); ctx.lineTo(10.4, 18.8); ctx.lineTo(7.3, 12); ctx.lineTo(13, 12); ctx.closePath();
+    ctx.fillStyle = a.c; ctx.strokeStyle = '#fff'; ctx.lineWidth = 1.2; ctx.shadowColor = a.c; ctx.shadowBlur = 8; ctx.fill(); ctx.shadowBlur = 0; ctx.stroke();
+    if (a.busy && a.mode === 'build') {
+      ctx.font = '600 10px ui-monospace,Menlo,Consolas,monospace'; const tw = ctx.measureText(a.name).width + 10;
+      ctx.fillStyle = a.c; ctx.beginPath(); ctx.roundRect ? ctx.roundRect(12, 18, tw, 15, 4) : ctx.rect(12, 18, tw, 15); ctx.fill();
+      ctx.fillStyle = '#06120A'; ctx.fillText(a.name, 17, 29);
+    }
+    ctx.restore();
+  }
+  let last = now();
+  function frame() {
+    const t = now(), dt = Math.min(0.033, t - last); last = t;
+    step(dt, t);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0); ctx.clearRect(0, 0, W, H);
+    for (const j of jobs) drawBox(j);
+    for (const a of agents) drawAgent(a);
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+  window.__swarm = { agents, jobs, items };
+})();
+</script>
+</body>
+</html>
