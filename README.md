@@ -57,6 +57,30 @@ banding is written above the `skills` array so later edits stay on the same
 scale. A high score on something the headline calls you a *candidate* for reads
 as a contradiction and costs the rows you actually earned their credibility.
 
+## The swarm that builds the page
+
+`js/swarm.js` is a layer on top of the page, not a second page. Instead of each
+block fading in the moment it scrolls into view, a pair of agents (the coloured
+cursors) flies to it, one pins the top-left corner and the other drags to the
+bottom-right, and the block is revealed once the selection box is drawn.
+Blocks that are not built yet show as dashed wireframes. While the loader runs,
+the agents swirl in the middle of the screen; at the contact button they
+orbit it once everything visible is built.
+
+`main.js` still owns the page and decides what is observed. The only contract
+is `PortfolioSwarm.build(el, show)`, which calls `show(el)` when the agents
+finish. Nothing in the markup or CSS changed.
+
+- **Agent name tags** come from `swarm.names` in `js/profile.js`. They are the
+  screens of the ShifuWok terminal; rename them freely.
+- **It switches itself off** under `prefers-reduced-motion`, when the file is
+  missing, and when the URL has `?swarm=off`. In all three the page behaves
+  exactly as before.
+- **12 agents on a laptop, 8 on a phone.** Small blocks (skill rings, stats) are
+  built faster so a long list does not make you wait.
+- If a tab is hidden while blocks are queued, a 9 second safety net reveals
+  them anyway, so content is never stuck behind an animation.
+
 ## Run it
 
 ```bash
