@@ -327,12 +327,24 @@
     ? new IntersectionObserver(function (entries) {
         entries.forEach(function (en) {
           if (!en.isIntersecting) return;
-          en.target.classList.add('is-in');
-          if (en.target.classList.contains('count')) countUp(en.target);
           io.unobserve(en.target);
+          buildOrShow(en.target);
         });
       }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' })
     : null;
+
+  /* The swarm (js/swarm.js) decides *when* a block appears: agents build it,
+     then call show(). Without the swarm, or with reduced motion, blocks appear
+     the old way, the moment they scroll in. */
+  var swarm = !reduced && window.PortfolioSwarm ? window.PortfolioSwarm : null;
+
+  function show(el) {
+    el.classList.add('is-in');
+    if (el.classList.contains('count')) countUp(el);
+  }
+  function buildOrShow(el) {
+    if (swarm) swarm.build(el, show); else show(el);
+  }
 
   function observeAll() {
     if (!io) {
@@ -344,10 +356,12 @@
   }
 
   /* stagger siblings so groups cascade instead of popping together */
-  $$('.specs > *, .timeline__list > *, .projects > *, .skills__grid > *, .certs > *, .hero__stats > *, .awards > *')
-    .forEach(function (el, i) {
-      el.style.transitionDelay = (i % 8) * 70 + 'ms';
-    });
+  if (!swarm) {
+    $$('.specs > *, .timeline__list > *, .projects > *, .skills__grid > *, .certs > *, .hero__stats > *, .awards > *')
+      .forEach(function (el, i) {
+        el.style.transitionDelay = (i % 8) * 70 + 'ms';
+      });
+  }
 
   function countUp(el) {
     if (el.dataset.done) return;
@@ -546,7 +560,8 @@
   function done() {
     setTimeout(function () {
       if (loader) loader.classList.add('is-done');
-      if (heroName) heroName.classList.add('is-in');
+      if (swarm) swarm.start();
+      if (heroName) buildOrShow(heroName);
       observeAll();
       onScroll();
     }, reduced ? 0 : 260);

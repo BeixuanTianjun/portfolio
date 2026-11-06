@@ -32,6 +32,19 @@ window.PROFILE = {
       "and crypto, hunting mispriced value."
   },
 
+  /* --- 1b. SWARM -------------------------------------------------------- */
+  /* The cursors that build the page as you scroll (js/swarm.js). Their name
+     tags are the screens of the ShifuWok terminal. Add or remove names freely;
+     the swarm has 12 agents on a laptop and 8 on a phone, and reuses the list
+     if there are fewer names than agents. */
+  swarm: {
+    names: [
+      "Screener", "Event Radar", "Fund Tracker", "Ownership Map",
+      "Retail Sentiment", "Deal Desk", "Sector Rotation", "Disclosures",
+      "Corporate Actions", "Chart Match", "Weekly Research", "Ask a Stock"
+    ]
+  },
+
   /* --- 2. LINKS --------------------------------------------------------- */
   links: {
     email: "michaelwibo@gmail.com",
