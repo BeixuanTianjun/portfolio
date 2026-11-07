@@ -38,6 +38,10 @@ window.PROFILE = {
      the swarm has 12 agents on a laptop and 8 on a phone, and reuses the list
      if there are fewer names than agents. */
   swarm: {
+    /* how visible the cursors are, 0 to 1. Wandering cursors are kept almost
+       invisible so nothing distracts a reader; builders are a bit stronger. */
+    idleOpacity: 0.1,
+    buildOpacity: 0.3,
     names: [
       "Screener", "Event Radar", "Fund Tracker", "Ownership Map",
       "Retail Sentiment", "Deal Desk", "Sector Rotation", "Disclosures",
