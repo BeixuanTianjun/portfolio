@@ -28,6 +28,12 @@
   var COLORS = ['#18A0FB', '#F24E1E', '#0ACF83', '#A259FF', '#FFC700', '#FF7262',
                 '#1ABCFE', '#FF6EC7', '#7CFC00', '#FFA629', '#00E5FF', '#C792EA'];
   var SEL = '#35e5ff';          /* the site's own cyan, so the boxes belong to it */
+  /* Kept faint on purpose: the swarm should be noticed, not read over. Cursors
+     that are only wandering are nearly invisible; the pair that is building a
+     block is a little stronger so you can follow what is happening. */
+  var SW = P.swarm || {};
+  var OP_IDLE = typeof SW.idleOpacity === 'number' ? SW.idleOpacity : 0.1;
+  var OP_BUILD = typeof SW.buildOpacity === 'number' ? SW.buildOpacity : 0.3;
   var WIRE = '[data-reveal], .h2.split, .hero__name';
 
   var cv = document.createElement('canvas');
@@ -239,7 +245,7 @@
     if (t - wiresAt > 0.5) { wires = [].slice.call(document.querySelectorAll(WIRE)); wiresAt = t; }
     ctx.save();
     ctx.setLineDash([5, 4]); ctx.lineWidth = 1;
-    ctx.strokeStyle = 'rgba(255,255,255,.2)'; ctx.fillStyle = 'rgba(255,255,255,.035)';
+    ctx.strokeStyle = 'rgba(255,255,255,.12)'; ctx.fillStyle = 'rgba(255,255,255,.02)';
     wires.forEach(function (el) {
       if (done(el)) return;
       var r = el.getBoundingClientRect();
@@ -253,7 +259,7 @@
     var A = j.A, B = j.B;
     var x0 = Math.min(A.x, B.x), y0 = Math.min(A.y, B.y), x1 = Math.max(A.x, B.x), y1 = Math.max(A.y, B.y);
     var w = x1 - x0, h = y1 - y0;
-    ctx.save(); ctx.globalAlpha = clamp(j.alpha, 0, 1);
+    ctx.save(); ctx.globalAlpha = clamp(j.alpha, 0, 1) * 0.55;
     ctx.fillStyle = 'rgba(53,229,255,.10)'; ctx.strokeStyle = SEL; ctx.lineWidth = 1.3;
     ctx.fillRect(x0, y0, w, h); ctx.strokeRect(x0, y0, w, h);
     if (w > 18 && h > 18) {
@@ -270,12 +276,13 @@
   }
 
   function drawAgent(a) {
-    ctx.save(); ctx.translate(a.x, a.y); ctx.beginPath();
+    var building = a.busy && a.mode === 'build';
+    ctx.save(); ctx.globalAlpha = building ? OP_BUILD : OP_IDLE; ctx.translate(a.x, a.y); ctx.beginPath();
     ctx.moveTo(0, 0); ctx.lineTo(0, 17); ctx.lineTo(4.6, 13); ctx.lineTo(7.8, 20);
     ctx.lineTo(10.4, 18.8); ctx.lineTo(7.3, 12); ctx.lineTo(13, 12); ctx.closePath();
     ctx.fillStyle = a.c; ctx.strokeStyle = '#fff'; ctx.lineWidth = 1.2;
-    ctx.shadowColor = a.c; ctx.shadowBlur = 8; ctx.fill(); ctx.shadowBlur = 0; ctx.stroke();
-    if (a.busy && a.mode === 'build') {
+    ctx.fill(); ctx.stroke();
+    if (building) {
       ctx.font = '600 10px ui-monospace,Menlo,Consolas,monospace';
       var tw = ctx.measureText(a.name).width + 10;
       ctx.fillStyle = a.c; rrect(12, 18, tw, 15, 4); ctx.fill();
