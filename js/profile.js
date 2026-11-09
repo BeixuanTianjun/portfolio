@@ -42,10 +42,16 @@ window.PROFILE = {
        invisible so nothing distracts a reader; builders are a bit stronger. */
     idleOpacity: 0.1,
     buildOpacity: 0.3,
+    /* The name tags are agents from ShifuWok's own Kantor Agen: Jarvis runs
+       the office; Benedict ingests data, Daphne checks it, Audrey audits the
+       work, William verifies deploys, Sebastian finds the filings, Harriet
+       writes the emiten case, Eleanor builds screens, Charlotte writes the
+       weekly research, and Bruno, Bianca and Julian are bull, bear and judge
+       in the research debate. The swarm has 12 agents on a laptop and 8 on a
+       phone, and reuses the list if there are fewer names than agents. */
     names: [
-      "Screener", "Event Radar", "Fund Tracker", "Ownership Map",
-      "Retail Sentiment", "Deal Desk", "Sector Rotation", "Disclosures",
-      "Corporate Actions", "Chart Match", "Weekly Research", "Ask a Stock"
+      "Jarvis", "Benedict", "Daphne", "Audrey", "William", "Sebastian",
+      "Harriet", "Eleanor", "Charlotte", "Bruno", "Bianca", "Julian"
     ]
   },
 
@@ -375,7 +381,15 @@ window.PROFILE = {
   /* --- 9. PROJECTS ------------------------------------------------------ */
   /* Concrete things, so this section isn't just the experience list again. */
   projects: [
-{
+    {
+      title: "Kantor Agen: a 3D office for ShifuWok's agents",
+      year: "2026",
+      blurb:
+        "ShifuWok runs on scheduled data jobs and Claude Code subagents, and I wanted to see that work instead of reading logs. Kantor Agen is a 3D office (Three.js) with 38 named agents who only move when real work happens: a data pull, an AI call, a subagent run. Events come from the service log, Claude Code hooks, scheduled routines and the usage log, are cleaned before display (no user IDs, emails, prompts or keys), and reach the page through a constant-time key check and rate limits. It is admin-only, so there is no public link.",
+      tags: ["Three.js", "Node.js", "TypeScript", "Claude Code subagents", "Unit + browser tests"],
+      link: ""
+    },
+    {
       title: "TeknikalDrill",
       year: "2026",
       blurb:
