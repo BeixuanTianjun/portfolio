@@ -23,8 +23,8 @@
 
   var P = window.PROFILE || {};
   var NAMES = (P.swarm && P.swarm.names && P.swarm.names.length) ? P.swarm.names :
-    ['Screener', 'Event Radar', 'Fund Tracker', 'Ownership Map', 'Retail Sentiment', 'Deal Desk',
-     'Sector Rotation', 'Disclosures', 'Corporate Actions', 'Chart Match', 'Weekly Research', 'Ask a Stock'];
+    ['Jarvis', 'Benedict', 'Daphne', 'Audrey', 'William', 'Sebastian',
+     'Harriet', 'Eleanor', 'Charlotte', 'Bruno', 'Bianca', 'Julian'];
   var COLORS = ['#18A0FB', '#F24E1E', '#0ACF83', '#A259FF', '#FFC700', '#FF7262',
                 '#1ABCFE', '#FF6EC7', '#7CFC00', '#FFA629', '#00E5FF', '#C792EA'];
   var SEL = '#35e5ff';          /* the site's own cyan, so the boxes belong to it */
