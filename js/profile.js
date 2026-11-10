@@ -2,9 +2,13 @@
    profile.js — THE ONLY FILE YOU NEED TO EDIT.
    Every word on the website comes from this object.
 
-   Sources: the LinkedIn profile at linkedin.com/in/michael-wibowo, and
-   CV MICHAEL WIBOWO.pdf (Sep 2025). Where the two overlap, the longer
-   wording won. Lines tagged TODO are still open — search for them.
+   Sources: the LinkedIn profile at linkedin.com/in/michael-wibowo, the CV,
+   and shifuwok.com. Lines tagged TODO are still open — search for them.
+
+   Writing rule for this file (November 2026 rewrite): plain sentences, one
+   fact each, no slogans. The page covers everything Michael does (building
+   software, industrial engineering, small businesses, communities and
+   markets), so no single area should take over the hero or the cards.
    ========================================================================= */
 
 window.PROFILE = {
@@ -14,29 +18,26 @@ window.PROFILE = {
     name: "Michael Wibowo",
     initials: "MW",
     headline:
-      "Industrial Engineering @ BINUS · Financial Modeling & Valuation · Aspiring Investment Banking Analyst",
+      "Industrial Engineering @ BINUS · Builds ShifuWok · Runs small businesses",
     /* the words that type themselves out in the hero, one after another */
     roles: [
-      "Value Investing on the IDX",
-      "Financial Modeling & Valuation",
-      "Aspiring Investment Banking Analyst",
-      "Founder ×4"
+      "Industrial Engineering student",
+      "Building ShifuWok",
+      "Running small businesses",
+      "Data & operations",
+      "Investing since 2021"
     ],
     location: "Jakarta Metropolitan Area",
-    availability: "Open to work · Jakarta · on-site or hybrid",
+    availability: "Open to internships · Jakarta · from Feb 2027",
     /* Path to your photo, relative to index.html. "" hides the avatar. */
     photo: "assets/michael-wibowo.jpg",
     tagline:
-      "I built the IDX terminal I wanted, then put my own " +
-      "capital behind what it tells me. Five years in Indonesian equities " +
-      "and crypto, hunting mispriced value."
+      "I study Industrial Engineering at BINUS University. Outside class I " +
+      "build software, run small businesses and invest my own money."
   },
 
   /* --- 1b. SWARM -------------------------------------------------------- */
-  /* The cursors that build the page as you scroll (js/swarm.js). Their name
-     tags are the screens of the ShifuWok terminal. Add or remove names freely;
-     the swarm has 12 agents on a laptop and 8 on a phone, and reuses the list
-     if there are fewer names than agents. */
+  /* The cursors that build the page as you scroll (js/swarm.js). */
   swarm: {
     /* how visible the cursors are, 0 to 1. Wandering cursors are kept almost
        invisible so nothing distracts a reader; builders are a bit stronger. */
@@ -70,63 +71,64 @@ window.PROFILE = {
   },
 
   /* --- 3. NUMBERS that count up in the hero ----------------------------- */
+  /* Whole numbers only: the counter rounds. One number per area, so the hero
+     doesn't read as a trading page. */
   stats: [
-    { value: 5,   suffix: "+", label: "Years trading markets" },
-    { value: 100, suffix: "+", label: "Traders in the community" },
-    { value: 5,   suffix: "",  label: "Competition placings" }
+    { value: 4,   suffix: "",  label: "Businesses started" },
+    { value: 100, suffix: "+", label: "Community members" },
+    { value: 5,   suffix: "",  label: "Competition placings" },
+    { value: 5,   suffix: "+", label: "Years investing" }
   ],
 
   /* --- 4. ABOUT --------------------------------------------------------- */
-  /* TODO — your LinkedIn still has no About section. This draft is built from
-     your own CV and experience entries; rewrite it in your voice, then paste
-     the result back into LinkedIn so the two tell the same story. */
   about: {
     heading: "About",
     paragraphs: [
-      "I'm an Industrial Engineering undergraduate at BINUS University working towards a career in investment banking. Since 2021 I've run my own capital in Indonesian equities and crypto, looking for stocks the market has mispriced — which means the work is already valuation: read the business, decide what it's worth, and only then look at what it costs. The habits that came out of it — size the risk before the upside, write the thesis down, be wrong quickly and cheaply — are the ones I bring to modeling work.",
-      "ShifuWok (formerly MasterIDX) is the one I care about most. It began as a screening tool for my own positions and I kept building until it was a terminal: valuation, screening, ratios, broker-flow analysis, a public API — run by me alone, and still the tool I put my own capital through. Before that I'd been selling things for money since school, and I still am. A food stand run to a 50% margin inside three months. GrowYourUMKM, a marketing agency for local cafés and small private businesses, built and run for a year. MWcrypto, a trading community past 100 active traders where I call live market commentary and risk. BullzTCG, where I price, source and sell collectible card assets end to end. Right now I'm funding BINECA 2026 the same way — food resale, fundraising sales and merchandise.",
-      "I'm open to analyst internships in Jakarta — investment banking, equity research, corporate finance or valuation. On-site or hybrid."
+      "I'm in my third year of Industrial Engineering at BINUS University. Most of what I do outside class is building things and running small businesses.",
+      "The biggest one is ShifuWok, a research terminal for the Indonesian stock market that I built and run by myself. It started as a screener for my own trades. Inside it I also built Kantor Agen, a 3D office that shows the AI agents behind the site while they work.",
+      "I've been selling things since high school: a food stand that reached a 50% margin in three months, a small marketing agency for cafés in Banjarmasin, and now BullzTCG, where I buy and sell trading cards. I also run MWcrypto, a trading community of more than 100 members, and I coordinate the finance division for BINECA 2026.",
+      "In class I've worked on production planning, ergonomic product design, QFD and regression analysis. I'm looking for an internship from February 2027, full-time for up to 12 months, in data, operations, product or finance."
     ],
     facts: [
-      { k: "Based in",   v: "Jakarta Metropolitan Area" },
-      { k: "Studying",   v: "Industrial Engineering, BINUS University" },
-      { k: "Focus",      v: "Financial modeling · Valuation · Markets" },
-      { k: "Certifying in", v: "WPPE · RTA · WMI" },
-      { k: "Open to",    v: "Analyst internships · on-site or hybrid" }
+      { k: "Based in",       v: "Jakarta" },
+      { k: "Studying",       v: "Industrial Engineering, BINUS University · GPA 3.43" },
+      { k: "Building",       v: "ShifuWok · BullzTCG" },
+      { k: "Interested in",  v: "Data · Operations · Product · Markets" },
+      { k: "Available",      v: "Full-time from Feb 2027, up to 12 months" }
     ]
   },
 
   /* --- 5. SPECIALTIES — the headline cards ------------------------------ */
+  /* One card per area, in the order a reader should meet them. */
   specialties: [
     {
-      title: "Financial Modeling & Valuation",
+      title: "Building software",
       blurb:
-        "Three-statement models, DCFs and comparable company analysis built from the filings up — and then built into ShifuWok, because a method you have to productise is a method you can no longer hand-wave.",
-      tags: ["DCF", "Comparables", "Screening", "Excel"]
+        "I build the tools I need. ShifuWok is a stock research terminal I run alone, Kantor Agen shows its AI agents at work in 3D, TeknikalDrill is a practice-exam app I made for my RTA exam, and I built this site.",
+      tags: ["Web apps", "Data pipelines", "AI agents", "Testing"]
     },
     {
-      title: "Value & Markets",
+      title: "Industrial engineering & analysis",
       blurb:
-        "Five years of my own money on the line: mispriced names on the IDX held until the gap closes, and crypto traded live in front of 100+ people. Decide what it's worth before you look at the price — then cut on a broken thesis, not on a red day.",
-      tags: ["Value Investing", "Indonesian Equities", "Risk Management", "Technical Analysis"]
+        "Forecasting, aggregate planning and MRP for a production line, an ergonomic redesign measured with a fatigue scale, QFD built from a customer survey, and regression and clustering in Python.",
+      tags: ["Forecasting & MRP", "Ergonomics", "QFD", "Python & statistics"]
     },
     {
-      title: "Selling & Building",
+      title: "Running small businesses",
       blurb:
-        "From a school food stand at a 50% margin to a marketing agency, a 100-trader community and a collectibles business — and still running fundraising sales and merchandise to fund BINECA 2026. Source it, price it so the margin holds, then go and sell it.",
-      tags: ["Sales & Marketing", "Pricing", "Cost Control", "Business Management"]
+        "A school food stand, a marketing agency, a trading-card business and the fundraising sales for BINECA 2026. In each one I sourced the product, set the price and sold it myself.",
+      tags: ["Sales & marketing", "Pricing", "Procurement", "Events"]
     },
     {
-      title: "Leading & Coordinating",
+      title: "Markets",
       blurb:
-        "Head of an entrepreneur division for two years, finance division coordinator for BINECA 2026, and a semester mentoring first-year students through onboarding and a capstone run to completion.",
-      tags: ["Leadership", "Project Management", "Mentoring", "Communication"]
+        "I've invested in Indonesian stocks and crypto since 2021 and run a trading community of more than 100 members. This year I finished the WPPE and RTA training and Bank of America's investment banking simulation.",
+      tags: ["Technical analysis", "Valuation", "Risk management", "Capital markets"]
     }
   ],
 
   /* --- 6. SKILLS -------------------------------------------------------- */
-  /* Levels are self-assessed, and the site says so out loud (skillsNote
-     below) so nobody reads them as a certified score.
+  /* Levels are self-assessed, and the site says so (skillsNote below).
 
      Calibrated on one rule: YEARS OF DOING IT beats STUDYING IT NOW.
      - 85-90  you do this live, under real money or real deadlines, and
@@ -135,107 +137,94 @@ window.PROFILE = {
      - 55-69  you are actively learning it and have used it on small things
      - below  you have touched it, not much more
 
-     This is why the markets rows sit above the modeling row. It reads as
-     self-aware rather than inflated: a high score on Financial Modeling,
-     with no certification or coursework behind it, is a claim a recruiter
-     will test in the first five minutes, and failing that test makes them
-     doubt the 90% on Technical Analysis, which you have genuinely earned.
-
-     Valuation, Equity Research and Fundamental Analysis sit in the 60s-70s
-     rather than the 50s because picking mispriced IDX names with your own
-     money IS applied valuation — years of doing it, by the rule above.
-     Financial Modeling stays lowest of the group because that row means
-     building the three-statement model and the DCF from scratch, which is
-     the one part of this you have not done under instruction.
-
-     Move any number you disagree with — it's your claim, not mine. */
+     November 2026: the markets rows were cut from nine to four so the grid
+     covers everything, and five rows were added for the build and
+     engineering work (Python, Statistics, Production Planning, Process
+     Mapping, Web & App Building). Their levels are a first guess on the rule
+     above; move any number you disagree with — it's your claim, not mine. */
   skills: [
-    { name: "Technical Analysis",    level: 90, group: "Markets" },
-    { name: "Trade Execution",       level: 86, group: "Markets" },
-    { name: "Crypto Markets",        level: 85, group: "Markets" },
-    { name: "Risk Management",       level: 80, group: "Markets" },
-    { name: "Indonesian Equities",   level: 76, group: "Markets" },
+    { name: "Web & App Building",   level: 65, group: "Build" },
+    { name: "Python",               level: 60, group: "Build" },
+    { name: "Microsoft Excel",      level: 72, group: "Build" },
+    { name: "PowerPoint",           level: 70, group: "Build" },
 
-    { name: "Market Research",       level: 75, group: "Finance" },
-    { name: "Fundamental Analysis",  level: 72, group: "Finance" },
-    { name: "Valuation",             level: 66, group: "Finance" },
-    { name: "Equity Research",       level: 62, group: "Finance" },
-    { name: "Financial Modeling",    level: 58, group: "Finance" },
+    { name: "Data Analysis",        level: 62, group: "Engineering" },
+    { name: "Statistics",           level: 62, group: "Engineering" },
+    { name: "Production Planning",  level: 65, group: "Engineering" },
+    { name: "Process Mapping",      level: 65, group: "Engineering" },
 
-    { name: "Business Management", level: 78, group: "Business" },
-    { name: "Sales & Marketing",   level: 75, group: "Business" },
-    { name: "Project Management",  level: 75, group: "Business" },
-    { name: "Problem Solving",     level: 76, group: "Business" },
+    { name: "Business Management",  level: 78, group: "Business" },
+    { name: "Sales & Marketing",    level: 75, group: "Business" },
+    { name: "Project Management",   level: 75, group: "Business" },
+    { name: "Problem Solving",      level: 76, group: "Business" },
 
-    { name: "Microsoft Excel",     level: 72, group: "Tools" },
-    { name: "PowerPoint",          level: 70, group: "Tools" },
-    { name: "Data Analysis",       level: 62, group: "Tools" },
+    { name: "Technical Analysis",   level: 90, group: "Markets" },
+    { name: "Risk Management",      level: 80, group: "Markets" },
+    { name: "Fundamental Analysis", level: 72, group: "Markets" },
+    { name: "Valuation",            level: 66, group: "Markets" },
 
-    { name: "Communication",       level: 85, group: "Human" },
-    { name: "Leadership",          level: 82, group: "Human" },
-    { name: "Teamwork",            level: 82, group: "Human" },
-    { name: "Adaptability",        level: 80, group: "Human" }
+    { name: "Communication",        level: 85, group: "People" },
+    { name: "Leadership",           level: 82, group: "People" },
+    { name: "Teamwork",             level: 82, group: "People" },
+    { name: "Adaptability",         level: 80, group: "People" }
   ],
 
-  /* Printed under the Skills heading. Saying the numbers are self-assessed
-     costs nothing and stops a reader treating them as a test score. */
+  /* Printed under the Skills heading. */
   skillsNote:
-    "Self-assessed, on one rule: years of doing it beats studying it now. " +
-    "The markets rows are five years of my own money on the line. The " +
-    "modeling row is the one I have no formal training in yet, and it's " +
-    "scored like it.",
+    "Self-assessed. A higher number means I've done it more often in real " +
+    "work, not that I've studied it longer.",
 
   /* words that scroll past in the marquee strip */
   marquee: [
-    "Financial Modeling", "Valuation", "Investment Banking", "Technical Analysis",
-    "Risk Management", "Market Research", "DCF", "Entrepreneurship"
+    "Industrial Engineering", "Product Building", "Data Analysis", "Production Planning",
+    "Entrepreneurship", "Community", "Ergonomics", "Markets"
   ],
 
   /* --- 7. EXPERIENCE ---------------------------------------------------- */
-  /* Current roles first, then past roles by end date. Merged from LinkedIn
-     and the CV — the CV supplied the three oldest entries. */
+  /* Current roles first, then past roles by end date. */
   experience: [
     {
       role: "Founder",
       org: "ShifuWok (formerly MasterIDX)",
       type: "Self-employed",
-      period: "Aug 2026 — Present",
+      period: "Aug 2026 – Present",
       location: "Jakarta, Indonesia",
       bullets: [
-        "Built and run a market terminal for the Indonesian exchange: valuation, screening, financial ratios and broker-flow analysis (bandarmology — broker-level accumulation), with a public API.",
-        "Sole operator end to end — product, data pipeline, billing and support. Subscription opens October 2026 at IDR 299,000 a month, free for beta testers until then.",
-        "Started as a screening tool for my own positions and kept growing until it was a terminal — and it is still the one I run my own capital through, so a weakness in the analysis costs me before it costs a subscriber."
+        "Built and run shifuwok.com, a research terminal for Indonesian stocks. It covers all 962 listed companies with prices, broker flows, KSEI ownership and official IDX announcements, and every number shows its source and date.",
+        "I do it alone: data pipeline, screens, testing, billing and support.",
+        "The screener's rules are published with their test results, and a paper-trading portfolio is logged in the open, losses included.",
+        "It started as a screening tool for my own trades."
       ],
-      tags: ["Valuation", "IDX", "Bandarmology", "API", "SaaS"],
-      link: "https://masteridx.com/",
-      linkLabel: "Open masteridx.com"
+      tags: ["Product", "Data pipeline", "IDX & KSEI data", "Testing"],
+      link: "https://shifuwok.com/",
+      linkLabel: "Open shifuwok.com"
     },
     {
       role: "Coordinator of Finance Division, BINECA 2026",
       org: "HIMTRI BINUS",
       type: "Organization",
-      period: "Jul 2026 — Present",
+      period: "Jul 2026 – Present",
       location: "Hybrid",
       /* TODO — one number would finish this: how much the division has raised
          so far, or the target. "Raised IDR X of an IDR Y target" beats every
          adjective on this page. */
       bullets: [
-        "Raise the event's budget rather than administer it — the finance division funds BINECA 2026 by selling, not by billing.",
-        "Run food resale and student fundraising sales alongside event merchandise: sourcing stock, setting the price that actually clears a margin, and marketing each drop to campus.",
-        "Coordinate the division across pre-orders and selling days so stock, cash and hand-off stay accounted for."
+        "The finance division raises the event budget by selling instead of waiting for an allocation.",
+        "We run food resale, fundraising sales and event merchandise. I source stock, set prices that keep a margin and promote each sale on campus.",
+        "I keep stock, cash and hand-offs reconciled across pre-orders and selling days."
       ],
-      tags: ["Sales & Marketing", "Pricing", "Coordinating Skills", "Growth Strategies"]
+      tags: ["Sales", "Pricing", "Coordination", "Events"]
     },
     {
       role: "Founder",
       org: "BullzTCG",
       type: "Self-employed",
-      period: "Mar 2026 — Present",
+      period: "Mar 2026 – Present",
       location: "Jakarta, Indonesia · On-site",
       bullets: [
-        "Oversaw procurement, valuation, and sales of Pokemon and One Piece TCG assets, driving high-margin profitability through targeted market positioning and excellent client communication."
+        "I buy, price and sell Pokémon and One Piece trading cards, online and at pop-up booths such as the one at Mall Taman Anggrek."
       ],
-      tags: ["Communication", "Market Research", "Procurement"],
+      tags: ["Procurement", "Pricing", "Sales"],
       images: [
         { src: "assets/projects/bullz-booth", alt: "The BullzTCG pop-up booth at Mall Taman Anggrek, stock laid out and buyers at the counter" },
         { src: "assets/projects/bullz-cards", alt: "Graded Pokemon cards in the display case" }
@@ -245,13 +234,13 @@ window.PROFILE = {
       role: "Founder & Community Manager",
       org: "MWcrypto",
       type: "Full-time",
-      period: "Nov 2024 — Present",
+      period: "Nov 2024 – Present",
       location: "Jakarta, Indonesia · Hybrid",
       bullets: [
-        "Founded and scaled a trading community to 100+ active traders, providing live market commentary, execution strategy, and real-time risk management guidance during active trading sessions.",
-        "Conducted regular market analysis to identify opportunities for new business development and competitive advantages."
+        "Started a crypto trading community in November 2024 that has grown past 100 members.",
+        "I post trade setups with an entry, take-profit levels, a stop and the reasoning, plus regular market commentary and live sessions."
       ],
-      tags: ["Technical Analysis", "Market Research", "Risk Management", "Community"],
+      tags: ["Community", "Technical Analysis", "Risk Management"],
       images: [
         { src: "assets/projects/mwc-calls-elite", alt: "Two dated calls posted to the elite-plan channel, each with the chart behind it" },
         { src: "assets/projects/mwc-call-hype", alt: "A HYPE long posted with entry, three take-profit levels, a stop, a conviction score and the reasoning" },
@@ -259,29 +248,29 @@ window.PROFILE = {
       ]
     },
     {
-      role: "Trader",
+      role: "Investor",
       org: "Self-employed",
       type: "Self-employed",
-      period: "Feb 2021 — Present",
-      location: "Jakarta, Indonesia · Hybrid",
+      period: "Feb 2021 – Present",
+      location: "Jakarta, Indonesia",
       bullets: [
-        "Running my own capital across Indonesian equities and crypto since 2021.",
-        "On the equity side the thesis is mispricing: find companies trading below what the business is worth, size the position against how wrong I can afford to be, and wait for the gap to close rather than for a chart to move.",
-        "Two exits, one per horizon. A value position is cut when the thesis breaks — not when the price moves against me, which is the same information I already paid for. A trade is cut when the trend breaks.",
-        "Keep a written record of entries, sizing and outcomes — the 2025 book is what I show when someone asks whether the approach survives a full year rather than a good month."
+        "I've invested my own money in Indonesian stocks and crypto since 2021.",
+        "With stocks I look for companies priced below what the business is worth and hold until the gap closes. I sell when the reason I bought is no longer true.",
+        "I log every trade with its entry, size and result."
       ],
-      tags: ["Value Investing", "Indonesian Equities", "Risk Management", "Trade Execution"]
+      tags: ["Indonesian Equities", "Valuation", "Risk Management"]
     },
     {
       role: "Freshmen Partner",
       org: "BINUS University",
       type: "Part-time",
-      period: "Sep 2025 — Jan 2026",
+      period: "Sep 2025 – Jan 2026",
       location: "West Jakarta, Indonesia · On-site",
       bullets: [
-        "Mentored first-year students through university onboarding, tracked academic compliance for mandatory assessments, and directed a capstone tree-planting initiative from execution to completion."
+        "Mentored first-year students through onboarding and tracked their mandatory assessments.",
+        "Led the group's tree-planting capstone from start to finish."
       ],
-      tags: ["Mentoring", "Project Management", "Communication"],
+      tags: ["Mentoring", "Project Management"],
       images: [
         { src: "assets/projects/freshmen-partner", alt: "The Freshmen Partner team at BINUS" }
       ]
@@ -293,32 +282,32 @@ window.PROFILE = {
       period: "2024",
       location: "Jakarta, Indonesia",
       bullets: [
-        "Directed the development and implementation of comprehensive sales and marketing strategies, achieving growth objectives and expanding the client base."
+        "Handled sales and marketing strategy and helped grow the client base."
       ],
-      tags: ["Sales & Marketing", "Business Management"]
+      tags: ["Sales & Marketing"]
     },
     {
       role: "Founder",
       org: "GrowYourUMKM",
       type: "Self-employed",
-      period: "2023 — 2024",
+      period: "2023 – 2024",
       location: "Banjarmasin, South Borneo",
       bullets: [
-        "Built a marketing agency for private local businesses — cafés and small enterprises — handling their marketing and client growth."
+        "Started a small marketing agency for cafés and local businesses and ran it for a year, finding the clients and handling their marketing."
       ],
-      tags: ["Business Management", "Sales & Marketing", "Client Growth"]
+      tags: ["Business Management", "Sales & Marketing"]
     },
     {
       role: "Head of Entrepreneur Division",
       org: "OSIS",
       type: "Student government",
-      period: "2021 — 2023",
+      period: "2021 – 2023",
       location: "Banjarmasin, South Borneo",
       bullets: [
-        "Launched and managed a successful food stand, achieving a 50% profit margin within the first three months of operation by implementing effective cost control measures and strategic pricing.",
-        "Organized school events and university marketing campaigns that increased foot traffic and customer engagement, leading to a notable rise in sales during the event."
+        "Ran a school food stand that reached a 50% profit margin in its first three months by keeping costs down and pricing carefully.",
+        "Organised school events and marketing campaigns that brought in more visitors and sales."
       ],
-      tags: ["Leadership", "Cost Control", "Pricing", "Events"]
+      tags: ["Leadership", "Pricing", "Events"]
     }
   ],
 
@@ -327,14 +316,14 @@ window.PROFILE = {
     {
       school: "BINUS University",
       degree: "Bachelor of Industrial Engineering",
-      period: "Sep 2024 — 2028 (expected)",
-      detail: "GPA 3.43/4.00"
+      period: "Sep 2024 – 2028 (expected)",
+      detail: "GPA 3.43/4.00. Semesters 6 and 7 free of classes through the BINUS Enrichment Program."
     },
     {
       school: "Finplan",
-      degree: "WPPE — Finance, General",
+      degree: "WPPE preparation programme",
       period: "Sep 2026",
-      detail: "Securities broker-dealer representative certification programme."
+      detail: "Securities broker-dealer representative training."
     },
     {
       school: "Kanaan Christian High School",
@@ -344,15 +333,9 @@ window.PROFILE = {
     }
   ],
 
-  /* Nothing here is passed, so nothing says it is. "Candidate" is a regulated
-     term for the CFA Program — it means registered for a specific exam — and
-     a finance reader knows it, so claiming it loosely costs more than it buys.
-
-     Ordered by how committed each one is, which is the only ordering that
-     means anything: taking it now, then certain, then next.
-
-     Ordered by how far along each one is: WPPE's training is finished and
-     only the examination remains, RTA is the one being studied now.
+  /* Nothing here is passed, so nothing says it is. Ordered by how far along
+     each one is: WPPE and RTA training are finished and only the exams
+     remain; WMI and CSA/CTA come after.
 
      TODO — this assumes RTA, CTA and CSA all come from CSA Institute, which
      is how they were described; if the technical analyst track is run by a
@@ -375,97 +358,97 @@ window.PROFILE = {
       ]
     },
     { name: "WMI — Investment Manager Representative (Wakil Manajer Investasi)", issuer: "OJK", year: "Planned" },
-    { name: "CSA & CTA",                            issuer: "CSA Institute", year: "After RTA" }
+    { name: "CSA & CTA", issuer: "CSA Institute", year: "After RTA" }
   ],
 
   /* --- 9. PROJECTS ------------------------------------------------------ */
-  /* Concrete things, so this section isn't just the experience list again. */
+  /* Ordered to show the range: building, engineering coursework, data,
+     product design, then markets. */
   projects: [
     {
-      title: "Kantor Agen: a 3D office for ShifuWok's agents",
+      title: "Kantor Agen: ShifuWok's 3D agent office",
       year: "2026",
       blurb:
-        "ShifuWok runs on scheduled data jobs and Claude Code subagents, and I wanted to see that work instead of reading logs. Kantor Agen is a 3D office (Three.js) with 38 named agents who only move when real work happens: a data pull, an AI call, a subagent run. Events come from the service log, Claude Code hooks, scheduled routines and the usage log, are cleaned before display (no user IDs, emails, prompts or keys), and reach the page through a constant-time key check and rate limits. It is admin-only, so there is no public link.",
-      tags: ["Three.js", "Node.js", "TypeScript", "Claude Code subagents", "Unit + browser tests"],
+        "A 3D office (Three.js) inside ShifuWok where 38 named agents move only when real work happens: a data pull, an AI call, a subagent run. Events are stripped of user data before they reach the page and arrive through a key check with rate limits. It's admin-only, so there's no public link.",
+      tags: ["Three.js", "TypeScript", "Node.js", "AI agents", "Browser tests"],
       link: ""
     },
     {
-      title: "TeknikalDrill",
+      title: "Production planning for a wireless mouse",
       year: "2026",
       blurb:
-        "A mock-test application covering the RTA and CTA syllabus, with interactive summaries and mind maps per competency unit. Built while studying for the RTA exam myself — the fastest way to find out what you actually don't know is to have to write the questions.",
-      tags: ["Technical Analysis", "RTA & CTA", "Self-built"],
-      link: "https://beixuantianjun.github.io/teknikaldrill/",
-      linkLabel: "Open TeknikalDrill"
-    },
-    {
-      title: "2025 Crypto Track Record",
-      year: "2025",
-      blurb:
-        "A full year of trades kept and documented — entries, sizing and outcomes — the record I point at when someone asks whether the approach actually works.",
-      tags: ["Trade Execution", "Risk Management", "Documentation"],
-      images: [
-        { src: "assets/projects/track-record-log", alt: "The trade log: entry, take profit, stop loss, leverage and outcome per position, with a running win rate" },
-        { src: "assets/projects/track-record-pepe", alt: "A closed PEPEUSDT position at +909%, shared in a chat; the other people in the thread are redacted" }
-      ],
-      link: ""
-      /* TODO — link the record, or a write-up of it, if you're happy to show it. */
-    },
-{
-      title: "Production & Operations Analysis \u2014 Razer Wireless Mouse",
-      year: "2026",
-      blurb:
-        "A full production plan for a wireless mouse line. Benchmarked five forecasting methods on MSE, MAPE and MAD \u2014 Winter's won at MAPE 2.67 \u2014 then compared four aggregate planning strategies and four lot-sizing heuristics, built the assembly chart, product structure and a bill of materials across 17 components and 7 levels, and closed with MPS, MRP, Kanban inventory control and machine and worker scheduling.",
+        "A production plan for a Razer wireless mouse line, done for Production & Operations Analysis. Compared five forecasting methods (Winter's had the lowest error, MAPE 2.67), four aggregate-planning strategies and four lot-sizing methods, built a 17-component bill of materials, and finished with MPS, MRP, Kanban and machine and worker schedules.",
       tags: ["Forecasting", "MRP & MPS", "Lot Sizing", "Scheduling"],
       image: "assets/projects/poa-razer",
       imageAlt: "Final poster for the Production & Operation Analysis project on the Razer wireless mouse",
       link: ""
     },
     {
-      title: "Human-Integrated System \u2014 Automatic Paint Roller",
+      title: "Ergonomic paint roller",
       year: "2026",
       blurb:
-        "An ergonomic redesign of a paint roller, sized from anthropometric percentiles (P5\u2013P95) and a time-and-motion study, with an automatic pump that removes the repeated bending to re-dip. Measured against the original with a Fatigue Assessment Scale: average operator fatigue fell 53%. The companion sales website was tested with SUS and WAMMI, reliability checked in SPSS by Cronbach's alpha.",
+        "A paint roller redesigned from anthropometric data and a time-and-motion study, with an automatic pump so the user doesn't bend down to reload paint. Operator fatigue dropped 53% on the Fatigue Assessment Scale. The sales website was tested with SUS and WAMMI, and its reliability checked in SPSS.",
       tags: ["Ergonomics", "Time & Motion Study", "SPSS", "Usability Testing"],
       image: "assets/projects/his-paint-roller",
       imageAlt: "Final poster for the Human-Integrated System project on the automatic paint roller",
       link: ""
     },
     {
-      title: "Engineering Data Analysis \u2014 Exam Score Prediction",
+      title: "Predicting exam scores",
       year: "2025",
       blurb:
-        "A multiple linear regression over a 20,000-row dataset of study habits and exam results, built in Python and Google Colab. R-squared 0.63 on the test set with train and test within 0.01 of each other, so no overfitting. Validated with residual, fitted-value and Q\u2013Q diagnostics, and the mild heteroscedasticity and non-normal residuals found were reported rather than hidden. Drivers tested one at a time: sleep quality significant by ANOVA, internet access not by t-test. Students then segmented into three clusters by K-Means.",
+        "Multiple linear regression on 20,000 rows of study-habit data in Python. R-squared was 0.63 on the test set, with train and test within 0.01 of each other. I checked the residuals and reported the problems I found, tested each factor with ANOVA and t-tests (sleep quality mattered, internet access didn't), and grouped the students into three clusters with K-Means.",
       tags: ["Python", "Regression", "ANOVA & t-test", "K-Means"],
       link: "assets/projects/EDA_Final_Project.pdf",
       linkLabel: "Open the project deck (PDF)"
     },
     {
-      title: "System Engineering & Analysis \u2014 Sustainable Product Design",
+      title: "Sustainable product design",
       year: "2025",
       blurb:
-        "Two halves of one course. For the individual midterm I took a biodegradable tumbler made from agricultural waste through the whole cycle myself: a 30-respondent Voice-of-Customer survey weighted into six customer needs (eco-friendly material highest at 22%), a QFD House of Quality translating those into six technical requirements, then two design alternatives scored against each other by Tabular Additive Method \u2014 3.69 against 3.00. For the group final the four members\u2019 concepts were scored on eight weighted criteria by Additive Weighting; the multifunction hanger won at 4.78 and the group carried it through detail design, technical drawing and production planning.",
-      tags: ["QFD", "Voice of Customer", "Weighted Decision", "Product Design"],
+        "Individual part: a biodegradable tumbler made from farm waste. I surveyed 30 people, turned their answers into six weighted needs, built a QFD House of Quality and scored two designs (3.69 against 3.00). Group part: we scored four concepts on eight criteria, picked a multifunction hanger (4.78) and took it through detailed design, technical drawings and production planning.",
+      tags: ["QFD", "Voice of Customer", "Weighted Scoring", "Product Design"],
       image: "assets/projects/sea-qfd",
       imageAlt: "The QFD House of Quality matrix for the tumbler: six customer requirements weighted against six functional requirements, with the competitive assessment",
       link: ""
     },
     {
-      title: "Investment Banking Job Simulation \u2014 Bank of America",
+      title: "TeknikalDrill",
       year: "2026",
       blurb:
-        "A self-paced job simulation run by Bank of America through Forage. Screened an acquisition target for a client by SWOT analysis against their stated strategic criteria, built a DCF to an implied equity and per-share value, ran a sensitivity analysis showing how that valuation moves as the assumptions move, and wrote the target company profile. Not a qualification \u2014 the tasks are the point, and they are the same shape as the work.",
-      tags: ["DCF", "SWOT", "Sensitivity Analysis", "M&A Screening"],
+        "A practice-exam app for the RTA and CTA syllabus, with summaries and mind maps for each unit. I built it while studying for the RTA exam.",
+      tags: ["Web app", "Technical Analysis", "Self-built"],
+      link: "https://beixuantianjun.github.io/teknikaldrill/",
+      linkLabel: "Open TeknikalDrill"
+    },
+    {
+      title: "Investment banking job simulation",
+      year: "2026",
+      blurb:
+        "Bank of America's simulation on Forage. I screened an acquisition target with a SWOT analysis, built a DCF to a per-share value, ran a sensitivity analysis and wrote the company profile.",
+      tags: ["DCF", "SWOT", "Sensitivity Analysis"],
       images: [
         { src: "assets/projects/forage-boa-ibd", alt: "Forage certificate of completion for the Bank of America Investment Banking Job Simulation, September 2026" }
       ],
       link: ""
     },
     {
-      title: "Campus Tree-Planting Capstone",
+      title: "2025 crypto trade log",
       year: "2025",
       blurb:
-        "Directed a tree-planting initiative from execution through to completion as part of the Freshmen Partner programme at BINUS.",
+        "Every crypto trade I made in 2025, logged with its entry, size and result.",
+      tags: ["Record Keeping", "Risk Management"],
+      images: [
+        { src: "assets/projects/track-record-log", alt: "The trade log: entry, take profit, stop loss, leverage and outcome per position, with a running win rate" },
+        { src: "assets/projects/track-record-pepe", alt: "A closed PEPEUSDT position at +909%, shared in a chat; the other people in the thread are redacted" }
+      ],
+      link: ""
+    },
+    {
+      title: "Campus tree planting",
+      year: "2025",
+      blurb:
+        "Led the tree-planting project for my Freshmen Partner group at BINUS.",
       tags: ["Project Management", "Leadership"],
       link: ""
     }
@@ -480,39 +463,39 @@ window.PROFILE = {
       name: "Cedea Cooking Competition",
       place: "1st place",
       year: "2023",
-      blurb: "A culinary competition organised by Cedea Seafood, judged on creations made with their products."
+      blurb: "A cooking competition run by Cedea Seafood, judged on dishes made with their products."
     },
     {
       name: "KalPhyCo Rocket Championship",
       place: "Best Design",
       year: "2024",
-      blurb: "An annual championship bringing together young engineers and rocket enthusiasts from across the province."
+      blurb: "A provincial rocket championship for students."
     },
     {
       name: "Kihajar STEM by Kemendikbud",
       place: "Finalist",
       year: "2023",
-      blurb: "A national programme from the Ministry of Education supporting innovative student work in science, technology, engineering and mathematics."
+      blurb: "A national STEM competition run by the Ministry of Education."
     },
     {
       name: "Jurnalistik FLS2N",
       place: "Finalist",
       year: "2023",
-      blurb: "The journalism category of FLS2N, the national student arts festival, judged on journalistic skill and creativity."
+      blurb: "The journalism category of FLS2N, the national student arts festival."
     },
     {
       name: "AVIMSA Doctor Championship",
       place: "Top 30",
       year: "2023 & 2024",
-      blurb: "The Avicenna Medical Science Award, an annual national medical science competition for high school students."
+      blurb: "The Avicenna Medical Science Award, a national medical science competition for high school students."
     }
   ],
 
   /* --- 11. CONTACT ------------------------------------------------------ */
   contact: {
-    heading: "Let's talk markets",
+    heading: "Let's talk",
     blurb:
-      "Open to analyst internships and finance roles in Jakarta — investment banking, equity research, corporate finance or valuation. Email reaches me fastest.",
+      "I'm looking for an internship in Jakarta from February 2027, full-time for up to 12 months. Data, operations, product and finance roles all interest me. Email is the fastest way to reach me.",
     cta: "Send a message"
   }
 };
