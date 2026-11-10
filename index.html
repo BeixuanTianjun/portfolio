@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Michael Wibowo — Portfolio</title>
 <meta name="description" content="Michael Wibowo, Industrial Engineering student at BINUS. Builds ShifuWok, runs small businesses and a trading community, and is looking for an internship from February 2027.">
-<meta name="theme-color" content="#05060a">
+<meta name="theme-color" content="#f3f0e8">
 <link rel="canonical" href="https://beixuantianjun.github.io/portfolio/">
 
 <!-- Link previews. Crawlers read these before any JS runs, so unlike the rest
@@ -27,21 +27,12 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 <link rel="preload" href="assets/fonts/manrope-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/fonts.css?v=20261008c">
-<link rel="stylesheet" href="css/style.css?v=20261008c">
+<link rel="stylesheet" href="css/style.css?v=20261110b">
 </head>
 <body>
 
-<!-- grain + glow layers ------------------------------------------------ -->
-<div class="fx-aurora" aria-hidden="true">
-  <span class="blob blob--a"></span>
-  <span class="blob blob--b"></span>
-  <span class="blob blob--c"></span>
-</div>
+<!-- background: faint graph paper -->
 <div class="fx-grid" aria-hidden="true"></div>
-<div class="fx-noise" aria-hidden="true"></div>
-
-<!-- cursor -------------------------------------------------------------- -->
-<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span></div>
 
 <!-- preloader ----------------------------------------------------------- -->
 <div class="loader" id="loader">
@@ -75,8 +66,6 @@
 
   <!-- HERO -------------------------------------------------------------- -->
   <section class="hero" id="hero">
-    <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
-
     <div class="hero__inner">
       <div class="hero__id reveal" data-reveal>
         <figure class="avatar" id="avatar" hidden><img id="avatarImg" alt="" width="320" height="320"></figure>
@@ -109,7 +98,7 @@
   <section class="section" id="about">
     <div class="wrap about">
       <div class="about__head">
-        <p class="eyebrow reveal" data-reveal><i></i>01 — About</p>
+        <p class="eyebrow reveal" data-reveal><i></i>01 / About</p>
         <h2 class="h2 split" id="aboutHeading"></h2>
       </div>
       <div class="about__body">
@@ -122,7 +111,7 @@
   <!-- SPECIALTIES ------------------------------------------------------- -->
   <section class="section" id="specialties">
     <div class="wrap">
-      <p class="eyebrow reveal" data-reveal><i></i>02 — Specialties</p>
+      <p class="eyebrow reveal" data-reveal><i></i>02 / Specialties</p>
       <h2 class="h2 split">What I'm good at</h2>
       <p class="lede reveal" data-reveal>Four areas I spend most of my time on.</p>
       <div class="specs" id="specs"></div>
@@ -132,7 +121,7 @@
   <!-- SKILLS ------------------------------------------------------------ -->
   <section class="section" id="skills">
     <div class="wrap">
-      <p class="eyebrow reveal" data-reveal><i></i>03 — Skills</p>
+      <p class="eyebrow reveal" data-reveal><i></i>03 / Skills</p>
       <h2 class="h2 split">The toolkit</h2>
       <p class="lede reveal" data-reveal id="skillsNote"></p>
       <div class="skills__filters" id="skillFilters" role="tablist" aria-label="Filter skills"></div>
@@ -143,7 +132,7 @@
   <!-- EXPERIENCE -------------------------------------------------------- -->
   <section class="section" id="experience">
     <div class="wrap">
-      <p class="eyebrow reveal" data-reveal><i></i>04 — Experience</p>
+      <p class="eyebrow reveal" data-reveal><i></i>04 / Experience</p>
       <h2 class="h2 split">Where I've been</h2>
       <div class="timeline">
         <div class="timeline__rail" aria-hidden="true"><i id="timelineFill"></i></div>
@@ -166,7 +155,7 @@
   <!-- WORK -------------------------------------------------------------- -->
   <section class="section" id="work">
     <div class="wrap">
-      <p class="eyebrow reveal" data-reveal><i></i>05 — Selected work</p>
+      <p class="eyebrow reveal" data-reveal><i></i>05 / Selected work</p>
       <h2 class="h2 split">What I've done</h2>
       <div class="projects" id="projects"></div>
     </div>
@@ -175,7 +164,7 @@
   <!-- AWARDS ------------------------------------------------------------ -->
   <section class="section" id="awards">
     <div class="wrap">
-      <p class="eyebrow reveal" data-reveal><i></i>06 — Achievements</p>
+      <p class="eyebrow reveal" data-reveal><i></i>06 / Achievements</p>
       <h2 class="h2 split">Competitions</h2>
       <p class="lede reveal" data-reveal>National and regional competitions in science, engineering, journalism and cooking.</p>
       <div class="awards" id="awards-grid"></div>
@@ -185,7 +174,7 @@
   <!-- CONTACT ----------------------------------------------------------- -->
   <section class="section section--contact" id="contact">
     <div class="wrap contact">
-      <p class="eyebrow reveal" data-reveal><i></i>07 — Contact</p>
+      <p class="eyebrow reveal" data-reveal><i></i>07 / Contact</p>
       <h2 class="h2 h2--xl split" id="contactHeading"></h2>
       <p class="lede reveal" data-reveal id="contactBlurb"></p>
 
@@ -220,8 +209,7 @@
 </footer>
 
 <script src="js/profile.js?v=20261110a"></script>
-<script src="js/hero.js?v=20261008c"></script>
-<script src="js/swarm.js?v=20261107b"></script>
-<script src="js/main.js?v=20261107a"></script>
+<script src="js/swarm.js?v=20261110b"></script>
+<script src="js/main.js?v=20261110b"></script>
 </body>
 </html>
