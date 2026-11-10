@@ -25,9 +25,12 @@
   var NAMES = (P.swarm && P.swarm.names && P.swarm.names.length) ? P.swarm.names :
     ['Jarvis', 'Benedict', 'Daphne', 'Audrey', 'William', 'Sebastian',
      'Harriet', 'Eleanor', 'Charlotte', 'Bruno', 'Bianca', 'Julian'];
-  var COLORS = ['#18A0FB', '#F24E1E', '#0ACF83', '#A259FF', '#FFC700', '#FF7262',
-                '#1ABCFE', '#FF6EC7', '#7CFC00', '#FFA629', '#00E5FF', '#C792EA'];
-  var SEL = '#35e5ff';          /* the site's own cyan, so the boxes belong to it */
+  /* muted ink colours that sit on the paper background, not neon */
+  var COLORS = ['#17160f', '#c4411d', '#3e5c76', '#6b7a3a', '#9a6a1f', '#6d4b6b',
+                '#47443c', '#2f6b5e', '#8a3b2e', '#4f5d75', '#7d786c', '#5c4a32'];
+  var css = window.getComputedStyle(document.documentElement);
+  var SEL = (css.getPropertyValue('--swarm-select') || '').trim() || '#c4411d';
+  var WIRE_LINE = (css.getPropertyValue('--swarm-wire') || '').trim() || 'rgba(23,22,15,.18)';
   /* Kept faint on purpose: the swarm should be noticed, not read over. Cursors
      that are only wandering are nearly invisible; the pair that is building a
      block is a little stronger so you can follow what is happening. */
@@ -245,7 +248,7 @@
     if (t - wiresAt > 0.5) { wires = [].slice.call(document.querySelectorAll(WIRE)); wiresAt = t; }
     ctx.save();
     ctx.setLineDash([5, 4]); ctx.lineWidth = 1;
-    ctx.strokeStyle = 'rgba(255,255,255,.12)'; ctx.fillStyle = 'rgba(255,255,255,.02)';
+    ctx.strokeStyle = WIRE_LINE; ctx.fillStyle = 'rgba(23,22,15,.025)';
     wires.forEach(function (el) {
       if (done(el)) return;
       var r = el.getBoundingClientRect();
@@ -260,7 +263,7 @@
     var x0 = Math.min(A.x, B.x), y0 = Math.min(A.y, B.y), x1 = Math.max(A.x, B.x), y1 = Math.max(A.y, B.y);
     var w = x1 - x0, h = y1 - y0;
     ctx.save(); ctx.globalAlpha = clamp(j.alpha, 0, 1) * 0.55;
-    ctx.fillStyle = 'rgba(53,229,255,.10)'; ctx.strokeStyle = SEL; ctx.lineWidth = 1.3;
+    ctx.fillStyle = 'rgba(196,65,29,.06)'; ctx.strokeStyle = SEL; ctx.lineWidth = 1.2;
     ctx.fillRect(x0, y0, w, h); ctx.strokeRect(x0, y0, w, h);
     if (w > 18 && h > 18) {
       var hs = [[x0, y0], [x0 + w / 2, y0], [x1, y0], [x0, y0 + h / 2], [x1, y0 + h / 2], [x0, y1], [x0 + w / 2, y1], [x1, y1]];
@@ -270,7 +273,7 @@
       ctx.font = '600 11px ui-monospace,Menlo,Consolas,monospace';
       var tw = ctx.measureText(label).width + 12;
       ctx.fillStyle = SEL; rrect(x1 - tw, y1 + 8, tw, 18, 4); ctx.fill();
-      ctx.fillStyle = '#05060a'; ctx.fillText(label, x1 - tw + 6, y1 + 21);
+      ctx.fillStyle = '#f3f0e8'; ctx.fillText(label, x1 - tw + 6, y1 + 21);
     }
     ctx.restore();
   }
@@ -280,13 +283,13 @@
     ctx.save(); ctx.globalAlpha = building ? OP_BUILD : OP_IDLE; ctx.translate(a.x, a.y); ctx.beginPath();
     ctx.moveTo(0, 0); ctx.lineTo(0, 17); ctx.lineTo(4.6, 13); ctx.lineTo(7.8, 20);
     ctx.lineTo(10.4, 18.8); ctx.lineTo(7.3, 12); ctx.lineTo(13, 12); ctx.closePath();
-    ctx.fillStyle = a.c; ctx.strokeStyle = '#fff'; ctx.lineWidth = 1.2;
+    ctx.fillStyle = a.c; ctx.strokeStyle = '#f3f0e8'; ctx.lineWidth = 1.2;
     ctx.fill(); ctx.stroke();
     if (building) {
       ctx.font = '600 10px ui-monospace,Menlo,Consolas,monospace';
       var tw = ctx.measureText(a.name).width + 10;
       ctx.fillStyle = a.c; rrect(12, 18, tw, 15, 4); ctx.fill();
-      ctx.fillStyle = '#05060a'; ctx.fillText(a.name, 17, 29);
+      ctx.fillStyle = '#f3f0e8'; ctx.fillText(a.name, 17, 29);
     }
     ctx.restore();
   }

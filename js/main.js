@@ -59,7 +59,7 @@
   var heroName = $('#heroName');
   if (heroName) {
     heroName.textContent = meta.name || 'Your Name';
-    splitText(heroName, true);
+    splitText(heroName, false);   /* plain ink: no gradient on the last name */
   }
 
   /* hero stats */
@@ -101,7 +101,7 @@
   var specs = $('#specs');
   if (specs && P.specialties) {
     specs.innerHTML = P.specialties.map(function (s, i) {
-      return '<article class="spec tilt" data-reveal>' +
+      return '<article class="spec" data-reveal>' +
         '<span class="spec__num">' + String(i + 1).padStart(2, '0') + '</span>' +
         '<i class="spec__bar"></i>' +
         '<h3>' + esc(s.title) + '</h3>' +
