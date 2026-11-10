@@ -26,10 +26,10 @@
     ['Jarvis', 'Benedict', 'Daphne', 'Audrey', 'William', 'Sebastian',
      'Harriet', 'Eleanor', 'Charlotte', 'Bruno', 'Bianca', 'Julian'];
   /* muted ink colours that sit on the paper background, not neon */
-  var COLORS = ['#17160f', '#c4411d', '#3e5c76', '#6b7a3a', '#9a6a1f', '#6d4b6b',
+  var COLORS = ['#17160f', '#d0241c', '#3e5c76', '#6b7a3a', '#9a6a1f', '#6d4b6b',
                 '#47443c', '#2f6b5e', '#8a3b2e', '#4f5d75', '#7d786c', '#5c4a32'];
   var css = window.getComputedStyle(document.documentElement);
-  var SEL = (css.getPropertyValue('--swarm-select') || '').trim() || '#c4411d';
+  var SEL = (css.getPropertyValue('--swarm-select') || '').trim() || '#d0241c';
   var WIRE_LINE = (css.getPropertyValue('--swarm-wire') || '').trim() || 'rgba(23,22,15,.18)';
   /* Kept faint on purpose: the swarm should be noticed, not read over. Cursors
      that are only wandering are nearly invisible; the pair that is building a
@@ -263,7 +263,7 @@
     var x0 = Math.min(A.x, B.x), y0 = Math.min(A.y, B.y), x1 = Math.max(A.x, B.x), y1 = Math.max(A.y, B.y);
     var w = x1 - x0, h = y1 - y0;
     ctx.save(); ctx.globalAlpha = clamp(j.alpha, 0, 1) * 0.55;
-    ctx.fillStyle = 'rgba(196,65,29,.06)'; ctx.strokeStyle = SEL; ctx.lineWidth = 1.2;
+    ctx.fillStyle = 'rgba(208,36,28,.06)'; ctx.strokeStyle = SEL; ctx.lineWidth = 1.2;
     ctx.fillRect(x0, y0, w, h); ctx.strokeRect(x0, y0, w, h);
     if (w > 18 && h > 18) {
       var hs = [[x0, y0], [x0 + w / 2, y0], [x1, y0], [x0, y0 + h / 2], [x1, y0 + h / 2], [x0, y1], [x0 + w / 2, y1], [x1, y1]];
