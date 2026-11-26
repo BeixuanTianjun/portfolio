@@ -1,93 +1,63 @@
 # Portfolio — Michael Wibowo
 
-A single-page personal portfolio built around motion: a reactive particle field
-behind the hero, kinetic typography, scroll-driven reveals, animated skill
-rings, a progressing timeline and a magnetic cursor.
-
-Content comes from linkedin.com/in/michael-wibowo and `CV MICHAEL WIBOWO.pdf`.
-Anything neither source supplied is tagged `TODO` in `js/profile.js` — search
-for it.
+A portfolio laid out as a set of engineering drawing sheets: 14 sheets, one on
+screen at a time, each with a numbered frame, a header strip and a title block
+in the bottom-right corner. Paper, ink and one red, the same as `assets/og.png`
+and the LinkedIn banner.
 
 No build step, no framework, no CDN. Open `index.html` and it runs.
 
 ## Edit your content in one place
 
-**Everything on the page comes from `js/profile.js`.** Markup, styles and motion
-never need touching to change what the site says. Open that file, replace the
-placeholder text with your LinkedIn content, save, refresh.
+**Every word on the page comes from `js/profile.js`.** The sheets come out of
+it in this order:
 
 ```
-meta            name, headline, location, photo, the roles that type out
-links           email, LinkedIn, GitHub, Instagram, résumé (blank = hidden)
-stats           the four numbers that count up in the hero
-about           your LinkedIn About section + the facts list beside it
-specialties     3-4 headline cards — the things you want to be hired for
-skills          name + level (0-100) + group; group names become the filter pills
-skillsNote      the line under the Skills heading (blank = the line is hidden)
-marquee         the words that scroll past under the hero
-experience      one entry per LinkedIn role, newest first
-education       schools and degrees
-certifications  name, issuer, year
-projects        selected work, with an optional link
-achievements    competitions — `place` drives the badge, see below
-contact         heading, blurb, button label
+01 cover        meta            name, tagline, chips, the four cover facts, photo
+02 about        about           paragraphs + keywords (links feed the side card)
+03 education    education       BINUS numbers, the courses behind the projects
+04-07 projects  projects[]      one sheet per industrial-engineering project
+08-09 work      work[]          ShifuWok, BINECA
+10 business     business        entries + pictures
+11 markets      markets         entries + pictures
+12 skills       skills          five groups
+13 awards       leadership, achievements
+14 contact      contact, links
 ```
 
-Three things are derived automatically, so don't hand-maintain them:
+Add an entry to `projects[]` or `work[]` and it gets its own sheet; the
+numbering, the title blocks and the menu update themselves. Keep the total
+under 15 sheets.
 
-- **Skill filter pills** are generated from the distinct `group` values.
-- **Achievement badges**: a `place` starting 1st / 2nd / 3rd / Winner /
-  Champion / Gold / Best gets the solid gradient pill; anything else (Finalist,
-  Top 30) gets an outline, so a win stays louder than a placing.
-- **The contact form** hides itself whenever `links.email` is empty.
-- **The hero portrait** appears only once the file named by `meta.photo`
-  actually loads. A blank value, a typo or a missing file leaves no gap and no
-  broken-image icon — so an empty `meta.photo` is a valid state, not a bug.
+A project or work entry has `kicker` (course or area), `title`, `meta`,
+`lead`, `steps` (what was done, in order), optional `stats`, `chain` (input to
+result, the last box turns red), `methods`, `images` and optional links.
 
-**Section numbering** (01 — About, 02 — Specialties …) is written in the markup,
-so it only changes if you add or remove a whole section.
+**Pictures** are named without the extension: `"assets/projects/poa-razer"`
+loads `poa-razer-thumb.webp` on the sheet and `poa-razer.webp` when someone
+clicks it. The first picture of a sheet is shown large and the rest as a strip
+of details; clicking any of them opens a viewer that steps through every
+picture on that sheet. The details of the two posters (`poa-*`, `his-*`) and
+the five `eda-*` slides were cut from the posters and from
+`EDA_Final_Project.pdf`, so a reader sees them without opening a file.
 
-`links.resume` is deliberately empty: the CV PDF carries a phone number, and
-linking it publishes that number. Make a version without it before filling the
-field in.
+`links.resume` is deliberately empty: the CV PDF carries a phone number.
 
-**Skill levels are self-assessed and the page says so**, via `skillsNote`. They
-are banded on one rule — years of doing it beats studying it now — and the
-banding is written above the `skills` array so later edits stay on the same
-scale. A high score on something the headline calls you a *candidate* for reads
-as a contradiction and costs the rows you actually earned their credibility.
+## Reading the sheets
 
-## The swarm that builds the page
-
-`js/swarm.js` is a layer on top of the page, not a second page. Instead of each
-block fading in the moment it scrolls into view, a pair of agents (the coloured
-cursors) flies to it, one pins the top-left corner and the other drags to the
-bottom-right, and the block is revealed once the selection box is drawn.
-Blocks that are not built yet show as dashed wireframes. While the loader runs,
-the agents swirl in the middle of the screen; at the contact button they
-orbit it once everything visible is built.
-
-`main.js` still owns the page and decides what is observed. The only contract
-is `PortfolioSwarm.build(el, show)`, which calls `show(el)` when the agents
-finish. Nothing in the markup or CSS changed.
-
-- **Agent name tags** come from `swarm.names` in `js/profile.js`. They are the
-  screens of the ShifuWok terminal; rename them freely.
-- **It switches itself off** under `prefers-reduced-motion`, when the file is
-  missing, and when the URL has `?swarm=off`. In all three the page behaves
-  exactly as before.
-- **12 agents on a laptop, 8 on a phone.** Small blocks (skill rings, stats) are
-  built faster so a long list does not make you wait.
-- If a tab is hidden while blocks are queued, a 9 second safety net reveals
-  them anyway, so content is never stuck behind an animation.
+Next and Back in the bottom bar, the arrow keys, Page Up / Page Down,
+Home / End, or a sideways swipe on a phone. The menu lists every sheet. The
+address follows along (`#production-planning`), so a link can open one sheet
+directly. On a phone each sheet scrolls on its own.
 
 ## Run it
 
 ```bash
-open index.html                    # works straight off the filesystem
-
-npx http-server . -p 8080 -c-1     # or serve it, if you prefer
+python3 -m http.server 8080        # then open http://localhost:8080
 ```
+
+Opening `index.html` straight from the disk also works; only the preloaded
+heading font is refused there by the browser.
 
 ## Deploying
 
@@ -125,63 +95,21 @@ with it.
 ## Structure
 
 ```
-Portfolio/
-├── index.html          # markup shell; sections are empty containers
-├── css/
-│   ├── fonts.css       # @font-face for self-hosted Manrope
-│   └── style.css       # tokens, then components, then reduced-motion
-├── js/
-│   ├── profile.js      # ← all of your content
-│   ├── hero.js         # the particle constellation (canvas 2D)
-│   └── main.js         # renders every section, then wires the motion
-└── assets/
-    ├── og.png          # 1200×630 link-preview card
-    ├── <your photo>    # whatever meta.photo names
-    └── fonts/          # Manrope 300-800 (woff2)
+index.html          shell: the deck, the bottom bar, the menu, the picture viewer
+css/fonts.css       self-hosted Manrope and Gelasio
+css/style.css       tokens, the sheet frame, the layouts, small screens, print
+js/profile.js       all of the content
+js/sheets.js        builds the sheets from profile.js and runs the deck
+assets/og.png       1200×630 link-preview card
+assets/projects/    pictures (name.webp + name-thumb.webp) and the EDA deck PDF
+swarm/              the older swarm page, still online at /swarm/
 ```
-
-`brand/`, one level up, holds the LinkedIn banner and its source. It is not
-part of the site and is not deployed — see `brand/README.md`.
-
-`main.js` runs in two passes: render every section from `PROFILE`, then attach
-the observers. That order matters — the observers have nothing to watch until
-the content exists.
-
-## What moves, and why
-
-| Effect | Where |
-| --- | --- |
-| Particle constellation, repelled by the cursor | `hero.js` |
-| Name cascading in character by character | `splitText()` in `main.js` |
-| Role text typing and deleting on a loop | `main.js` |
-| Stat and percentage counters | `countUp()` |
-| Blur-and-lift reveals, staggered per group | `IntersectionObserver` + `[data-reveal]` |
-| Skill rings drawing to their level | SVG `stroke-dashoffset`, `.skill.is-in` |
-| Timeline rail filling as you scroll past | `#timelineFill` in `onScroll()` |
-| Spotlight following the cursor across cards | `--mx` / `--my` custom properties |
-| 3D tilt on specialty cards | `.tilt` handler, pointer devices only |
-| Custom cursor with a trailing ring, magnetic buttons | `.cursor`, `.magnetic` |
-
-The hero canvas stops itself when it scrolls out of view or the tab is hidden,
-so it isn't burning frames in the background.
 
 ## Accessibility
 
-- `prefers-reduced-motion: reduce` kills every animation, freezes the canvas on
-  a single still frame, hides the custom cursor and shows all content at rest.
-- Content is real text, never baked into images.
-- Focus rings are visible and the mobile menu manages `aria-expanded`.
+- One sheet is shown at a time; the others are `inert` and hidden from screen
+  readers, and each sheet is labelled "Sheet n of 14: title".
+- `prefers-reduced-motion: reduce` turns the sheet transition off.
+- Every picture has alt text; the viewer and the menu close with Escape.
 - Everything from `profile.js` is HTML-escaped before it reaches the DOM.
-
-## The contact form
-
-There's no backend. Submitting validates the three fields, then hands the
-message to the visitor's mail client via `mailto:` using `links.email`.
-
-**While `links.email` is empty the form is hidden entirely** — a form that can
-only fail is worse than no form — and the LinkedIn button carries the section
-on its own. Fill the address in and the form reappears.
-
-If you'd rather have real submissions land in an inbox, point the `<form>` at
-Formspree, Netlify Forms or similar and delete the submit handler at the bottom
-of `main.js`.
+- Printing gives every sheet its own page.
