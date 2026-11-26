@@ -35,6 +35,7 @@
 *,*::before,*::after{box-sizing:border-box}
 html,body{height:100%}
 body{
+  font-variant-numeric:lining-nums;
   margin:0;overflow:hidden;background:var(--paper);color:var(--ink);
   font:400 15px/1.55 var(--font);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
 }
@@ -126,7 +127,8 @@ ol,ul{padding:0;list-style:none}
 .specs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:28px;border-top:1.5px solid var(--ink)}
 .specs>div{padding:10px 14px 0 0}
 .specs>div+div{padding-left:14px;border-left:1px solid var(--line)}
-.specs dt,.rows dt,.stats dt{font:500 9.5px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.specs dt,.rows dt{font:500 9.5px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.stats dt{font:500 12.5px/1.35 var(--font);color:var(--ink-3);margin-top:2px}
 .specs dd{font-size:15px;font-weight:600;margin-top:3px}
 .cover__photo{position:relative;justify-self:center;width:min(100%,340px);margin:14px}
 .portrait{background:var(--ink);padding:14px;border-radius:14px}
@@ -151,11 +153,10 @@ ol,ul{padding:0;list-style:none}
 
 /* numbers */
 .stats{display:flex;flex-wrap:wrap;gap:10px 22px;margin:4px 0 6px}
-.stats>div{display:flex;flex-direction:column-reverse;border-left:3px solid var(--red);padding-left:12px}
-.stats dd{font:600 clamp(22px,2.1vw,28px)/1.05 var(--serif);letter-spacing:-.01em}
-.stats--edu{margin:22px 0 8px;display:grid;grid-template-columns:auto auto minmax(0,1fr)}
-.stats--edu dd{font-size:clamp(30px,3.4vw,44px)}
-.stats--edu dt{max-width:34ch;line-height:1.5}
+.stats>div{display:flex;flex-direction:column-reverse;justify-content:flex-end;border-left:3px solid var(--red);padding-left:12px}
+.stats dd{font:700 clamp(21px,1.9vw,26px)/1.1 var(--font);letter-spacing:-.02em;font-variant-numeric:lining-nums tabular-nums}
+.stats--edu{margin:22px 0 8px;gap:12px 40px}
+.stats--edu dd{font-size:clamp(28px,3vw,40px)}
 
 .courses li{display:flex;gap:14px;align-items:baseline;padding:9px 0;border-top:1px solid var(--line);font-size:15.5px;font-weight:500}
 .courses li:first-child{border-top:1.5px solid var(--ink)}
@@ -297,7 +298,6 @@ ol,ul{padding:0;list-style:none}
   .cover__photo{order:-1;width:min(44%,170px);justify-self:start;margin:14px 14px 22px}
   .specs{grid-template-columns:repeat(2,minmax(0,1fr))}
   .certs{grid-template-columns:1fr}
-  .stats--edu{grid-template-columns:1fr}
   .rows--wide{grid-template-columns:1fr 1fr}
   .skill ul{columns:1}
   .bar{left:12px;right:12px;bottom:12px;justify-content:space-between}
@@ -330,7 +330,7 @@ ol,ul{padding:0;list-style:none}
   .steps li{padding:8px 11px}
   .steps p{font-size:12.3px;line-height:1.45}
   .steps h4{font-size:13.5px}
-  .stats dd{font-size:22px}
+  .stats dd{font-size:20px}
   .chain{margin-top:8px}
   .chain__step{font-size:12px;padding:5px 10px}
   .methods{font-size:12px;margin-top:6px}

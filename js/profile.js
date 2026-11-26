@@ -89,8 +89,7 @@ window.PROFILE = {
     period: "Sep 2024 – 2028 (expected) · Jakarta",
     numbers: [
       { v: "3.43", l: "GPA out of 4.00" },
-      { v: "2028", l: "Expected graduation" },
-      { v: "Feb 2027", l: "Free for an internship: semesters 6 and 7 have no classes (BINUS Enrichment Program)" }
+      { v: "2028", l: "Expected graduation" }
     ],
     /* the courses behind the project sheets */
     courses: [
