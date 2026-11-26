@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Michael Wibowo — Portfolio</title>
-<meta name="description" content="Michael Wibowo, Industrial Engineering student at BINUS. Builds ShifuWok, runs small businesses and a trading community, and is looking for an internship from February 2027.">
+<meta name="description" content="Michael Wibowo, Industrial Engineering student at BINUS. Production planning, ergonomics, QFD and data projects, plus ShifuWok and small businesses. Looking for an internship from February 2027.">
 <meta name="theme-color" content="#f3f0e8">
 <link rel="canonical" href="https://beixuantianjun.github.io/portfolio/">
 
@@ -24,192 +24,48 @@
 <meta name="twitter:title" content="Michael Wibowo — Portfolio">
 <meta name="twitter:description" content="Industrial Engineering student at BINUS. Builds ShifuWok, runs small businesses and a trading community. Open to internships in Jakarta from February 2027.">
 <meta name="twitter:image" content="https://beixuantianjun.github.io/portfolio/assets/og.png?v=20261110">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
-<link rel="preload" href="assets/fonts/manrope-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/fonts.css?v=20261008c">
-<link rel="stylesheet" href="css/style.css?v=20261110c">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23f3f0e8'/><rect x='6' y='6' width='88' height='88' fill='none' stroke='%2317160f' stroke-width='6'/><text x='50' y='66' font-family='Georgia,serif' font-weight='700' font-size='44' text-anchor='middle' fill='%23d0241c'>MW</text></svg>">
+<link rel="preload" href="assets/fonts/gelasio-normal-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css?v=20261126a">
+<link rel="stylesheet" href="css/style.css?v=20261126a">
 </head>
 <body>
 
-<!-- background: faint graph paper -->
-<div class="fx-grid" aria-hidden="true"></div>
+<!-- a set of drawing sheets, one on screen at a time; js/sheets.js fills them -->
+<div class="progress" aria-hidden="true"><i id="progress"></i></div>
 
-<!-- preloader ----------------------------------------------------------- -->
-<div class="loader" id="loader">
-  <div class="loader__inner">
-    <div class="loader__name" id="loaderName"></div>
-    <div class="loader__bar"><i></i></div>
-    <div class="loader__pct" id="loaderPct">0</div>
+<main class="deck" id="deck" aria-live="polite"></main>
+
+<nav class="bar" aria-label="Sheets">
+  <button class="bar__btn bar__prev" id="prev" type="button" aria-label="Previous sheet">‹</button>
+  <p class="bar__where" id="where"></p>
+  <div class="bar__right">
+    <button class="bar__btn bar__menu" id="menuBtn" type="button" aria-controls="menu" aria-expanded="false">☰ <span>Menu</span></button>
+    <button class="bar__btn bar__next" id="next" type="button"><span>Next</span> ›</button>
+  </div>
+</nav>
+
+<div class="menu" id="menu" hidden>
+  <div class="menu__panel" role="dialog" aria-modal="true" aria-labelledby="menuTitle">
+    <div class="menu__head">
+      <h2 id="menuTitle">Drawing register</h2>
+      <button class="bar__btn" type="button" data-close aria-label="Close menu">✕</button>
+    </div>
+    <ol class="register" id="register"></ol>
+    <p class="menu__hint">Arrow keys, Page Up / Page Down or a sideways swipe also turn the sheet.</p>
   </div>
 </div>
 
-<!-- scroll progress ----------------------------------------------------- -->
-<div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Picture">
+  <button class="bar__btn lightbox__close" id="lbClose" type="button" aria-label="Close picture">✕</button>
+  <button class="bar__btn lightbox__prev" id="lbPrev" type="button" aria-label="Previous picture">‹</button>
+  <figure><img alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button class="bar__btn lightbox__next" id="lbNext" type="button" aria-label="Next picture">›</button>
+</div>
 
-<!-- nav ----------------------------------------------------------------- -->
-<header class="nav" id="nav">
-  <a class="nav__logo magnetic" href="#top"><span id="navInitials"></span><i class="nav__pulse"></i></a>
-  <nav class="nav__links" id="navLinks" aria-label="Sections">
-    <a href="#about">About</a>
-    <a href="#specialties">Specialties</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#work">Work</a>
-    <a href="#awards">Awards</a>
-    <a href="#contact">Contact</a>
-    <i class="nav__ink" id="navInk" aria-hidden="true"></i>
-  </nav>
-  <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
-</header>
+<noscript><p class="noscript">This portfolio needs JavaScript to turn its sheets. You can reach Michael at michaelwibo@gmail.com.</p></noscript>
 
-<main id="top">
-
-  <!-- HERO -------------------------------------------------------------- -->
-  <section class="hero" id="hero">
-    <div class="hero__inner">
-      <div class="hero__id reveal" data-reveal>
-        <figure class="avatar" id="avatar" hidden><img id="avatarImg" alt="" width="320" height="320"></figure>
-        <p class="hero__status"><i class="dot"></i><span id="heroAvailability"></span></p>
-      </div>
-
-      <h1 class="hero__name" id="heroName"></h1>
-
-      <p class="hero__roles">
-        <span class="hero__roleSwap"><span id="heroRole"></span><i class="caret"></i></span>
-      </p>
-
-      <p class="hero__tagline reveal" data-reveal id="heroTagline"></p>
-
-      <div class="hero__actions reveal" data-reveal>
-        <a class="btn btn--primary magnetic" href="#work"><span>See the work</span></a>
-        <a class="btn btn--ghost magnetic" href="#contact"><span>Get in touch</span></a>
-      </div>
-
-      <ul class="hero__stats" id="heroStats"></ul>
-    </div>
-
-    <a class="hero__scroll" href="#about" aria-label="Scroll down"><span></span></a>
-  </section>
-
-  <!-- MARQUEE ----------------------------------------------------------- -->
-  <div class="marquee" aria-hidden="true"><div class="marquee__track" id="marqueeTrack"></div></div>
-
-  <!-- ABOUT ------------------------------------------------------------- -->
-  <section class="section" id="about">
-    <div class="wrap about">
-      <div class="about__head">
-        <p class="eyebrow reveal" data-reveal><i></i>01 / About</p>
-        <h2 class="h2 split" id="aboutHeading"></h2>
-      </div>
-      <div class="about__body">
-        <div class="about__text" id="aboutText"></div>
-        <dl class="about__facts" id="aboutFacts"></dl>
-      </div>
-    </div>
-  </section>
-
-  <!-- SPECIALTIES ------------------------------------------------------- -->
-  <section class="section" id="specialties">
-    <div class="wrap">
-      <p class="eyebrow reveal" data-reveal><i></i>02 / Specialties</p>
-      <h2 class="h2 split">What I'm good at</h2>
-      <p class="lede reveal" data-reveal>Four areas I spend most of my time on.</p>
-      <div class="specs" id="specs"></div>
-    </div>
-  </section>
-
-  <!-- SKILLS ------------------------------------------------------------ -->
-  <section class="section" id="skills">
-    <div class="wrap">
-      <p class="eyebrow reveal" data-reveal><i></i>03 / Skills</p>
-      <h2 class="h2 split">The toolkit</h2>
-      <p class="lede reveal" data-reveal id="skillsNote"></p>
-      <div class="skills__filters" id="skillFilters" role="tablist" aria-label="Filter skills"></div>
-      <div class="skills__grid" id="skillsGrid"></div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -------------------------------------------------------- -->
-  <section class="section" id="experience">
-    <div class="wrap">
-      <p class="eyebrow reveal" data-reveal><i></i>04 / Experience</p>
-      <h2 class="h2 split">Where I've been</h2>
-      <div class="timeline">
-        <div class="timeline__rail" aria-hidden="true"><i id="timelineFill"></i></div>
-        <ol class="timeline__list" id="timeline"></ol>
-      </div>
-
-      <div class="edu">
-        <div class="edu__col">
-          <h3 class="h3 reveal" data-reveal>Education</h3>
-          <div id="education"></div>
-        </div>
-        <div class="edu__col">
-          <h3 class="h3 reveal" data-reveal>Certifications</h3>
-          <ul class="certs" id="certs"></ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WORK -------------------------------------------------------------- -->
-  <section class="section" id="work">
-    <div class="wrap">
-      <p class="eyebrow reveal" data-reveal><i></i>05 / Selected work</p>
-      <h2 class="h2 split">What I've done</h2>
-      <div class="projects" id="projects"></div>
-    </div>
-  </section>
-
-  <!-- AWARDS ------------------------------------------------------------ -->
-  <section class="section" id="awards">
-    <div class="wrap">
-      <p class="eyebrow reveal" data-reveal><i></i>06 / Achievements</p>
-      <h2 class="h2 split">Competitions</h2>
-      <p class="lede reveal" data-reveal>National and regional competitions in science, engineering, journalism and cooking.</p>
-      <div class="awards" id="awards-grid"></div>
-    </div>
-  </section>
-
-  <!-- CONTACT ----------------------------------------------------------- -->
-  <section class="section section--contact" id="contact">
-    <div class="wrap contact">
-      <p class="eyebrow reveal" data-reveal><i></i>07 / Contact</p>
-      <h2 class="h2 h2--xl split" id="contactHeading"></h2>
-      <p class="lede reveal" data-reveal id="contactBlurb"></p>
-
-      <form class="form reveal" data-reveal id="contactForm" novalidate>
-        <div class="field">
-          <input id="f-name" name="name" type="text" required placeholder=" " autocomplete="name">
-          <label for="f-name">Your name</label><i class="field__line"></i>
-        </div>
-        <div class="field">
-          <input id="f-email" name="email" type="email" required placeholder=" " autocomplete="email">
-          <label for="f-email">Email</label><i class="field__line"></i>
-        </div>
-        <div class="field field--full">
-          <textarea id="f-msg" name="message" rows="4" required placeholder=" "></textarea>
-          <label for="f-msg">What's on your mind?</label><i class="field__line"></i>
-        </div>
-        <button class="btn btn--primary magnetic" type="submit"><span id="contactCta">Send</span></button>
-        <p class="form__note" id="formNote" role="status" aria-live="polite"></p>
-      </form>
-
-      <ul class="social" id="social"></ul>
-    </div>
-  </section>
-</main>
-
-<footer class="foot">
-  <div class="wrap foot__inner">
-    <span id="footName"></span>
-    <span class="foot__meta"><span id="footYear"></span> · Built by hand, no frameworks</span>
-    <a href="#top" class="foot__top magnetic">Back to top ↑</a>
-  </div>
-</footer>
-
-<script src="js/profile.js?v=20261110a"></script>
-<script src="js/swarm.js?v=20261110c"></script>
-<script src="js/main.js?v=20261110b"></script>
+<script src="js/profile.js?v=20261126a"></script>
+<script src="js/sheets.js?v=20261126a"></script>
 </body>
 </html>

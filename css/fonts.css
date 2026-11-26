@@ -11,3 +11,9 @@
   src:url("../assets/fonts/manrope-latin-700-normal.woff2") format("woff2")}
 @font-face{font-family:"Manrope";font-style:normal;font-weight:800;font-display:swap;
   src:url("../assets/fonts/manrope-latin-800-normal.woff2") format("woff2")}
+/* Gelasio (SIL Open Font License) for headings — the same serif as og.png
+   and the LinkedIn banner. */
+@font-face{font-family:"Gelasio";font-style:normal;font-weight:600;font-display:swap;
+  src:url("../assets/fonts/gelasio-normal-600.woff2") format("woff2")}
+@font-face{font-family:"Gelasio";font-style:italic;font-weight:500;font-display:swap;
+  src:url("../assets/fonts/gelasio-italic-500.woff2") format("woff2")}
