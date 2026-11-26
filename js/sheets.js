@@ -226,40 +226,30 @@
       '</dl>' +
     '</div>', 'sheet--contact');
 
-  /* --- frame + title block around every sheet ---------------------------- */
+  /* --- every page: a dark rail on the left, the content on the right ------ */
   var N = sheets.length;
-  var COLS = 8, ROWS = 4;
-  function zones() {
-    var top = '', side = '', i;
-    for (i = 1; i <= COLS; i++) top += '<span>' + i + '</span>';
-    for (i = 0; i < ROWS; i++) side += '<span>' + 'ABCDEFGH'.charAt(i) + '</span>';
-    return '<div class="z z--t" aria-hidden="true">' + top + '</div><div class="z z--b" aria-hidden="true">' + top + '</div>' +
-           '<div class="z z--l" aria-hidden="true">' + side + '</div><div class="z z--r" aria-hidden="true">' + side + '</div>';
-  }
-  function titleBlock(s, i) {
-    return '<div class="tblock" aria-label="Title block">' +
-      '<div><dt>Drawn by</dt><dd>' + esc(m.name) + '</dd></div>' +
-      '<div class="tblock__title"><dt>Title</dt><dd>' + esc(s.menu) + '</dd></div>' +
-      '<div><dt>Scale</dt><dd>1 : 1</dd></div>' +
-      '<div class="tblock__sheet"><dt>Sheet</dt><dd>' + pad(i + 1) + ' / ' + pad(N) + '</dd></div>' +
-    '</div>';
+  function dots(i) {
+    var out = '';
+    for (var k = 0; k < N; k++) out += '<i class="' + (k === i ? 'is-on' : k < i ? 'is-past' : '') + '"></i>';
+    return '<span class="rail__dots">' + out + '</span>';
   }
 
   var deck = document.getElementById('deck');
   deck.innerHTML = sheets.map(function (s, i) {
-    return '<section class="sheet ' + s.cls + '" id="s-' + esc(s.id) + '" data-i="' + i + '" aria-label="Sheet ' + (i + 1) + ' of ' + N + ': ' + esc(s.menu) + '" aria-roledescription="sheet">' +
-      '<div class="sheet__frame">' + zones() +
-        '<div class="sheet__inner">' +
-          '<header class="sheet__head"><span><b>' + esc(m.initials) + '</b> · ' + esc(m.name) + ' · Portfolio ' + esc(m.year) + '</span>' +
-            '<span>' + esc(s.section) + ' · MW-' + pad(i + 1) + '</span></header>' +
-          '<div class="sheet__body">' + s.html + '</div>' +
-          '<footer class="sheet__foot">' + titleBlock(s, i) + '</footer>' +
-        '</div>' +
-        '<i class="mark mark--tl"></i><i class="mark mark--tr"></i><i class="mark mark--bl"></i><i class="mark mark--br"></i>' +
+    return '<section class="sheet ' + s.cls + '" id="s-' + esc(s.id) + '" data-i="' + i + '" aria-label="Page ' + (i + 1) + ' of ' + N + ': ' + esc(s.menu) + '" aria-roledescription="page">' +
+      '<div class="slide">' +
+        '<aside class="rail" aria-hidden="true">' +
+          '<span class="rail__brand">' + esc(m.first.charAt(0)) + '<span>' + esc(m.last.charAt(0)) + '</span></span>' +
+          '<span class="rail__num">' + pad(i + 1) + '</span>' +
+          '<span class="rail__sec">' + esc(s.section) + '</span>' +
+          '<span class="rail__title">' + esc(s.menu) + '</span>' +
+          dots(i) +
+        '</aside>' +
+        '<div class="sheet__inner"><div class="sheet__body">' + s.html + '</div></div>' +
       '</div></section>';
   }).join('');
 
-  /* menu: the drawing register */
+  /* menu: every page as a card */
   var reg = document.getElementById('register');
   reg.innerHTML = sheets.map(function (s, i) {
     return '<li><a href="#' + esc(s.id) + '" data-go="' + i + '"><span>' + pad(i + 1) + '</span>' + esc(s.menu) +
