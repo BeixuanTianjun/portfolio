@@ -120,10 +120,10 @@
       return '<div><dt>' + esc(s.l) + '</dt><dd>' + esc(s.v) + '</dd></div>';
     }).join('') + '</dl>' +
     '<div class="split split--even">' +
-      '<div><h3 class="h3">Courses behind the project sheets</h3>' +
-        '<ol class="courses">' + e.courses.map(function (c, i) {
-          return '<li><span>' + pad(i + 4) + '</span>' + esc(c) + '</li>';
-        }).join('') + '</ol></div>' +
+      '<div><h3 class="h3">Courses behind the projects</h3>' +
+        '<ul class="courses">' + e.courses.map(function (c) {
+          return '<li>' + esc(c) + '</li>';
+        }).join('') + '</ul></div>' +
       '<div><h3 class="h3">Also</h3><ul class="list">' + e.other.map(function (o) {
         return '<li><b>' + esc(o.school) + '</b><span>' + esc(o.what) + '</span><em>' + esc(o.when) + '</em></li>';
       }).join('') + '</ul></div>' +
