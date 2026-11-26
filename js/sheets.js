@@ -93,6 +93,9 @@
         '<p class="kicker">About</p>' +
         '<h2 class="h2">' + esc(a.heading) + '</h2>' +
         a.paragraphs.map(function (p) { return '<p class="body">' + esc(p) + '</p>'; }).join('') +
+        (a.numbers ? '<dl class="stats stats--about">' + a.numbers.map(function (n) {
+          return '<div><dt>' + esc(n.l) + '</dt><dd>' + esc(n.v) + '</dd></div>';
+        }).join('') + '</dl>' : '') +
         '<p class="keywords"><b>Keywords</b> ' + a.keywords.map(esc).join(' · ') + '</p>' +
       '</div>' +
       '<aside class="card">' +
@@ -101,6 +104,7 @@
           '<div><dt>Location</dt><dd>Jakarta, Indonesia</dd></div>' +
           '<div><dt>Email</dt><dd><a href="mailto:' + esc(L.email) + '">' + esc(L.email) + '</a></dd></div>' +
           '<div><dt>LinkedIn</dt><dd><a ' + linkAttrs(L.linkedin) + '>' + esc(L.linkedin.replace(/^https?:\/\/(www\.)?/, '')) + '</a></dd></div>' +
+          (a.interests ? '<div><dt>Interested in</dt><dd>' + esc(a.interests) + '</dd></div>' : '') +
           '<div><dt>Status</dt><dd>' + esc(P.contact.status) + '</dd></div>' +
         '</dl>' +
       '</aside>' +
@@ -136,6 +140,7 @@
       '<ol class="steps">' + c.steps.map(function (s, i) {
         return '<li><span class="steps__n">' + pad(i + 1) + '</span><h4>' + esc(s.h) + '</h4><p>' + esc(s.t) + '</p></li>';
       }).join('') + '</ol>' +
+      (c.note ? '<p class="note">' + esc(c.note) + '</p>' : '') +
       stats(c.stats);
     var foot =
       chain(c.chain) +
@@ -165,6 +170,9 @@
             (it.role ? '<span>' + esc(it.role) + '</span>' : '') + '<em>' + esc(it.when) + '</em></div>' +
             '<p>' + esc(it.text) + '</p></li>';
         }).join('') + '</ul>' +
+        (d.certs ? '<h3 class="h3">Certifications</h3><ul class="certs">' + d.certs.map(function (ct) {
+          return '<li><b>' + esc(ct.name) + '</b><span>' + esc(ct.issuer) + '</span><em>' + esc(ct.status) + '</em></li>';
+        }).join('') + '</ul>' : '') +
       '</div><div class="case__figs">' + figs(d.images, d.images.length > 2) + '</div></div>');
   }
   entrySheet('business', 'Small businesses', 'Business', P.business, 'Business · Since 2021');
@@ -205,8 +213,11 @@
       '<p class="links">' +
         '<a class="btn btn--red" href="mailto:' + esc(L.email) + '?subject=Internship%20opportunity">Email me</a>' +
         '<a class="btn btn--line" ' + linkAttrs(L.linkedin) + '>LinkedIn <span aria-hidden="true">↗</span></a>' +
-        (L.resume ? '<a class="btn btn--line" ' + linkAttrs(L.resume) + '>Download CV <span aria-hidden="true">↓</span></a>' : '') +
       '</p>' +
+      ((L.resume || L.portfolioPdf) ? '<div class="downloads"><h3 class="h3">Downloads</h3><p class="links">' +
+        (L.resume ? '<a class="btn btn--ink" href="' + esc(L.resume) + '" download>Download my CV (PDF) <span aria-hidden="true">↓</span></a>' : '') +
+        (L.portfolioPdf ? '<a class="btn btn--ink" href="' + esc(L.portfolioPdf) + '" download>Download this portfolio (PDF) <span aria-hidden="true">↓</span></a>' : '') +
+      '</p></div>' : '') +
       '<dl class="rows rows--wide">' +
         '<div><dt>Email</dt><dd><a href="mailto:' + esc(L.email) + '">' + esc(L.email) + '</a></dd></div>' +
         '<div><dt>LinkedIn</dt><dd><a ' + linkAttrs(L.linkedin) + '>' + esc(L.linkedin.replace(/^https?:\/\/(www\.)?/, '')) + '</a></dd></div>' +

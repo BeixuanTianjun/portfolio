@@ -41,7 +41,18 @@ picture on that sheet. The details of the two posters (`poa-*`, `his-*`) and
 the five `eda-*` slides were cut from the posters and from
 `EDA_Final_Project.pdf`, so a reader sees them without opening a file.
 
-`links.resume` is deliberately empty: the CV PDF carries a phone number.
+## Downloads
+
+The contact sheet has two download buttons:
+
+- **CV**: `links.resume` names the PDF (blank hides the button). Whatever the
+  PDF contains, phone number included, is public once it's linked.
+- **Portfolio**: `links.portfolioPdf` is `assets/Michael_Wibowo_Portfolio.pdf`,
+  the 14 sheets printed one per page. It is a copy, so regenerate it after
+  changing `profile.js`: serve the folder, open it in a headless Chromium at
+  1440×900, switch to print media and print to a 1440×900 px page with
+  backgrounds on and no margins (the print styles already put each sheet on
+  its own page).
 
 ## Reading the sheets
 
