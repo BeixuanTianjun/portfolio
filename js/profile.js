@@ -50,19 +50,31 @@ window.PROFILE = {
     email: "michaelwibo@gmail.com",
     linkedin: "https://www.linkedin.com/in/michael-wibowo",
     instagram: "https://instagram.com/michael.mw_",
-    /* No CV link on purpose: the PDF carries your phone number. Make a copy
-       without it, put it in this folder and write the filename here. */
-    resume: ""
+    /* The CV for the "Download my CV" button on the contact sheet, e.g.
+       "assets/Michael_Wibowo_CV.pdf". Blank hides the button. Anything in
+       the PDF (phone number included) is public once it's here. */
+    resume: "",
+    /* the 14 sheets as one PDF; regenerate it after changing this file (README) */
+    portfolioPdf: "assets/Michael_Wibowo_Portfolio.pdf"
   },
 
   /* --- 3. ABOUT --------------------------------------------------------- */
   about: {
     heading: "Hi, I'm Michael.",
     paragraphs: [
-      "I'm in my third year of Industrial Engineering at BINUS University. In class I've planned production for a factory line, redesigned a tool around the people who use it, built a QFD from a customer survey and modelled 20,000 rows of data in Python.",
+      "I'm a third-year Industrial Engineering student at BINUS University. I'm interested in how things get planned, made and sold, and I learn most by running things myself.",
       "Outside class I build things and sell things. The biggest is ShifuWok, a research terminal for the Indonesian stock market that I built and run by myself. I also run BullzTCG, a trading-card business, and MWcrypto, a trading community of more than 100 members, and I coordinate the finance division for BINECA 2026.",
+      "In class I've planned production for a factory line, redesigned a tool around the people who use it, turned a customer survey into a QFD and analysed the study habits of 20,000 students.",
       "I'm looking for an internship from February 2027, full-time for up to 12 months, in data, operations, product or finance."
     ],
+    /* the four numbers under the paragraphs */
+    numbers: [
+      { v: "4",    l: "Businesses started" },
+      { v: "100+", l: "Community members" },
+      { v: "5",    l: "Competition placings" },
+      { v: "5+",   l: "Years investing" }
+    ],
+    interests: "Data · Operations · Product · Finance",
     keywords: [
       "Forecasting", "Aggregate Planning", "MPS & MRP", "Lot Sizing", "Kanban",
       "Ergonomics", "Time & Motion Study", "QFD", "Regression", "ANOVA",
@@ -89,7 +101,7 @@ window.PROFILE = {
     ],
     other: [
       { school: "Finplan", what: "WPPE preparation programme", when: "Sep 2026" },
-      { school: "Kanaan Christian High School", what: "High school diploma · Banjarmasin", when: "2024" }
+      { school: "Kanaan Christian High School", what: "High school diploma · Banjarmasin, South Borneo", when: "2024" }
     ]
   },
 
@@ -163,7 +175,7 @@ window.PROFILE = {
       meta: "Group project · 2025",
       lead: "20,000 students' study habits from a Kaggle dataset, turned into a model and a short list of what actually moves exam scores.",
       steps: [
-        { h: "Describe", t: "Excel, RStudio and Python agreed: students studying 6–8 hours a day averaged 79.96, against 44.69 for 0–2 hours. Attendance and sleep showed the same upward pattern." },
+        { h: "Describe", t: "Students who studied 6–8 hours a day averaged 79.96, against 44.69 for 0–2 hours. Attendance and sleep showed the same upward pattern." },
         { h: "Model",    t: "Multiple linear regression on an 80/20 split: each study hour adds 5.91 points, each sleep hour 1.44 and each attendance point 0.34. R² 0.63 on test and train alike, MAE 9.20." },
         { h: "Test",     t: "A t-test found internet access made no difference (p = 0.274). ANOVA found sleep quality did (p < 0.001)." },
         { h: "Mine",     t: "Apriori rules: students who studied little scored low 83.7% of the time. K-Means with an elbow curve split students into three clusters." }
@@ -174,7 +186,7 @@ window.PROFILE = {
         { v: "83.7%",  l: "low study → low score" }
       ],
       chain: ["20,000 rows", "Regression", "t-test & ANOVA", "Rules & clusters"],
-      methods: "Excel · RStudio · Python (Colab) · Multiple linear regression · t-test · ANOVA · Apriori · K-Means",
+      methods: "Multiple linear regression · t-test · ANOVA · Apriori · K-Means · Excel · RStudio · Python",
       images: [
         { src: "assets/projects/eda-study-hours", alt: "Slide: average exam score by study hours, rising from 44.69 at 0–2 hours to 79.96 at 6–8 hours", cap: "Score by study hours" },
         { src: "assets/projects/eda-coefficients", alt: "Slide: regression coefficients, study hours 5.91, class attendance 0.34, sleep hours 1.44", cap: "Coefficients" },
@@ -217,8 +229,9 @@ window.PROFILE = {
         { h: "Data",        t: "Covers all 962 listed companies: prices, broker flows, KSEI ownership and official IDX announcements. Every number shows its source and date." },
         { h: "Alone",       t: "I do the data pipeline, screens, testing, billing and support." },
         { h: "In the open", t: "The screener's rules are published with their test results, and a paper-trading portfolio is logged in public, losses included." },
-        { h: "Kantor Agen", t: "A 3D office inside ShifuWok where 38 named agents move only when real work happens. Admin-only, so there's no public link." }
+        { h: "Kantor Agen", t: "A 3D office inside ShifuWok where 38 named agents move only when real work happens: a data pull, an AI call, a subagent run. Events are stripped of user data and pass a key check with rate limits. Admin-only, so there's no public link." }
       ],
+      note: "Also built: TeknikalDrill, a practice-exam app for the RTA and CTA syllabus with summaries and mind maps for each unit. I made it while studying for the RTA exam.",
       chain: ["Screener for my trades", "Data for 962 companies", "Public terminal", "Agents shown in 3D"],
       methods: "Data pipelines · Testing · Kantor Agen: Three.js, TypeScript, Node.js, browser tests",
       images: [
@@ -227,7 +240,7 @@ window.PROFILE = {
       link: "https://shifuwok.com/",
       linkLabel: "Open shifuwok.com",
       link2: "https://beixuantianjun.github.io/teknikaldrill/",
-      link2Label: "Also built: TeknikalDrill"
+      link2Label: "Open TeknikalDrill"
     },
     {
       id: "bineca",
@@ -276,9 +289,16 @@ window.PROFILE = {
       { name: "Investing", when: "Feb 2021 – Present",
         text: "With stocks I look for companies priced below what the business is worth and hold until the gap closes. I sell when the reason I bought is no longer true." },
       { name: "MWcrypto", when: "Nov 2024 – Present",
-        text: "A crypto trading community I started, now past 100 members. I post setups with an entry, take-profit levels, a stop and the reasoning." },
-      { name: "Training", when: "2026",
-        text: "WPPE (broker-dealer representative) and RTA (technical analyst) training finished, exams pending. Bank of America's investment banking simulation: SWOT, DCF and sensitivity analysis." }
+        text: "A crypto trading community I started in November 2024, now past 100 members. I post setups with an entry, take-profit levels, a stop and the reasoning, plus market commentary and live sessions." },
+      { name: "Bank of America IB simulation", when: "Sep 2026",
+        text: "On Forage: screened an acquisition target with a SWOT analysis, built a DCF to a per-share value, ran a sensitivity analysis and wrote the company profile." }
+    ],
+    /* nothing here is passed yet, and the list says so */
+    certs: [
+      { name: "WPPE, broker-dealer representative", issuer: "Finplan / OJK", status: "Training done · exam pending" },
+      { name: "RTA, Registered Technical Analyst", issuer: "CSA Institute", status: "Training done · exam pending" },
+      { name: "WMI, investment manager representative", issuer: "OJK", status: "Planned" },
+      { name: "CSA & CTA", issuer: "CSA Institute", status: "After RTA" }
     ],
     images: [
       { src: "assets/projects/wppe-certificate", alt: "Finplan Academy certificate for the KKNI Level 5 capital-market broker-dealer representative preparation programme, Jakarta, 17 September 2026", cap: "WPPE training" },
@@ -299,11 +319,13 @@ window.PROFILE = {
     { title: "Ergonomics & design",
       items: ["Anthropometry", "Time & motion study", "QFD / House of Quality", "Weighted scoring", "Usability testing (SUS, WAMMI)"] },
     { title: "Data",
-      items: ["Python", "Regression", "ANOVA & t-tests", "K-Means", "SPSS", "Microsoft Excel"] },
+      items: ["Statistics", "Regression", "ANOVA & t-tests", "K-Means", "SPSS", "Microsoft Excel", "Python"] },
     { title: "Building",
       items: ["Web apps", "Data pipelines", "AI agents", "Testing", "PowerPoint"] },
     { title: "Business & markets",
-      items: ["Procurement & pricing", "Sales & marketing", "Project management", "Technical analysis", "Valuation (DCF)", "Risk management"] }
+      items: ["Business management", "Procurement & pricing", "Sales & marketing", "Project management", "Technical analysis", "Fundamental analysis", "Valuation (DCF)", "Risk management"] },
+    { title: "People",
+      items: ["Communication", "Leadership", "Teamwork", "Problem solving", "Adaptability", "Mentoring"] }
   ],
 
   /* --- 10. LEADERSHIP + AWARDS ------------------------------------------ */
@@ -328,7 +350,7 @@ window.PROFILE = {
     { name: "Jurnalistik FLS2N", place: "Finalist", year: "2023",
       text: "The journalism category of the national student arts festival." },
     { name: "AVIMSA Doctor Championship", place: "Top 30", year: "2023 & 2024",
-      text: "A national medical science competition for high school students." }
+      text: "The Avicenna Medical Science Award, a national medical science competition for high school students." }
   ],
 
   /* --- 11. CONTACT ------------------------------------------------------ */
