@@ -1,22 +1,22 @@
 # Portfolio — Michael Wibowo
 
-A portfolio laid out as a set of engineering drawing sheets: 14 sheets, one on
-screen at a time, each with a numbered frame, a header strip and a title block
-in the bottom-right corner. Paper, ink and one red, the same as `assets/og.png`
-and the LinkedIn banner.
+A portfolio read one page at a time: 14 pages, each with a dark rail on the
+left (page number, section, progress dots) and the content on paper to the
+right, in cards. Paper, ink and one red, the same as `assets/og.png` and the
+LinkedIn banner.
 
 No build step, no framework, no CDN. Open `index.html` and it runs.
 
 ## Edit your content in one place
 
-**Every word on the page comes from `js/profile.js`.** The sheets come out of
+**Every word on the page comes from `js/profile.js`.** The pages come out of
 it in this order:
 
 ```
 01 cover        meta            name, tagline, chips, the four cover facts, photo
 02 about        about           paragraphs + keywords (links feed the side card)
 03 education    education       BINUS numbers, the courses behind the projects
-04-07 projects  projects[]      one sheet per industrial-engineering project
+04-07 projects  projects[]      one page per industrial-engineering project
 08-09 work      work[]          ShifuWok, BINECA
 10 business     business        entries + pictures
 11 markets      markets         entries + pictures
@@ -25,41 +25,41 @@ it in this order:
 14 contact      contact, links
 ```
 
-Add an entry to `projects[]` or `work[]` and it gets its own sheet; the
-numbering, the title blocks and the menu update themselves. Keep the total
-under 15 sheets.
+Add an entry to `projects[]` or `work[]` and it gets its own page; the
+numbering, the rail and the menu update themselves. Keep the total under 15
+pages.
 
 A project or work entry has `kicker` (course or area), `title`, `meta`,
 `lead`, `steps` (what was done, in order), optional `stats`, `chain` (input to
 result, the last box turns red), `methods`, `images` and optional links.
 
 **Pictures** are named without the extension: `"assets/projects/poa-razer"`
-loads `poa-razer-thumb.webp` on the sheet and `poa-razer.webp` when someone
-clicks it. The first picture of a sheet is shown large and the rest as a strip
+loads `poa-razer-thumb.webp` on the page and `poa-razer.webp` when someone
+clicks it. The first picture of a page is shown large and the rest as a strip
 of details; clicking any of them opens a viewer that steps through every
-picture on that sheet. The details of the two posters (`poa-*`, `his-*`) and
+picture on that page. The details of the two posters (`poa-*`, `his-*`) and
 the five `eda-*` slides were cut from the posters and from
 `EDA_Final_Project.pdf`, so a reader sees them without opening a file.
 
 ## Downloads
 
-The contact sheet has two download buttons:
+The contact page has two download buttons:
 
 - **CV**: `links.resume` names the PDF (blank hides the button). Whatever the
   PDF contains, phone number included, is public once it's linked.
 - **Portfolio**: `links.portfolioPdf` is `assets/Michael_Wibowo_Portfolio.pdf`,
-  the 14 sheets printed one per page. It is a copy, so regenerate it after
+  the 14 pages printed one per sheet of paper. It is a copy, so regenerate it after
   changing `profile.js`: serve the folder, open it in a headless Chromium at
   1440×900, switch to print media and print to a 1440×900 px page with
-  backgrounds on and no margins (the print styles already put each sheet on
+  backgrounds on and no margins (the print styles already put each page on
   its own page).
 
-## Reading the sheets
+## Reading the pages
 
-Next and Back in the bottom bar, the arrow keys, Page Up / Page Down,
-Home / End, or a sideways swipe on a phone. The menu lists every sheet. The
-address follows along (`#production-planning`), so a link can open one sheet
-directly. On a phone each sheet scrolls on its own.
+Next and Back in the pill at the bottom right, the arrow keys, Page Up / Page Down,
+Home / End, or a sideways swipe on a phone. The menu shows every page as a card. The
+address follows along (`#production-planning`), so a link can open one page
+directly. On a phone the rail becomes a strip on top and each page scrolls.
 
 ## Run it
 
@@ -108,9 +108,9 @@ with it.
 ```
 index.html          shell: the deck, the bottom bar, the menu, the picture viewer
 css/fonts.css       self-hosted Manrope and Gelasio
-css/style.css       tokens, the sheet frame, the layouts, small screens, print
+css/style.css       tokens, the rail, the cards, the layouts, small screens, print
 js/profile.js       all of the content
-js/sheets.js        builds the sheets from profile.js and runs the deck
+js/sheets.js        builds the pages from profile.js and runs the deck
 assets/og.png       1200×630 link-preview card
 assets/projects/    pictures (name.webp + name-thumb.webp) and the EDA deck PDF
 swarm/              the older swarm page, still online at /swarm/
@@ -118,9 +118,9 @@ swarm/              the older swarm page, still online at /swarm/
 
 ## Accessibility
 
-- One sheet is shown at a time; the others are `inert` and hidden from screen
-  readers, and each sheet is labelled "Sheet n of 14: title".
+- One page is shown at a time; the others are `inert` and hidden from screen
+  readers, and each sheet is labelled "Page n of 14: title".
 - `prefers-reduced-motion: reduce` turns the sheet transition off.
 - Every picture has alt text; the viewer and the menu close with Escape.
 - Everything from `profile.js` is HTML-escaped before it reaches the DOM.
-- Printing gives every sheet its own page.
+- Printing gives every page its own sheet of paper.
