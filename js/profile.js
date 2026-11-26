@@ -8,7 +8,7 @@
 
      01 cover · 02 about · 03 education
      04-07 the four industrial-engineering projects  (projects[])
-     08-09 ShifuWok and BINECA                       (work[])
+     08-09 ShifuWok and HIMTRI finance (BINECA, WFP)  (work[])
      10 small businesses · 11 markets · 12 skills
      13 leadership & awards · 14 contact
 
@@ -243,21 +243,23 @@ window.PROFILE = {
       link2Label: "Open TeknikalDrill"
     },
     {
-      id: "bineca",
-      menu: "BINECA 2026 finance",
+      id: "himtri-finance",
+      menu: "HIMTRI finance: BINECA & WFP",
       kicker: "Operations · Organization",
-      title: "BINECA 2026 finance division",
-      meta: "Coordinator · HIMTRI BINUS · Jul 2026 – Present",
-      lead: "The finance division raises the event budget by selling instead of waiting for an allocation.",
+      title: "Finance for HIMTRI events",
+      meta: "HIMTRI BINUS · BINECA 2026 and WFP 2025",
+      lead: "Two events of the Industrial Engineering student association where the finance team runs the money and the selling.",
       steps: [
-        { h: "Sell",      t: "We run food resale, fundraising sales and event merchandise." },
-        { h: "Price",     t: "I source the stock and set prices that keep a margin." },
-        { h: "Promote",   t: "I promote each sale on campus." },
-        { h: "Reconcile", t: "I keep stock, cash and hand-offs reconciled across pre-orders and selling days." }
+        { h: "BINECA 2026 · Coordinator", t: "Jul 2026 – Present. The division raises the event budget by selling instead of waiting for an allocation: food resale, fundraising sales and event merchandise." },
+        { h: "Price & promote", t: "I source the stock, set prices that keep a margin and promote each sale on campus." },
+        { h: "Reconcile", t: "I keep stock, cash and hand-offs reconciled across pre-orders and selling days." },
+        { h: "WFP 2025 · Finance Staff", t: "Finance staff for WFP 2025 \"The Y2K Experience\", the welcome and farewell party for Industrial Engineering students. The division ran the money flow, sales, food and merchandise; I ordered the printed sticker set." }
       ],
       chain: ["Source stock", "Price with a margin", "Sell on campus", "Reconcile stock & cash"],
-      methods: "Procurement · Pricing · Sales · Stock and cash reconciliation",
-      images: []
+      methods: "Procurement · Pricing · Sales · Merchandise · Stock and cash reconciliation",
+      images: [
+        { src: "assets/projects/wfp-stickers", alt: "The WFP 2025 sticker set: a WFP dial, WFP 2025 speakers, Vibin', a spray can reading Ain't nothing but WFP 2025, a skateboard sign and Let the music do the talking", cap: "WFP 2025 sticker set" }
+      ]
     }
   ],
 
